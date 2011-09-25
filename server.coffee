@@ -1,11 +1,14 @@
 # Requires
 docpad = require 'docpad'
+mydocpad = require './lib/MyDocPad'
 express = require 'express'
+fs = require 'fs'
+gzippo = require './lib/gzippo.js'
+RSS = require 'rss'
 
 # Variables
 oneDay = 86400000
-expiresOffset = oneDay
-
+expiresOffset = oneDay * 0
 
 # -------------------------------------
 # Server
@@ -19,36 +22,69 @@ masterServer = express.createServer()
 # Setup DocPad
 docpadPort = masterPort
 docpadServer = masterServer
-docpadInstance = docpad.createInstance {
-	port: docpadPort
-	maxAge: expiresOffset
-	server: masterServer
-}
+
+cache = []
 
 # -------------------------------------
 # Middlewares
 
-# Configure
-docpadServer.configure ->
-	### Correct Domain Middleware
-	docpadServer.use (req,res,next) ->
-		if req.headers.host in ['www.yourwebsite.com']
-			res.redirect 'http://yourwebsite.com'+req.url, 301
-			res.end()
-		else
-			next()
-	###
-
+configureDocPadInstance = (docpadInstance) ->
 	# Static Middleware
-	docpadInstance.serverAction (err) -> throw err  if err
+	docpadInstance.action 'generate', (next) ->
+		docpadInstance.action 'watch', (next) ->
+			docpadInstance.action 'server', (next) ->
+				docpadServer.use gzippo.staticGzip docpadInstance.outPath, { maxAge: expiresOffset }
 
-	# Router Middleware
-	docpadServer.use docpadServer.router
+				# Router Middleware
+				docpadServer.use docpadServer.router
 
-	# 404 Middleware
-	docpadServer.use (req,res,next) ->
-		res.send(404)
+				# 404 Middleware
+				docpadServer.use (req,res,next) ->
+					cache.push { path: req.path, referer : req.header('Referer'), when: new Date() }
+					fs.readFile __dirname + '/out/404.html', 'utf8', (err, text) ->
+						res.send text, 404
 
+				# 404 rss
+				docpadServer.get '/404.xml', (req, res) ->
+					feed = new RSS {
+						title: 'Le Blog d Olivier: 404 feed'
+						feed_url: 'http://blog.bazoud.com/404.xml'
+						site_url: 'http://blog.bazoud.com'
+						author: 'Olivier Bazoud'
+					}
+					for page in cache
+						feed.item {
+							title:  'blog.bazoud.com: 404 Not Found'
+							description: page.referer + ' -> ' + page.path
+							url: 'http://blog.bazoud.com/404.xml'
+							author: 'Olivier Bazoud'
+							date: page.when.toIsoDateString()
+						}
+					res.header "Content-Type", "text/xml; charset=UTF-8"
+					res.send feed.xml(), 200
+
+# Configure
+docpadServer.configure 'development', () ->
+	# Settings
+	docpadInstance = new mydocpad.MyDocPad {
+		logLevel: 6
+		port: docpadPort
+		maxAge: 0
+		server: masterServer
+		rootPath: __dirname
+	}
+	configureDocPadInstance docpadInstance
+
+docpadServer.configure 'production', () ->
+	# Settings
+	docpadInstance = new mydocpad.MyDocPad {
+		logLevel: 6
+		port: docpadPort
+		maxAge: expiresOffset
+		server: masterServer
+		rootPath: __dirname
+	}
+	configureDocPadInstance docpadInstance
 
 # -------------------------------------
 # Start Server
@@ -65,3 +101,27 @@ console.log 'Express server listening on port %d', masterServer.address().port
 # Redirects
 
 # Place your redirects here
+
+# healthCheck
+docpadServer.get '/healthCheck', (req, res) ->
+	res.send 'ok', 200
+
+# feeds
+docpadServer.get '/feed', (req, res) ->
+	res.redirect '/feed.xml', 301
+
+docpadServer.get '/rss', (req, res) ->
+	res.redirect '/rss.xml', 301
+
+docpadServer.get '/atom', (req, res) ->
+	res.redirect '/atom.xml', 301
+
+# legacy
+docpadServer.get '/feed/atom', (req, res) ->
+	res.redirect '/atom.xml', 301
+docpadServer.get '/feed/rss2/comments', (req, res) ->
+	res.redirect 'http://feeds.bazoud.com/bazoud/comments', 301
+
+docpadServer.get '/public/billets/eclipse1.png', (req, res) ->
+	res.redirect '/images/eclipse1.png', 301
+

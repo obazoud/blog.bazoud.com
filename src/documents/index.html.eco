@@ -1,0 +1,21 @@
+---
+layout: 'page'
+title: 'Les derniers articles'
+---
+
+<table class="zebra-striped" style="border: 0px;">
+<tbody>
+<% count = 0 %>
+<% for Document in @Documents: %>
+	<% if Document.url.indexOf('/post') == 0 and count < 45: %>
+	<tr>
+		<td style="border-left: 0px"><span property="dc:created"><%= new Date(Document.date).toString('dd/MM/yyyy') %></span></td>
+		<td style="border-left: 0px"><a typeof="sioc:Page" about="<%= Document.url %>" href="<%= Document.url %>"><%= Document.title %></a></td>
+	</tr>
+  <% count++ %>    
+	<% end %>
+<% end %>
+</tbody>
+</table>
+<p><a target="_blank" href="/next" class="btn primary">La suite...</a></p>
+

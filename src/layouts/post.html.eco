@@ -1,0 +1,163 @@
+---
+layout: default
+---
+
+<article>
+  <div class="page-header">
+    <a href="<%= @Document.url %>"><h1><%= @Document.title %></h1></a>
+  </div>
+  <p class="muted">
+    <span class="meta-prep meta-prep-author">Posté le</span> <span class="entry-date"><%= new Date(@Document.date).toString('dddd dd MMMM yyyy') %></span> <span class="meta-sep">par</span> <span class="author vcard"><%= @Document.author %></span> | <a href="<%= @Document.url %>">Lien permanent</a><% if @Site.config.disqus: %> | <a href="<%= @Document.url %>#disqus_thread">Commentaires</a><% end %>
+<% if @Document.categories and @Document.categories.length: %>
+  | Posté dans 
+  <% for category in @Document.categories: %>
+    <a rel="category tag" title="View all posts in Example Category" href="/category/<%= category %>"><%= category %></a> 
+  <% end %>
+<% end %>
+  </p>
+<% if @Document.tags.length: %>
+  <p class="muted">
+  Taggé avec: 
+  <% for tag in @Document.tags: %>
+    <a rel="tag" href="/tag/<%= tag %>"><%= tag %></a>
+  <% end %>
+  </p>
+<% end %>
+  <hr>
+  <div class="well clearfix">
+  	<% socialtags = '' %>
+  	<% i = 0 %>
+  	<% for tag in @Document.tags: %>
+  		<% if i > 0: %>
+	  		<% socialtags += ' ' %>
+	  	<% end %>
+  		<% socialtags += '#' + tag %>
+  		<% i++ %>
+  	<% end %>
+  	<div class="social">
+    	<a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= @Site.config.baseurl %><%= @Document.url %>" data-text="<%= @Document.title %> <%= socialtags %>" data-count="vertical">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+    </div>
+  	<div class="social">
+	    <g:plusone size="tall" href="<%= @Site.config.baseurl %><%= @Document.url %>"></g:plusone>
+	  </div>
+  	<div class="social">
+		  <script src="http://platform.linkedin.com/in.js" type="text/javascript"></script>
+			<script type="IN/Share" data-url="<%= @Site.config.baseurl %><%= @Document.url %>" data-counter="top"></script>
+		</div>
+  	<div class="social">
+			<div class='share-delicious'>
+				<div class='delicious' id='delic'>0</div>
+				<div class='delicious-b'><a href='http://del.icio.us/post?url=<%= @Site.config.baseurl %><%= @Document.url %>&title="<%= @Document.title %>"' target='blank'>delicious</a></div>
+				<script type='text/javascript'>
+				function delic(info) {
+					if(!info[0]) return;
+					var num = info[0].total_posts;
+					if(!num) return;
+					var delic = document.getElementById('delic');
+					delic.innerHTML = '' + num;
+					delic.style.textIndent = 0;
+					delic.style.paddingRight= '6px';
+				}
+				</script>
+				<script src='http://badges.del.icio.us/feeds/json/url/data?url=<%= @Site.config.baseurl %><%= @Document.url %>'&callback=declic></script>
+			</div>
+	  </div>
+  </div>
+  <hr style="border-width: 0 0 3px;">
+  <div class="post_content">
+    <%- @content %>
+  </div>
+  <hr style="border-width: 0 0 3px;">
+  <p class="muted">
+    <span class="meta-prep meta-prep-author">Posté le</span> <span class="entry-date"><%= new Date(@Document.date).toString('dddd dd MMMM yyyy') %></span> <span class="meta-sep">par</span> <span class="author vcard"><%= @Document.author %></span>
+<% if @Document.categories and @Document.categories.length: %>
+  | Posté dans 
+  <% for category in @Document.categories: %>
+    <a rel="category tag" title="View all posts in Example Category" href="/category/<%= category %>"><%= category %></a> 
+  <% end %>
+<% end %>
+  </p>
+<% if @Document.tags.length: %>
+  <p class="muted">
+  Taggé avec: 
+  <% for tag in @Document.tags: %>
+    <a rel="tag" href="/tag/<%= tag %>"><%= tag %></a>
+  <% end %>
+  </p>
+<% end %>
+  <hr>
+  <div class="well clearfix">
+  	<% socialtags = '' %>
+  	<% i = 0 %>
+  	<% for tag in @Document.tags: %>
+  		<% if i > 0: %>
+	  		<% socialtags += ' ' %>
+	  	<% end %>
+  		<% socialtags += '#' + tag %>
+  		<% i++ %>
+  	<% end %>
+  	<div class="social">
+    	<a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= @Site.config.baseurl %><%= @Document.url %>" data-text="<%= @Document.title %> <%= socialtags %>" data-count="vertical">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+    </div>
+  	<div class="social">
+	    <g:plusone size="tall" href="<%= @Site.config.baseurl %><%= @Document.url %>"></g:plusone>
+	  </div>
+  	<div class="social">
+		  <script src="http://platform.linkedin.com/in.js" type="text/javascript"></script>
+			<script type="IN/Share" data-url="<%= @Site.config.baseurl %><%= @Document.url %>" data-counter="top"></script>
+		</div>
+  	<div class="social">
+			<div class='share-delicious'>
+				<div class='delicious' id='delic'>0</div>
+				<div class='delicious-b'><a href='http://del.icio.us/post?url=<%= @Site.config.baseurl %><%= @Document.url %>&title="Save To Delicious"' target='blank'>delicious</a></div>
+				<script type='text/javascript'>
+				function delic(info) {
+					if(!info[0]) return;
+					var num = info[0].total_posts;
+					if(!num) return;
+					var delic = document.getElementById('delic');
+					delic.innerHTML = '' + num;
+					delic.style.textIndent = 0;
+					delic.style.paddingRight= '6px';
+				}
+				</script>
+				<script src='http://badges.del.icio.us/feeds/json/url/data?url=<%= @Site.config.baseurl %><%= @Document.url %>'&callback=declic></script>
+			</div>
+	  </div>
+  </div>
+  <br>
+  <hr>
+  <h3>Articles similaires</h3>
+  <table class="zebra-striped" style="border: 0px;">
+    <tbody>
+<% if @Document.relatedDocuments.length: %><% i = 0 %><% for relatedDocument in @Document.relatedDocuments: %><% if i < 5: %>
+<tr><td><a href="<%= relatedDocument.url %>"><%= relatedDocument.title %></a></td></tr>
+<% end %><% i = i + 1 %><% end %><% end %>
+    </tbody>
+  </table>
+  <hr>
+<% if @Site.config.disqus: %>
+  <h3>Commentaires</h3>
+  <div id="disqus_thread">
+    <script type="text/javascript">
+      var disqus_shortname = '<%= @Site.config.disqus.shortname %>';
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+  </div>
+<% end %>
+</article>
+
+<script type="text/javascript">
+	(function() {
+		var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+		po.src = 'https://apis.google.com/js/plusone.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+	})();
+</script>
+

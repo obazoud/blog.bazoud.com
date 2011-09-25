@@ -1,8 +1,8 @@
 {
-	"name": "bootstrap.docpad",
+	"name": "blog.bazoud.com",
 	"version": "0.1.0",
-	"description": "Twitter Bootstrap Skeleton for DocPad",
-	"homepage": "https://github.com/balupton/bootstrap.docpad",
+	"description": "The source code of Olivier Bazoud's website",
+	"homepage": "https://github.com/obazoud/blog.bazoud.com",
 	"keywords": [
 		"twitter",
 		"bootstrap",
@@ -11,43 +11,35 @@
 		"theme"
 	],
 	"author": {
-		"name": "Benjamin Lupton",
-		"email": "b@lupton.cc",
-		"web": "http://balupton.com"
+		"name": "Olivier Bazoud",
+		"url": "http://blog.bazoud.com"
 	},
 	"maintainers": [
 		{
-			"name": "Benjamin Lupton",
-			"email": "b@lupton.cc",
-			"web": "http://balupton.com"
-		}
-	],
-	"contributors": [
-		{
-			"name": "Benjamin Lupton",
-			"email": "b@lupton.cc",
-			"web": "http://balupton.com"
+			"name": "Olivier Bazoud",
+			"url": "http://blog.bazoud.com"
 		}
 	],
 	"bugs": {
-		"web": "https://github.com/balupton/bootstrap.docpad/issues"
+		"url": "https://github.com/obazoud/blog.bazoud.com/issues"
 	},
-	"licenses": [
-		{
-			"type": "MIT",
-			"url": "http://creativecommons.org/licenses/MIT/"
-		}
-	],
 	"repository" : {
 		"type" : "git",
-		"url" : "http://github.com/balupton/bootstrap.docpad.git"
+		"url" : "https://github.com/obazoud/blog.bazoud.com"
 	},
 	"dependencies": {
-		"coffee-script": ">=1.1.1",
-		"express": ">=2.4.2",
-		"docpad": ">=0.9.17"
+		"coffee-script": "1.1.2",
+		"express": "2.4.7",
+		"docpad": "1.4.0",
+		"datejs": "0.0.2",
+		"bal-util": "0.7.0",
+		"compress": "0.1.9",
+		"mime" : "1.2.2",
+		"zombie": "0.10.2",
+		"rss": "0.0.2",
+		"cson": "0.2.0"
 	},
 	"engines" : {
-		"node": ">=0.4.0"
+		"node": ">=0.4.x"
 	}
 }

@@ -1,0 +1,14 @@
+---
+layout: post
+title: Mapper un arbre I
+date: '2007-05-13T16:22:00.000Z'
+author: Olivier
+aliases: ['/post/2007/05/13/mapper-un-arbre-i/', '/post/2007/05/13/mapper-un-arbre-i/']
+categories: [Uncategorized]
+tags: [jdk5,java,Hibernate,generics]
+excerpt: <p>Je tente une série d'article sur le mapping d'un arbre avec Hibernate. Elle me permettra d'aborder <a href="http://annotations.hibernate.org/">Hibernate Annotations</a>, le <a href="http://java.sun.com/j2se/1.5.0/">JDK 1.5</a>, <a href="http://www.springframework.org/">Spring</a>, <a href="http://dbunit.sourceforge.net/">DBUnit</a>, ...</p> <h3>Problèmatique</h3> <p>Le mapping objet relationnel permet de mapper des objects vers des tables du base de données relationnelles. <a href="http://www.hibernate.org">Hibernate</a> propose un framework pour mettre en oeuvre cette technique. Mais tous les mappings ne sont pas simples. Par exemple mapper un arbre n'est pas le mapping le plus facile et le plus courant.</p>
+---
+
+<p>Je tente une série d'article sur le mapping d'un arbre avec Hibernate. Elle me permettra d'aborder <a href="http://annotations.hibernate.org/">Hibernate Annotations</a>, le <a href="http://java.sun.com/j2se/1.5.0/">JDK 1.5</a>, <a href="http://www.springframework.org/">Spring</a>, <a href="http://dbunit.sourceforge.net/">DBUnit</a>, ...</p> <h3>Problèmatique</h3> <p>Le mapping objet relationnel permet de mapper des objects vers des tables du base de données relationnelles. <a href="http://www.hibernate.org">Hibernate</a> propose un framework pour mettre en oeuvre cette technique. Mais tous les mappings ne sont pas simples. Par exemple mapper un arbre n'est pas le mapping le plus facile et le plus courant.</p>
+<!--more-->
+<p>Pour réaliser ce mapping, je souhaite :</p> <ul> <li>utiliser le <a href="http://java.sun.com/j2se/1.5.0/">JDK 5</a> et <a href="http://java.sun.com/j2se/1.5.0/docs/guide/language/generics.html">les generics</a>.</li> <li>utiliser <a href="http://annotations.hibernate.org/">Hibernate Annotations</a></li> <li>l'arbre, les noeuds soient génériques, les valeurs de chaque noeud ayant pour leur part seulement une classe identifiée dans leur hiéarchie.</li> </ul> <p>Le principe de mon arbre est le suivant :</p> <ul> <li>1 arbre (Tree) a un nom et a une référence vers le noeud (Node) 'root'</li> <li>1 noeud (Node) a un parent, des enfants et contient une référence vers une valeur (NodeValue)</li> <li>la valeur (NodeValue)</li> </ul> <p>La suite explorera les différentes étapes pour réaliser les objectifs précédents : préparation, l'arbre générique, l'arbre spécifique avec deux exemples, test et conclusion.</p>

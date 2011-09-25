@@ -1,0 +1,10 @@
+---
+layout: 'page'
+title: 'Page non trouvée'
+---
+
+<div class="hero-unit">
+	<h1>404</h1>
+	<p>A work in progress...</p>
+</div>
+

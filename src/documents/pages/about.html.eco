@@ -1,0 +1,10 @@
+---
+layout: 'page'
+title: 'A propos de'
+---
+
+<div class="hero-unit">
+	<h1>A propos de...</h1>
+	<p>A work in progress...</p>
+</div>
+
