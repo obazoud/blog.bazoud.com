@@ -119,9 +119,19 @@ docpadServer.get '/atom', (req, res) ->
 # legacy
 docpadServer.get '/feed/atom', (req, res) ->
 	res.redirect '/atom.xml', 301
+docpadServer.get '/feed/rss2', (req, res) ->
+	res.redirect '/feed.xml', 301
 docpadServer.get '/feed/rss2/comments', (req, res) ->
 	res.redirect 'http://feeds.bazoud.com/bazoud/comments', 301
+docpadServer.get '^/feed/tag*$', (req, res) ->
+	res.redirect '/feed.xml', 301
 
+docpadServer.get '^/wp-*$', (req, res) ->
+  res.send 'Gone', 410
+
+# images
 docpadServer.get '/public/billets/eclipse1.png', (req, res) ->
 	res.redirect '/images/eclipse1.png', 301
+docpadServer.get '/wp-content/uploads/eclipse2.png', (req, res) ->
+	res.redirect '/images/eclipse2.png', 301
 
