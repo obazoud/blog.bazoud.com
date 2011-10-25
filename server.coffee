@@ -127,6 +127,8 @@ docpadServer.get '^/feed/tag/*$', (req, res) ->
 	res.redirect '/feed.xml', 301
 docpadServer.get '^/post/tag/*$', (req, res) ->
 	res.redirect '/feed.xml', 301
+docpadServer.all '/archive/:year/:mount', (req, res) ->
+  res.redirect '/archive/' + req.params.year, 301
 
 docpadServer.get '^/wp-*$', (req, res) ->
   res.send 'Gone', 410
