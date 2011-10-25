@@ -105,6 +105,10 @@ console.log 'Express server listening on port %d', masterServer.address().port
 # healthCheck
 docpadServer.get '/healthCheck', (req, res) ->
 	res.send 'ok', 200
+docpadServer.get '/healthCheckKO', (req, res) ->
+	res.send 'ko', 200
+docpadServer.get '/healthCheckRange', (req, res) ->
+	res.send '10', 200
 
 # feeds
 docpadServer.get '/feed', (req, res) ->
