@@ -31,7 +31,7 @@ class AliasPlugin extends DocpadPlugin
         if document.aliases
           document.aliases.forEach (alias) ->
           	if document.url
-              that.aliases[alias] = document.url.toLowerCase()
+              that.aliases[alias.toLowerCase()] = document.url.toLowerCase()
       next()
 
 	# Insert your add-on configuration
