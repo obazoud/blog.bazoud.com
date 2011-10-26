@@ -8,7 +8,7 @@ RSS = require 'rss'
 
 # Variables
 oneDay = 86400000
-expiresOffset = oneDay * 0
+expiresOffset = oneDay * 7
 
 # -------------------------------------
 # Server
