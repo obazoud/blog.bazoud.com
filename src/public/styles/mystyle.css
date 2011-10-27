@@ -1,3 +1,14 @@
+body {
+      padding-top: 60px;
+}
+
+hr {
+  margin: 20px 0 19px;
+}
+footer {
+  background-color: #EEEEEE;
+}
+
 .page-header a {
 	color: #404040;
 	text-decoration: none;

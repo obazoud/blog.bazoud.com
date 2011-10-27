@@ -24,11 +24,6 @@
 
 	<link href="/vendor/bootstrap/bootstrap-1.3.0.min.css" rel="stylesheet">
 	<link href="/styles/mystyle.css" rel="stylesheet">
-  <style type="text/css">
-    body {
-      padding-top: 60px;
-    }
-  </style>
 <% if @Document.url.indexOf('/post') == 0: %>
   <link href="/vendor/google-code-prettify/styles/sunburst.css" type="text/css" rel="stylesheet" />
   <script type="text/javascript" src="/vendor/google-code-prettify/prettify.js"></script>
