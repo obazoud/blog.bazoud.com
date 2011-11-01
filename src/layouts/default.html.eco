@@ -1,16 +1,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="fr-FR" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
 <head profile="http://gmpg.org/xfn/11">
-	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" charset="utf-8" />
+	<meta content="text/html;charset=UTF-8" http-equiv="Content-Type" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width">
-	<meta name="generator" content="Docpad 1.3.x">
-	<meta name="google-site-verification" content="<%= @Site.config.googleSiteVerification %>">
-	<meta name="description" content="<%= @Site.config.description %>">
-	<meta name="author" content="<%= @Site.config.author %>">
-	<meta name="keywords" content="<%= @Site.config.keywords %>">
-	<link rel="shortcut icon" href="/favicon.ico">
+	<meta name="viewport" content="width=device-width" />
+	<meta name="generator" content="Docpad 1.3.x" />
+	<meta name="google-site-verification" content="<%= @Site.config.googleSiteVerification %>" />
+	<meta name="description" content="<%= @Site.config.description %>" />
+	<meta name="author" content="<%= @Site.config.author %>" />
+	<meta name="keywords" content="<%= @Site.config.keywords %>" />
+	<link rel="shortcut icon" href="/favicon.ico" />
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<%= @Site.config.feeds.feed %>" />
 	<link rel="alternate" type="text/xml" title="RSS .92" href="<%= @Site.config.feeds.rss %>" />
 	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<%= @Site.config.feeds.atom %>" />
@@ -22,8 +22,8 @@
 		<script async src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
-	<link href="/vendor/bootstrap/bootstrap-1.3.0.min.css" rel="stylesheet">
-	<link href="/styles/mystyle.css" rel="stylesheet">
+	<link href="/vendor/bootstrap/bootstrap-1.3.0.min.css" rel="stylesheet" />
+	<link href="/styles/mystyle.css" rel="stylesheet" />
 <% if @Document.url.indexOf('/post') == 0: %>
   <link href="/vendor/google-code-prettify/styles/sunburst.css" type="text/css" rel="stylesheet" />
   <script type="text/javascript" src="/vendor/google-code-prettify/prettify.js"></script>
@@ -36,7 +36,7 @@
 <body>
 <% end %>
 	<div class="topbar">
-    <a href="http://github.com/obazoud/blog.bazoud.com"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a>
+    <a href="http://github.com/obazoud/blog.bazoud.com"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" /></a>
 		<div class="topbar-inner">
       <div class="container-fluid">
 				<h3><a class="brand" href="/">Le blog d'Olivier</a></h3>
@@ -45,11 +45,11 @@
 				</ul>
         <form id="search-form" class="js-search-form" action="http://www.google.com/search" method="get">
           <span class="glass js-search-action"><i></i></span>
-          <input type="hidden" value="UTF-8" name="ie">
-          <input type="hidden" value="UTF-8" name="oe">
-          <input type="hidden" value="blog.bazoud.com" name="domains">
-          <input type="hidden" value="blog.bazoud.com" name="sitesearch">
-          <input id="search-query" name="q" type="text" placeholder="Rechercher avec Google...">
+          <input type="hidden" value="UTF-8" name="ie" />
+          <input type="hidden" value="UTF-8" name="oe" />
+          <input type="hidden" value="blog.bazoud.com" name="domains" />
+          <input type="hidden" value="blog.bazoud.com" name="sitesearch" />
+          <input id="search-query" name="q" type="text" placeholder="Rechercher avec Google..." />
         </form>
 			</div>
 		</div>
@@ -58,12 +58,12 @@
     <div class="sidebar">
       <div class="well follow">
         <h5>Suivez moi !</h5>
-        <a target="_blank" style="cursor:pointer;" href="<%= @Site.config.feeds.feed %>"><img alt="Feed" title="Feed" src="/images/rss.png"></a>
+        <a target="_blank" style="cursor:pointer;" href="<%= @Site.config.feeds.feed %>"><img alt="Feed" title="Feed" src="/images/rss.png" /></a>
         <a href="http://www.twitter.com/obazoud" style="cursor:pointer;" target="_blank"><img src="/images/twitter.png" title="Follow me on Twitter!" alt="Follow @obazoud on Twitter!" /></a>
-      	<a href="https://plus.google.com/108456051643223740688" target="_blank" alt="Google +" title="Google +"><img src="/images/google-plus-48x48.png" border="0"></a>
-      	<hr>
+        <a href="https://plus.google.com/108456051643223740688" target="_blank" alt="Google +" title="Google +"><img src="/images/google-plus-48x48.png" border="0" /></a>
+        <hr />
         <h5>Spring Batch in Action</h5>
-        <a href="http://affiliate.manning.com/idevaffiliate.php?id=1178_267_1_68" target="_blank" alt="String Batch in Action" title="String Batch in Action"><img border="0" src="/images/SpringBatchInAction.jpg" alt="String Batch in Action" title="String Batch in Action"></a>
+        <a href="http://affiliate.manning.com/idevaffiliate.php?id=1178_267_1_68" target="_blank" alt="String Batch in Action" title="String Batch in Action"><img border="0" src="/images/SpringBatchInAction.jpg" alt="String Batch in Action" title="String Batch in Action" /></a>
         <h5>Mes derniers tweets</h5>
 <script src="http://widgets.twimg.com/j/2/widget.js"></script>
 <script>
@@ -120,8 +120,8 @@ new TWTR.Widget({
           <li><a href="http://grumeautique.blogspot.com/" target="_blank" class="ext">Petit précis de Grumeautique</a><span class="ext"></span></li>
         </ul>
         <h5>Feeds</h5>
-        <a target="_blank" style="cursor:pointer;" href="<%= @Site.config.feeds.feed %>"><img alt="Feed" title="Feed" src="/images/rss.png"></a>
-        <a target="_blank" style="cursor:pointer;" href="<%= @Site.config.feeds.comments %>"><img alt="Comments Feed" title="Comments Feed" src="/images/rss.png"></a>
+        <a target="_blank" style="cursor:pointer;" href="<%= @Site.config.feeds.feed %>"><img alt="Feed" title="Feed" src="/images/rss.png" /></a>
+        <a target="_blank" style="cursor:pointer;" href="<%= @Site.config.feeds.comments %>"><img alt="Comments Feed" title="Comments Feed" src="/images/rss.png" /></a>
       </div>
     </div>
     <div class="content">
