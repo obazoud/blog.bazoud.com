@@ -28,6 +28,7 @@
   <link href="/vendor/google-code-prettify/styles/sunburst.css" type="text/css" rel="stylesheet" />
   <script type="text/javascript" src="/vendor/google-code-prettify/prettify.js"></script>
 <% end %>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 </head>
 
 <% if @Document.url.indexOf('/post') == 0: %>
@@ -35,7 +36,7 @@
 <% else: %>
 <body>
 <% end %>
-	<div class="topbar">
+	<div class="topbar" id="topbar">
     <a href="http://github.com/obazoud/blog.bazoud.com"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" /></a>
 		<div class="topbar-inner">
       <div class="container-fluid">
@@ -96,18 +97,19 @@ new TWTR.Widget({
   }
 }).render().setUser('obazoud').start();
 </script>
-				<div class="tagcloud">
+				<div class="tagcloud" id="tags">
 				<h5>Tags</h5>
 <% for tag in @Site.tags.tags: %>
 		<a class="size-<%= Math.floor(@Site.tags.meta[tag].count / 3) %>" href="/tag/<%= tag %>" title="<%= tag %>: <%= @Site.tags.meta[tag].count %> posts"><%= tag %></a>
 <% end %>
 				</div>
-				<div class="tagcloud">
+				<div class="tagcloud" id="archives">
 				<h5>Archives</h5>
 <% for year in @Site.archives.years: %>
 		<a class="size-<%= Math.floor(@Site.archives.meta[year].count) %>" href="/archive/<%= year %>" title="Archive <%= year %>: <%= @Site.archives.meta[year].count %> posts"><%= year %></a>
 <% end %>
 				</div>
+				<div id="blogroll">
         <h5>Blogroll</h5>
         <ul>
           <li><a href="http://www.dviel.com/" target="_blank" class="ext">Damien Viel’s blog</a><span class="ext"></span></li>
@@ -119,6 +121,7 @@ new TWTR.Widget({
           <li><a href="http://www.onirik.org/" target="_blank" class="ext">Onirik</a><span class="ext"></span></li>
           <li><a href="http://grumeautique.blogspot.com/" target="_blank" class="ext">Petit précis de Grumeautique</a><span class="ext"></span></li>
         </ul>
+        </div>
         <h5>Feeds</h5>
         <a target="_blank" style="cursor:pointer;" href="<%= @Site.config.feeds.feed %>"><img alt="Feed" title="Feed" src="/images/rss.png" /></a>
         <a target="_blank" style="cursor:pointer;" href="<%= @Site.config.feeds.comments %>"><img alt="Comments Feed" title="Comments Feed" src="/images/rss.png" /></a>
