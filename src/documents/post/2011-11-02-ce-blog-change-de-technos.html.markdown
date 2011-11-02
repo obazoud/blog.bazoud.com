@@ -5,7 +5,7 @@ date: '2011-11-02T09:30:00.000Z'
 author: Olivier
 categories: [Uncategorized]
 tags: [git,nodejs,javascript,coffeescript,heroku,docpad,twitter,phantomjs,vows,bdd,wordpress]
-excerpt: Ce blog change de technos, abandonne wordpress et utiliser node.js FTW!
+excerpt: Ce blog change de technos, abandonne wordpress et utilise node.js FTW!
 ---
 
 ## Constat
