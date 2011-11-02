@@ -76,17 +76,31 @@ describe "Blog index"
 					"which is no empty": (footer) ->
 						assert.equal footer, 1
 
-				"has tags":
+				"has tags section":
 					topic: t (page) ->
 						page.evaluate (-> $("#tags").length), (tags) => @callback null, tags
 					
 					"which is no empty": (tags) ->
 						assert.equal tags, 1
 
-				"has archives":
+				"has tags":
+					topic: t (page) ->
+						page.evaluate (-> $("#tags a").length), (tags) => @callback null, tags
+					
+					"which is no empty": (tags) ->
+						assert.isTrue tags > 50
+
+				"has archives section":
 					topic: t (page) ->
 						page.evaluate (-> $("#archives").length), (archives) => @callback null, archives
-					
+
 					"which is no empty": (archives) ->
 						assert.equal archives, 1
+
+				"has archives":
+					topic: t (page) ->
+						page.evaluate (-> $("#archives a").length), (archives) => @callback null, archives
+
+					"which is no empty": (archives) ->
+						assert.equal archives, 5
 
