@@ -3,7 +3,6 @@ layout: post
 title: Ce blog change de technos
 date: '2011-11-02T09:00:00.000Z'
 author: Olivier
-draft: true
 categories: [Uncategorized]
 tags: [git,nodejs,javascript,coffeescript,heroku,docpad,twitter,phantomjs,vows,bdd,cloud]
 excerpt: Ce blog change de technos, abandonne wordpress et utiliser [node.js](http://www.nodejs.org) FTW!
