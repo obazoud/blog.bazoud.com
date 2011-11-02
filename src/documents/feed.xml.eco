@@ -25,7 +25,7 @@
         <% end %>
         <guid isPermaLink="false"><%= @Site.config.baseurl %><%= Document.url %></guid>
         <description><![CDATA[<%= Document.excerpt %>]]></description>
-        <content:encoded><%= Document.content %></content:encoded>
+        <content:encoded><%= Document.excerpt %> - &lt;a href="<%= @Site.config.baseurl %><%= Document.url %>"&gt;Lire la suite&lt;/a&gt;</content:encoded>
         <wfw:commentRss><%= @Site.config.baseurl %><%= Document.url %>/lastest.rss</wfw:commentRss>
         <slash:comments>0</slash:comments>
 			</item>
