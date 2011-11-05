@@ -17,5 +17,5 @@ title: 'Les derniers articles'
 <% end %>
 </tbody>
 </table>
-<p><a target="_blank" href="/next" class="btn primary">La suite...</a></p>
+<p><a href="/next" class="btn primary">La suite...</a></p>
 
