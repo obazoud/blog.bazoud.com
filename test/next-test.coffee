@@ -34,10 +34,41 @@ describe "Blog next"
 						@callback null, page
 					, 1000
 
-				"has a next button":
+				"has a button":
 					topic: t (page) ->
-						page.evaluate (-> $(".btn").text()), (next) => @callback null, next
-					
+						page.evaluate (-> $("a.btn").text()), (next) => @callback null, next
+
 					"which has text": (next) ->
 						assert.equal next, "La suite..."
+
+				"has a next link":
+					topic: t (page) ->
+						page.evaluate (->
+							elem = document.querySelector("a.btn")
+							return false if !elem
+							evt = document.createEvent("MouseEvents")
+							evt.initMouseEvent("click", true, true, window, 1, 1, 1, 1, 1, false, false, false, false, 0, null)
+							if elem.dispatchEvent(evt)
+								return elem.getAttribute('href')
+							if elem.hasAttribute('href')
+								document.location = elem.getAttribute('href')
+								return elem.getAttribute('href')
+							return null
+						), (next) => @callback null, next
+
+					"which has a next url": (next) ->
+						assert.equal next, "/next"
+
+#
+#					"has page title":
+#						topic: t (page) ->
+#							page.evaluate (-> $("h1").text()), (title) => @callback null, title
+#
+#						"which is correct": (title) ->
+#							console.log '->' + title
+#							assert.equal title, "Articles"
+#
+
+		teardown: (page, ph) ->
+			ph.exit()
 

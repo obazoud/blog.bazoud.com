@@ -104,3 +104,20 @@ describe "Blog index"
 					"which is no empty": (archives) ->
 						assert.equal archives, 5
 
+				"has posts entries":
+					topic: t (page) ->
+						page.evaluate (-> $("table.zebra-striped tr").length), (value) => @callback null, value
+
+					"which is no empty": (value) ->
+						assert.equal value, 45
+
+				"has columns":
+					topic: t (page) ->
+						page.evaluate (-> $("table.zebra-striped td").length), (value) => @callback null, value
+
+					"which is no empty": (value) ->
+						assert.equal value, 90
+
+		teardown: (page, ph) ->
+			ph.exit()
+

@@ -6,7 +6,7 @@ layout: default
   <div class="page-header">
     <a href="<%= @Document.url %>"><h1><%= @Document.title %></h1></a>
   </div>
-  <p class="muted">
+  <p id="post_top_meta1" class="muted">
     <span class="meta-prep meta-prep-author">Posté le</span> <span class="entry-date"><%= new Date(@Document.date).toString('dddd dd MMMM yyyy') %></span> <span class="meta-sep">par</span> <span class="author vcard"><%= @Document.author %></span> | <a href="<%= @Document.url %>">Lien permanent</a><% if @Site.config.disqus: %> | <a href="<%= @Document.url %>#disqus_thread">Commentaires</a><% end %>
 <% if @Document.categories and @Document.categories.length: %>
   | Posté dans 
@@ -16,7 +16,7 @@ layout: default
 <% end %>
   </p>
 <% if @Document.tags.length: %>
-  <p class="muted">
+  <p id="post_top_meta2" class="muted">
   Taggé avec: 
   <% for tag in @Document.tags: %>
     <a rel="tag" href="/tag/<%= tag %>"><%= tag %></a>
@@ -24,7 +24,7 @@ layout: default
   </p>
 <% end %>
   <hr>
-  <div class="well clearfix">
+  <div id="social_top" class="well clearfix">
   	<% socialtags = '' %>
   	<% i = 0 %>
   	<% for tag in @Document.tags: %>
@@ -68,8 +68,8 @@ layout: default
     <%- @content %>
   </div>
   <hr style="border-width: 0 0 3px;">
-  <p class="muted">
-    <span class="meta-prep meta-prep-author">Posté le</span> <span class="entry-date"><%= new Date(@Document.date).toString('dddd dd MMMM yyyy') %></span> <span class="meta-sep">par</span> <span class="author vcard"><%= @Document.author %></span>
+  <p id="post_bottom_meta1" class="muted">
+    <span class="meta-prep meta-prep-author">Posté le</span> <span class="entry-date"><%= new Date(@Document.date).toString('dddd dd MMMM yyyy') %></span> <span class="meta-sep">par</span> <span class="author vcard"><%= @Document.author %></span> | <a href="<%= @Document.url %>">Lien permanent</a><% if @Site.config.disqus: %> | <a href="<%= @Document.url %>#disqus_thread">Commentaires</a><% end %>
 <% if @Document.categories and @Document.categories.length: %>
   | Posté dans 
   <% for category in @Document.categories: %>
@@ -78,7 +78,7 @@ layout: default
 <% end %>
   </p>
 <% if @Document.tags.length: %>
-  <p class="muted">
+  <p id="post_bottom_meta2" class="muted">
   Taggé avec: 
   <% for tag in @Document.tags: %>
     <a rel="tag" href="/tag/<%= tag %>"><%= tag %></a>
@@ -86,7 +86,7 @@ layout: default
   </p>
 <% end %>
   <hr>
-  <div class="well clearfix">
+  <div id="social_bottom" class="well clearfix">
   	<% socialtags = '' %>
   	<% i = 0 %>
   	<% for tag in @Document.tags: %>
