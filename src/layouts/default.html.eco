@@ -78,6 +78,7 @@
 		<a class="size-<%= Math.floor(@Site.archives.meta[year].count) %>" href="/archive/<%= year %>" title="Archive <%= year %>: <%= @Site.archives.meta[year].count %> posts"><%= year %></a>
 <% end %>
 				</div>
+        <hr />
 				<div id="blogroll">
         <h5>Blogroll</h5>
         <ul>
