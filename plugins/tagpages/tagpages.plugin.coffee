@@ -14,34 +14,32 @@ class TagPagesPlugin extends DocpadPlugin
 	tags: {}
 	tmpPath: null
 
-	constructor: ->
-		@tags = {}
-
 	# Cleaning has finished
-	cleanFinished: ({docpad,logger},next) ->
-		@tmpPath = docpad.rootPath + '/tmp/' + @name
+	cleanAfter: ({},next) ->
+		@tmpPath = @docpad.config.rootPath + '/tmp/' + @name
+		@docpad.logger.log 'info', 'Creating ' + @tmpPath
 		# Create docpad tmp directory
 		tmpTags = @tmpPath + '/tag'
 		util.rmdir @tmpPath, (err) ->
-			logger.log 'warn', err  if err
+			@docpad.logger.log 'warn', err  if err
 			util.ensurePath tmpTags, (err) ->
-				logger.log 'warn', err  if err
+				@docpad.logger.log 'warn', err  if err
 				next()
 
 	# Parsing all files has finished
-	parseFinished: ({docpad,logger,util},next) ->
+	parseAfter: ({},next) ->
 		@tags = {}
 		@tags.meta = {}
 		@tags.tags = []
 		that = @
 
 		# Prepare
-		documents = docpad.documents
-		logger.log 'debug', 'Generating tags'
+		documents = @docpad.documents
+		@docpad.logger.log 'info', 'Generating tags'
 
 		# Async
 		tasks = new util.Group (err) ->
-			logger.log 'debug', 'Generated tags'
+			that.docpad.logger.log 'info', 'Generated tags'
 			next err
 		
 		tasks.total = 2
@@ -67,9 +65,9 @@ class TagPagesPlugin extends DocpadPlugin
 		# dump tags documents
 		for key, value of @tags.meta
 			fileFullPath = @tmpPath + '/tag/' + key + '.html.markdown'
-			logger.log 'debug', 'Generated tag: ' + fileFullPath
+			@docpad.logger.log 'debug', 'Generated tag: ' + fileFullPath
 			fs.writeFile fileFullPath, '---\nlayout: tag\ntag: ' + key + '\ntitle: Tag ' + key + '\n---', (err) ->
-				logger.log 'warn', err  if err
+				@docpad.logger.log 'warn', err  if err
 
 		# dump scan documents
 		util.scandir(
@@ -78,26 +76,28 @@ class TagPagesPlugin extends DocpadPlugin
 
 			# File Action
 			(fileFullPath,fileRelativePath,nextFile) ->
-				document = docpad.createDocument(
+				document = that.docpad.createDocument(
 					fullPath: fileFullPath
 					relativePath: fileRelativePath
 				)
 				document.load (err) ->
 					return nextFile err  if err
-					document.save()
-					nextFile err
+					document.contextualize (next) ->
+						document.store()
+						nextFile err
 
 			# Dir Action
 			false,
 
 			# Next
 			(err) ->
-				logger.log 'warn', 'Failed to parse documents', err  if err
+				that.docpad.logger.log 'warn', 'Failed to parse documents', err  if err
 				tasks.complete err
 		)
 
-	renderStarted: ({docpad, documents, templateData, logger, util}, next) ->
-		logger.log 'debug', 'Set tags in Site'
+	# Rendering all files has started
+	renderBefore: ({templateData},next) ->
+		@docpad.logger.log 'debug', 'Set tags in Site'
 		templateData.Site.tags = @tags
 		templateData.site.tags = @tags
 		next()

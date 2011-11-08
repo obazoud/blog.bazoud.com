@@ -14,34 +14,33 @@ class CategoryPagesPlugin extends DocpadPlugin
 	categories: {}
 	tmpPath: null
 
-	constructor: ->
-		@categories = {}
-
 	# Cleaning has finished
-	cleanFinished: ({docpad,logger},next) ->
-		@tmpPath = docpad.rootPath + '/tmp/' + @name
+	cleanAfter: ({},next) ->
+		@categories = {}
+		@tmpPath = @docpad.config.rootPath + '/tmp/' + @name
+		@docpad.logger.log 'info', 'Creating ' + @tmpPath
 		# Create docpad tmp directory
 		tmpCategories = @tmpPath + '/category'
 		util.rmdir @tmpPath, (err) ->
-			logger.log 'warn', err  if err
+			@docpad.logger.log 'warn', err  if err
 			util.ensurePath tmpCategories, (err) ->
-				logger.log 'warn', err  if err
+				@docpad.logger.log 'warn', err  if err
 				next()
 
 	# Parsing all files has finished
-	parseFinished: ({docpad,logger,util},next) ->
+	parseAfter: ({},next) ->
 		@categories = {}
 		@categories.meta = {}
 		@categories.categories = []
 		that = @
 
 		# Prepare
-		documents = docpad.documents
-		logger.log 'debug', 'Generating categories'
+		documents = @docpad.documents
+		@docpad.logger.log 'info', 'Generating categories'
 
 		# Async
 		tasks = new util.Group (err) ->
-			logger.log 'debug', 'Generated categories'
+			that.docpad.logger.log 'info', 'Generated categories'
 			next err
 		
 		tasks.total = 2
@@ -67,9 +66,9 @@ class CategoryPagesPlugin extends DocpadPlugin
 		# dump tags documents
 		for key, value of @categories.meta
 			fileFullPath = @tmpPath + '/category/' + key + '.html.markdown'
-			logger.log 'debug', 'Generated category: ' + fileFullPath
+			@docpad.logger.log 'debug', 'Generated category: ' + fileFullPath
 			fs.writeFile fileFullPath, '---\nlayout: category\ncategory: ' + key + '\ntitle: Catégorie ' + key + '\n---', (err) ->
-				logger.log 'warn', err  if err
+				@docpad.logger.log 'warn', err  if err
 
 		# dump scan documents
 		util.scandir(
@@ -78,26 +77,29 @@ class CategoryPagesPlugin extends DocpadPlugin
 
 			# File Action
 			(fileFullPath,fileRelativePath,nextFile) ->
-				document = docpad.createDocument(
+				document = that.docpad.createDocument(
 					fullPath: fileFullPath
 					relativePath: fileRelativePath
 				)
 				document.load (err) ->
 					return nextFile err  if err
-					document.save()
-					nextFile err
+					document.store()
+					document.contextualize (next) ->
+						document.store()
+						nextFile err
 
 			# Dir Action
 			false,
 
 			# Next
 			(err) ->
-				logger.log 'warn', 'Failed to parse documents', err  if err
+				that.docpad.logger.log 'warn', 'Failed to parse documents', err  if err
 				tasks.complete err
 		)
 
-	renderStarted: ({docpad, documents, templateData, logger, util}, next) ->
-		logger.log 'debug', 'Set categories in Site'
+	# Rendering all files has started
+	renderBefore: ({templateData},next) ->
+		@docpad.logger.log 'debug', 'Set categories in Site'
 		templateData.Site.categories = @categories
 		templateData.site.categories = @categories
 		next()

@@ -11,18 +11,18 @@ DocpadPlugin = require docpadPath + '/plugin.coffee'
 class AliasPlugin extends DocpadPlugin
 	# Plugin Name
 	name: 'alias'
+	
+	# ALiases
 	aliases: {}
 
 	# Plugin priority
 	priority: 100
 
-	constructor: ->
-		@aliases = {}
-
 	# Parsing all files has finished
-	contextualizeFinished: ({docpad,logger,util},next) ->
+	parseAfter: ({},next) ->
+		@aliases = {}
 		# Prepare
-		documents = docpad.documents
+		documents = @docpad.documents
 
 		# Find documents
 		that = @
@@ -34,10 +34,10 @@ class AliasPlugin extends DocpadPlugin
               that.aliases[alias.toLowerCase()] = document.url.toLowerCase()
       next()
 
-	# Insert your add-on configuration
-	serverBeforeConfiguration: ({docpad,server},next) ->
+	# Setting up the server is starting
+	serverBefore: ({},next) ->
     that = @
-    docpad.server.all '/', (req,res,next) ->
+    @docpad.server.all '/', (req,res,next) ->
       p = req.param 'p', null
       if p
         if that.aliases[req.url.toLowerCase()]
@@ -48,10 +48,10 @@ class AliasPlugin extends DocpadPlugin
       else
         next()
 
-	# Run when the server setup has finished
-	serverFinished: ({docpad,server},next) ->
+	# Setting up the server has finished
+	serverAfter: ({server},next) ->
 		that = @
-		docpad.server.all /\/[a-z0-9\-]+\/?$/i, (req,res,next) =>
+		server.all /\/[a-z0-9\-]+\/?$/i, (req,res,next) =>
 			if !req.url.toLowerCase().match('\/$')
         req.url = req.url + '/'
 			if that.aliases[req.url.toLowerCase()]

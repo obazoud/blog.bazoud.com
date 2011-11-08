@@ -10,8 +10,9 @@ class ModuleaddonsPlugin extends DocpadPlugin
 	# Plugin Name
 	name: 'moduleaddons'
 
-	# Parsing all files has finished
-	cleanFinished: ({docpad, logger, util}, next) ->
+	# Cleaning has finished
+	cleanAfter: ({}, next) ->
 		next()
 
+# Export Plugin
 module.exports = ModuleaddonsPlugin

@@ -28,9 +28,9 @@
 		"url" : "https://github.com/obazoud/blog.bazoud.com"
 	},
 	"dependencies": {
-		"coffee-script": "1.1.2",
+		"coffee-script": "1.1.1",
 		"express": "2.4.7",
-		"docpad": "1.4.1",
+		"docpad": "2.0.1",
 		"datejs": "0.0.2",
 		"bal-util": "0.7.0",
 		"compress": "0.1.9",

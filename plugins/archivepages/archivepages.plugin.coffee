@@ -11,37 +11,37 @@ DocpadPlugin = require docpadPath + '/plugin.coffee'
 class ArchivePagesPlugin extends DocpadPlugin
 	# Plugin Name
 	name: 'archivepages'
+
 	archives: {}
 	tmpPath: null
 
-	constructor: ->
-		@archives = {}
-
 	# Cleaning has finished
-	cleanFinished: ({docpad,logger},next) ->
-		@tmpPath = docpad.rootPath + '/tmp/' + @name
+	cleanAfter: ({},next) ->
+		@archives = {}
+		@tmpPath = @docpad.config.rootPath + '/tmp/' + @name
+		@docpad.logger.log 'info', 'Creating ' + @tmpPath
 		# Create docpad tmp directory
 		tmpArchives = @tmpPath + '/archive'
 		util.rmdir @tmpPath, (err) ->
-			logger.log 'warn', err  if err
+			@docpad.logger.log 'warn', err  if err
 			util.ensurePath tmpArchives, (err) ->
-				logger.log 'warn', err  if err
+				@docpad.logger.log 'warn', err  if err
 				next()
 
 	# Parsing all files has finished
-	parseFinished: ({docpad,logger,util},next) ->
+	parseAfter: ({},next) ->
 		@archives = {}
 		@archives.meta = {}
 		@archives.years = []
 		that = @
 
 		# Prepare
-		documents = docpad.documents
-		logger.log 'debug', 'Generating archives'
+		documents = @docpad.documents
+		@docpad.logger.log 'info', 'Generating archives'
 
 		# Async
 		tasks = new util.Group (err) ->
-			logger.log 'debug', 'Generated archives'
+			that.docpad.logger.log 'info', 'Generated archives'
 			next err
 
 		tasks.total = 2
@@ -66,9 +66,9 @@ class ArchivePagesPlugin extends DocpadPlugin
 		# dump archives documents
 		for key, value of @archives.meta
 			fileFullPath = @tmpPath + '/archive/' + key + '.html.markdown'
-			logger.log 'debug', 'Generated archive: ' + fileFullPath
+			@docpad.logger.log 'debug', 'Generated archive: ' + fileFullPath
 			fs.writeFile fileFullPath, '---\nlayout: archive\narchive: ' + key + '\ntitle: Archive ' + key + '\n---', (err) ->
-				logger.log 'warn', err  if err
+				@docpad.logger.log 'warn', err  if err
 
 		# dump scan documents
 		util.scandir(
@@ -77,26 +77,28 @@ class ArchivePagesPlugin extends DocpadPlugin
 
 			# File Action
 			(fileFullPath,fileRelativePath,nextFile) ->
-				document = docpad.createDocument(
+				document = that.docpad.createDocument(
 					fullPath: fileFullPath
 					relativePath: fileRelativePath
 				)
 				document.load (err) ->
 					return nextFile err  if err
-					document.save()
-					nextFile err
+					document.contextualize (next) ->
+						document.store()
+						nextFile err
 
 			# Dir Action
 			false,
 
 			# Next
 			(err) ->
-				logger.log 'warn', 'Failed to parse documents', err  if err
+				that.docpad.logger.log 'warn', 'Failed to parse documents', err  if err
 				tasks.complete err
 		)
 
-	renderStarted: ({docpad, documents, templateData, logger, util}, next) ->
-		logger.log 'debug', 'Set archives in Site'
+	# Rendering all files has started
+	renderBefore: ({templateData},next) ->
+		@docpad.logger.log 'debug', 'Set archives in Site'
 		templateData.Site.archives = @archives
 		templateData.site.archives = @archives
 		next()
