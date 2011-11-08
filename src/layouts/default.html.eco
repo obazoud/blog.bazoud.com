@@ -65,38 +65,7 @@
         <hr />
         <h5>Spring Batch in Action</h5>
         <a href="http://affiliate.manning.com/idevaffiliate.php?id=1178_267_1_68" target="_blank" alt="String Batch in Action" title="String Batch in Action"><img border="0" src="/images/SpringBatchInAction.jpg" alt="String Batch in Action" title="String Batch in Action" /></a>
-        <h5>Mes derniers tweets</h5>
-<script src="http://widgets.twimg.com/j/2/widget.js"></script>
-<script>
-new TWTR.Widget({
-  version: 2,
-  type: 'profile',
-  rpp: 4,
-  interval: 6000,
-  width: 180,
-  height: 150,
-  theme: {
-    shell: {
-      background: '#404040',
-      color: '#ffffff'
-    },
-    tweets: {
-      background: '#F5F5F5',
-      color: '#404040',
-      links: '#f17600'
-    }
-  },
-  features: {
-    scrollbar: false,
-    loop: true,
-    live: false,
-    hashtags: true,
-    timestamp: true,
-    avatars: true,
-    behavior: 'all'
-  }
-}).render().setUser('obazoud').start();
-</script>
+        <hr />
 				<div class="tagcloud" id="tags">
 				<h5>Tags</h5>
 <% for tag in @Site.tags.tags: %>

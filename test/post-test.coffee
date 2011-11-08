@@ -239,7 +239,7 @@ describe "Post techno"
 
 				"has related articles":
 					topic: t (page) ->
-						page.evaluate (-> $("h3")[2].innerText), (value) => @callback null, value
+						page.evaluate (-> $("h3")[1].innerText), (value) => @callback null, value
 
 					"which is no empty": (value) ->
 						assert.equal value, "Articles similaires"
@@ -260,7 +260,7 @@ describe "Post techno"
 
 				"has comments":
 					topic: t (page) ->
-						page.evaluate (-> $("h3")[3].innerText), (value) => @callback null, value
+						page.evaluate (-> $("h3")[2].innerText), (value) => @callback null, value
 
 					"which is no empty": (value) ->
 						assert.equal value, "Commentaires"
