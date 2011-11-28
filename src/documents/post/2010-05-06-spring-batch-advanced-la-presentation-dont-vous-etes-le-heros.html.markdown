@@ -4,8 +4,8 @@ title: Spring Batch Advanced, la présentation dont vous êtes le héros
 date: '2010-05-06T10:26:21.000Z'
 author: Olivier
 aliases: ['/?p=382', '/post/2010/05/06/spring-batch-advanced-la-presentation-dont-vous-etes-le-heros/']
-categories: [Uncategorized]
-tags: [evenement,spring,springbatch,advanced]
+categories: [conference]
+tags: [evenement,spring,springbatch,advanced,sugfr]
 ---
 
 Source : <a href="http://groups.google.com/group/sugfr/browse_thread/thread/ec7ebb9eb3226c3e" target="_blank">http://groups.google.com/group/sugfr/browse_thread/thread/ec7ebb9eb3226c3e</a>

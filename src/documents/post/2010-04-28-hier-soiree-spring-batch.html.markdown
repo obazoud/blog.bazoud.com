@@ -4,7 +4,7 @@ title: Hier, Soirée Spring Batch
 date: '2010-04-28T13:57:12.000Z'
 author: Olivier
 aliases: ['/?p=367', '/post/2010/04/28/hier-soiree-spring-batch/']
-categories: [Uncategorized]
+categories: [conference]
 tags: [evenement,spring,springbatch,sugfr]
 ---
 

@@ -4,7 +4,7 @@ title: Soirée Spring Batch Mardi 27 avril 2010
 date: '2010-04-21T12:03:13.000Z'
 author: Olivier
 aliases: ['/?p=347', '/post/2010/04/21/soiree-spring-batch-mardi-27-avril-2010/']
-categories: [Uncategorized]
+categories: [conference]
 tags: [evenement,spring,springbatch,twitter,sugfr]
 ---
 
