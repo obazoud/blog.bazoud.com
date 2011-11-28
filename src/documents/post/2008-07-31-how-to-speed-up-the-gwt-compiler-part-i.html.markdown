@@ -3,7 +3,7 @@ layout: post
 title: How to speed up the GWT compiler ? (Part I)
 date: '2008-07-31T21:01:00.000Z'
 author: Olivier
-aliases: ['/post/2008/07/31/how-to-speed-up-the-gwt-compiler-part-i/', '/post/2008/07/31/can-i-speed-up-the-gwt-compiler/', '/post/2008/07/31/Can-I-speed-up-the-GWT-compiler-Part-I', '/post/2008/07/31/can-i-speed-up-the-gwt-compiler-part-i']
+aliases: ['/post/2008/07/31/how-to-speed-up-the-gwt-compiler-part-i/', '/post/2008/07/31/can-i-speed-up-the-gwt-compiler/', '/post/2008/07/31/Can-I-speed-up-the-GWT-compiler-Part-I', '/post/2008/07/31/can-i-speed-up-the-gwt-compiler-part-i', '/post/2008-07-31-can-i-speed-up-the-gwt-compiler.html']
 categories: [Uncategorized]
 tags: [maven,GWT,Oracle,jdk6,jdk5,svn,tomcat]
 ---
@@ -52,4 +52,4 @@ tags: [maven,GWT,Oracle,jdk6,jdk5,svn,tomcat]
 
 </module>
 </pre> 
-<p>The main idea is to reduce permutations.</p> <p><a href="/post/2008/07/31/Can-I-speed-up-the-GWT-compiler-Part-II">How to speed up the GWT compiler ? (Part II)</a>.</p> <p><a href="/post/2008/07/31/Can-I-speed-up-the-GWT-compiler-Part-III">How to speed up the GWT compiler ? (Part III)</a>.</p> <h3>French version</h3> <p>Coming soon.</p>
+<p>The main idea is to reduce permutations.</p> <p><a href="/post/2008-07-31-how-to-speed-up-the-gwt-compiler-part-ii.html">How to speed up the GWT compiler ? (Part II)</a>.</p> <p><a href="/post/2008-07-31-how-to-speed-up-the-gwt-compiler-part-iii.html">How to speed up the GWT compiler ? (Part III)</a>.</p> <h3>French version</h3> <p>Coming soon.</p>

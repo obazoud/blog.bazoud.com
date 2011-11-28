@@ -137,6 +137,14 @@ docpadServer.all '/archive/:year/:mount', (req, res) ->
 docpadServer.get '^/wp-*$', (req, res) ->
   res.send 'Gone', 410
 
+# quick fix
+docpadServer.get '^/post/2008-07-31-can-i-speed-up-the-gwt-compiler.html$', (req, res) ->
+	res.redirect '/post/2008-07-31-how-to-speed-up-the-gwt-compiler-part-i.html', 301
+docpadServer.get '^/post/2008-07-31-can-i-speed-up-the-gwt-compiler-part-ii.html$', (req, res) ->
+	res.redirect '/post/2008-07-31-how-to-speed-up-the-gwt-compiler-part-ii.html', 301
+docpadServer.get '^/post/2008-07-31-can-i-speed-up-the-gwt-compiler-part-iii.html$', (req, res) ->
+	res.redirect '/post/2008-07-31-can-i-speed-up-the-gwt-compiler-part-ii.html', 301
+
 # images
 docpadServer.get '/public/billets/eclipse1.png', (req, res) ->
 	res.redirect '/images/eclipse1.png', 301

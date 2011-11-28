@@ -3,12 +3,12 @@ layout: post
 title: How to speed up the GWT compiler ? (Part III)
 date: '2008-07-31T21:08:00.000Z'
 author: Olivier
-aliases: ['/post/2008/07/31/how-to-speed-up-the-gwt-compiler-part-iii/', '/post/2008/07/31/can-i-speed-up-the-gwt-compiler-part-iii/']
+aliases: ['/post/2008/07/31/how-to-speed-up-the-gwt-compiler-part-iii/', '/post/2008/07/31/can-i-speed-up-the-gwt-compiler-part-iii/', '/post/2008-07-31-can-i-speed-up-the-gwt-compiler-part-iii.html']
 categories: [Uncategorized]
 tags: [GWT]
 ---
 
-<h3>English version</h3> <p><a href="/post/2008/07/31/Can-I-speed-up-the-GWT-compiler">To speed up GWT compiler</a>, the main idea is to reduce GWT permutations.</p> <p>To manage the permutations, I build my own version of GWT 1.5 named GWT 1.5 r2030-olivier.</p> <p>I am using 1.5 M1:</p> <ul> <li>svn co http://google-web-toolkit.googlecode.com/svn/trunk -r2030</li> <li>Edit I18N.gwt.xml to remove default locale and force &quot;fr_FR&quot; as &quot;default&quot; locale</li> </ul>
+<h3>English version</h3> <p><a href="/post/2008-07-31-how-to-speed-up-the-gwt-compiler-part-i.html">How to speed up GWT compiler</a>, the main idea is to reduce GWT permutations.</p> <p>To manage the permutations, I build my own version of GWT 1.5 named GWT 1.5 r2030-olivier.</p> <p>I am using 1.5 M1:</p> <ul> <li>svn co http://google-web-toolkit.googlecode.com/svn/trunk -r2030</li> <li>Edit I18N.gwt.xml to remove default locale and force &quot;fr_FR&quot; as &quot;default&quot; locale</li> </ul>
 <pre class="prettyprint">
 Index: trunk/user/src/com/google/gwt/i18n/I18N.gwt.xml
 ===================================================================
@@ -61,4 +61,4 @@ Index: trunk/user/src/com/google/gwt/user/UserAgent.gwt.xml
        return "unknown";
    ]]&gt;&lt;/property-provider&gt;
 </pre>
-<p>With my own build, GWT compiler speeds up my project compilation :</p> <ul> <li>12mn with GWT 1.5 r2030</li> <li>4mn with GWT 1.5 r2030-olivier</li> <li>1m15s with GWT 1.5 r2030-olivier + no additional locale</li> <li>1mn with GWT 1.5 r2030-olivier + no locale + gecko1_8</li> </ul> <p>This is an amazing gain : 12mn to 1mn</p> <h3>French version</h3> <p>Coming soon.</p>
+<p>With my own build, GWT compiler speeds up my project compilation :</p> <ul> <li>12mn with GWT 1.5 r2030</li> <li>4mn with GWT 1.5 r2030-olivier</li> <li>1m15s with GWT 1.5 r2030-olivier + no additional locale</li> <li>1mn with GWT 1.5 r2030-olivier + no locale + gecko1_8</li> </ul> <p>This is an amazing gain : 12mn to 1mn</p>

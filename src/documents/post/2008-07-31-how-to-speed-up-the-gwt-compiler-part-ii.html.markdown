@@ -3,12 +3,12 @@ layout: post
 title: How to speed up the GWT compiler ? (Part II)
 date: '2008-07-31T21:03:00.000Z'
 author: Olivier
-aliases: ['/post/2008/07/31/how-to-speed-up-the-gwt-compiler-part-ii/', '/post/2008/07/31/can-i-speed-up-the-gwt-compiler-part-ii/']
+aliases: ['/post/2008/07/31/how-to-speed-up-the-gwt-compiler-part-ii/', '/post/2008/07/31/can-i-speed-up-the-gwt-compiler-part-ii/', '/post/2008-07-31-can-i-speed-up-the-gwt-compiler-part-ii.html']
 categories: [Uncategorized]
 tags: [GWT]
 ---
 
-<h3>English version</h3> <p><a href="/post/2008/07/31/Can-I-speed-up-the-GWT-compiler">To speed up GWT compiler</a>, the main idea is to reduce GWT permutations.</p>
+<h3>English version</h3> <p><a href="/post/2008-07-31-how-to-speed-up-the-gwt-compiler-part-i.html">How to speed up GWT compiler</a>, the main idea is to reduce GWT permutations.</p>
  <p>1. Force a browser</p> <p>In your module.gwt.xml, force an user agent : <a href="http://developer.mozilla.org/en/docs/Gecko">gecko1_8 (Firefox 2)</a>.</p>
 <pre class="prettyprint lang-xml">
     &lt;!-- User Agent --&gt;
@@ -28,5 +28,5 @@ tags: [GWT]
     &lt;extend-property name="locale" values="nl_NL"&gt;&lt;/extend-property&gt;
     --&gt;
 </pre>
-<p><a href="/post/2008/07/31/Can-I-speed-up-the-GWT-compiler-Part-III">How to speed up the GWT compiler ? (Part III)</a>.</p> 
+<p><a href="/post/2008-07-31-how-to-speed-up-the-gwt-compiler-part-iii.html">How to speed up the GWT compiler ? (Part III)</a>.</p> 
 <h3>French version</h3> <p>Coming soon.</p>
