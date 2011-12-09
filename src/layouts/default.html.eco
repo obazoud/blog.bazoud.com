@@ -28,7 +28,6 @@
   <link href="/vendor/google-code-prettify/styles/sunburst.css" type="text/css" rel="stylesheet" />
   <script type="text/javascript" src="/vendor/google-code-prettify/prettify.js"></script>
 <% end %>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 </head>
 
 <% if @Document.url.indexOf('/post') == 0: %>
