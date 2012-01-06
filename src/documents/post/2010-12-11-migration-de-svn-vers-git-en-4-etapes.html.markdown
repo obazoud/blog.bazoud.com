@@ -17,7 +17,7 @@ Exemple :
 svnusername = fullname &lt;name@mycompany.com&gt;
 
 <pre class="prettyprint lang-bsh">
-% svn log --quiet 'http://subversion.mycompany.com/myproject' | grep "^r" | awk '{print $3}' | sort | uniq | awk '{ print $1" = "$1" <"$1"@mycompany.com>" }' > author.txt
+% svn log --quiet 'http://subversion.mycompany.com/myproject' | grep "^r" | awk '{print $3}' | sort | uniq | awk '{ print $1" = "$1" <"$1"@mycompany.com>" }' > authors.txt
 </pre>
 
 2. Cloner le repository SVN
