@@ -6,7 +6,7 @@
 	description: 'Le blog d\'Olivier'
 	language: 'fr'
 	googleSiteVerification: 'google36a66ae7f1a82c45'
-	keywords: 'geek,web,java,spring,spring batch,node.js'
+	keywords: 'geek,web,java,spring,spring batch,node.js,git,ruby,svn,subversion'
 	feeds: 
 		feed: 'http://feeds.feedburner.com/bazoud/feed'
 		rss: 'http://feeds.feedburner.com/bazoud/rss'
