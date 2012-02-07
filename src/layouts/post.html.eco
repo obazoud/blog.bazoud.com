@@ -23,7 +23,6 @@ layout: default
   <% end %>
   </p>
 <% end %>
-  <hr>
   <div id="social_top" class="well clearfix">
   	<% socialtags = '' %>
   	<% i = 0 %>
@@ -63,11 +62,11 @@ layout: default
 			</div>
 	  </div>
   </div>
-  <hr style="border-width: 0 0 3px;">
+  <hr />
   <div class="post_content">
     <%- @content %>
   </div>
-  <hr style="border-width: 0 0 3px;">
+  <hr />
   <p id="post_bottom_meta1" class="muted">
     <span class="meta-prep meta-prep-author">Posté le</span> <span class="entry-date"><%= new Date(@Document.date).toString('dddd dd MMMM yyyy') %></span> <span class="meta-sep">par</span> <span class="author vcard"><%= @Document.author %></span> | <a href="<%= @Document.url %>">Lien permanent</a><% if @Site.config.disqus: %> | <a href="<%= @Document.url %>#disqus_thread">Commentaires</a><% end %>
 <% if @Document.categories and @Document.categories.length: %>
@@ -85,7 +84,6 @@ layout: default
   <% end %>
   </p>
 <% end %>
-  <hr>
   <div id="social_bottom" class="well clearfix">
   	<% socialtags = '' %>
   	<% i = 0 %>
@@ -125,7 +123,6 @@ layout: default
 			</div>
 	  </div>
   </div>
-  <br>
   <hr>
   <h3>Articles similaires</h3>
   <table class="zebra-striped" style="border: 0px;">
