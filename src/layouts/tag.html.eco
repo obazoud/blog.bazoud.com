@@ -2,7 +2,7 @@
 layout: page
 ---
 
-<table class="zebra-striped" style="border: 0px;">
+<table class="table table-striped">
 <tbody>
 <% for Document in @Site.tags.meta[@Document.tag].documents: %>
 	<tr>

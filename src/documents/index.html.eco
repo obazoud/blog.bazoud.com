@@ -3,7 +3,7 @@ layout: 'page'
 title: 'Les derniers articles'
 ---
 
-<table class="zebra-striped" style="border: 0px">
+<table class="table table-striped">
 <tbody>
 <% count = 0 %>
 <% for Document in @Documents: %>
@@ -17,5 +17,5 @@ title: 'Les derniers articles'
 <% end %>
 </tbody>
 </table>
-<p><a href="/next" class="btn primary">La suite...</a></p>
+<p><a href="/next" class="btn small primary">La suite...</a></p>
 

@@ -1,26 +1,43 @@
 body {
-      padding-top: 60px;
+  padding-top: 60px;
 }
 
 hr {
-  margin: 20px 0 19px;
-}
-footer {
-  background-color: #EEEEEE;
+  margin: 12px 0 12px;
 }
 
-.page-header a {
-	color: #404040;
-	text-decoration: none;
+.sidebar-nav {
+  padding: 9px 0;
 }
 
-.social {
-	float:left;
-	margin-right:30px;
+h3, h4, h5, h6 {
+  line-height: 36px;
 }
-.social:first-child {
-	margin-right:15px;
+
+.footer {
+  background-color: whiteSmoke;
+  margin-top: 40px;
+  padding: 25px 15px 10px;
+  border-top: 1px solid #e5e5e5;
 }
+
+.page-header {
+  padding-bottom:10px;
+  margin:0px 0;
+  border-bottom:0px solid #eeeeee;
+}
+
+.row-fluid .span3 {
+  width: 220px;
+}
+
+.table tbody tr:nth-child(odd) td, .table tbody tr:nth-child(odd) th {
+  background-color: #f9f9f9;
+}
+.table tbody tr:hover td, .table tbody tr:hover th {
+  background-color: #f5f5f5;
+}
+
 span.ext {
 	background:url(/images/extlink.png) right center no-repeat;
 }
@@ -41,7 +58,19 @@ span.ext {
 }
 
 .well {
-    min-height: 55px;
+  min-height: 55px;
+}
+
+.topsocial {
+  min-height: 65px;
+}
+
+.social {
+  float:left;
+  margin-right:30px;
+}
+.social:first-child {
+  margin-right:30px;
 }
 
 .share-delicious {
@@ -207,9 +236,13 @@ span.ext {
 }
 .tagcloud a.size-21 {
     color: #090909;
-    font-size: 2.0em;
+    font-size: 1.96em;
+}
+.tagcloud a.size-24 {
+    color: #090909;
+    font-size: 1.96em;
 }
 .tagcloud a.size-48 {
     color: #090909;
-    font-size: 2.0em;
+    font-size: 1.96em;
 }

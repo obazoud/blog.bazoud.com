@@ -2,7 +2,7 @@
 layout: page
 ---
 
-<table class="zebra-striped" style="border: 0px;">
+<table class="table table-striped" style="border: 0px;">
 <tbody>
 <% for Document in @Site.archives.meta[@Document.archive].documents: %>
 	<tr>

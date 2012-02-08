@@ -3,7 +3,7 @@ layout: 'page'
 title: 'Articles'
 ---
 
-<table class="zebra-striped" style="border: 0px;">
+<table class="table table-striped" style="border: 0px;">
 <tbody>
 <% count = 0 %>
 <% for Document in @Documents: %>
