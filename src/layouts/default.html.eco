@@ -22,7 +22,7 @@
   <link href="/vendor/bootstrap/bootstrap-2.0.0.min.css" rel="stylesheet" />
   <link href="/styles/mystyle.css" rel="stylesheet" />
 <% if @Document.url.indexOf('/post') == 0: %>
-  <link href="/vendor/google-code-prettify/styles/sunburst.css" type="text/css" rel="stylesheet" />
+  <link href="/vendor/bootstrap/prettify.css" type="text/css" rel="stylesheet" />
   <script type="text/javascript" src="/vendor/google-code-prettify/prettify.js"></script>
 <% end %>
 </head>
