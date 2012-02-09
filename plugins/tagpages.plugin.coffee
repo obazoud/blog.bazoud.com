@@ -62,6 +62,9 @@ class TagPagesPlugin extends DocpadPlugin
 							if that.tags.tags.indexOf(tag) < 0
 								that.tags.tags.push(tag)
 			that.tags.tags = that.tags.tags.sort()
+			for tag, value of that.tags.meta
+				that.tags.meta[tag].documents = value.documents.sort (a, b) ->
+					new Date(b.date) - new Date(a.date)
 			tasks.complete()
 
 		# dump tags documents

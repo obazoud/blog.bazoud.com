@@ -61,6 +61,9 @@ class ArchivePagesPlugin extends DocpadPlugin
 					if that.archives.years.indexOf(created) < 0
 						that.archives.years.push(created)
 			that.archives.years = that.archives.years.sort()
+			for year, value of that.archives.meta
+				that.archives.meta[year].documents = value.documents.sort (a, b) ->
+					new Date(b.date) - new Date(a.date)
 			tasks.complete()
 
 		# dump archives documents

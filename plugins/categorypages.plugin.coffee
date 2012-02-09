@@ -62,6 +62,9 @@ class CategoryPagesPlugin extends DocpadPlugin
 							if that.categories.categories.indexOf(category) < 0
 								that.categories.categories.push(category)
 			that.categories.categories = that.categories.categories.sort()
+			for category, value of that.categories.meta
+				that.categories.meta[category].documents = value.documents.sort (a, b) ->
+					new Date(b.date) - new Date(a.date)
 			tasks.complete()
 
 		# dump tags documents
