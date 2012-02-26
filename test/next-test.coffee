@@ -23,6 +23,7 @@ describe "Blog next"
 		"can open a URL on localhost":
 			topic: t (page) ->
 				page.open "http://127.0.0.1:10113/", (status) =>
+					page.includeJs "http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
 					@callback null, page, status
 
 			"and succeed": (err, page, status) ->
@@ -36,7 +37,7 @@ describe "Blog next"
 
 				"has a button":
 					topic: t (page) ->
-						page.evaluate (-> $("a.btn").text()), (next) => @callback null, next
+						page.evaluate (-> $("a.btn.small.primary").text()), (next) => @callback null, next
 
 					"which has text": (next) ->
 						assert.equal next, "La suite..."
@@ -44,7 +45,7 @@ describe "Blog next"
 				"has a next link":
 					topic: t (page) ->
 						page.evaluate (->
-							elem = document.querySelector("a.btn")
+							elem = document.querySelector("a.btn.small.primary")
 							return false if !elem
 							evt = document.createEvent("MouseEvents")
 							evt.initMouseEvent("click", true, true, window, 1, 1, 1, 1, 1, false, false, false, false, 0, null)

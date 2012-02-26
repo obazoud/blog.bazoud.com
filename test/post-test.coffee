@@ -23,6 +23,7 @@ describe "Post techno"
 		"can open a URL on localhost":
 			topic: t (page) ->
 				page.open "http://127.0.0.1:10113/post/2011-11-02-ce-blog-change-de-technos.html", (status) =>
+					page.includeJs "http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
 					@callback null, page, status
 
 			"and succeed": (err, page, status) ->
@@ -48,16 +49,16 @@ describe "Post techno"
 					"which is correct": (title) ->
 						assert.equal title, "Ce blog change de technos"
 
-				"has topbar":
+				"has navbar":
 					topic: t (page) ->
-						page.evaluate (-> $("#topbar").length), (topbar) => @callback null, topbar
+						page.evaluate (-> $(".navbar.navbar-fixed-top").length), (topbar) => @callback null, topbar
 					
 					"which is no empty": (topbar) ->
 						assert.equal topbar, 1
 
 				"has topbar title":
 					topic: t (page) ->
-						page.evaluate (-> $("#topbar a.brand").text()), (title) => @callback null, title
+						page.evaluate (-> $(".navbar.navbar-fixed-top a.brand").text()), (title) => @callback null, title
 					
 					"which is correct": (title) ->
 						assert.equal title, "Le blog d'Olivier"
@@ -102,7 +103,7 @@ describe "Post techno"
 						page.evaluate (-> $("#archives a").length), (archives) => @callback null, archives
 
 					"which is no empty": (archives) ->
-						assert.equal archives, 5
+						assert.equal archives, 6
 
 				"has section":
 					topic: t (page) ->
@@ -145,13 +146,6 @@ describe "Post techno"
 
 					"which are href": (value) ->
 						assert.equal value, "/category/Uncategorized"
-
-				"has top meta 2 post":
-					topic: t (page) ->
-						page.evaluate (-> $("#post_top_meta2").length), (value) => @callback null, value
-
-					"which are 1": (value) ->
-						assert.equal value, 1
 
 				"has tags":
 					topic: t (page) ->
@@ -209,20 +203,6 @@ describe "Post techno"
 					"which are 11": (value) ->
 						assert.equal value, 11
 
-				"has top social block":
-					topic: t (page) ->
-						page.evaluate (-> $("#social_top").length), (value) => @callback null, value
-
-					"which is no empty": (value) ->
-						assert.equal value, 1
-
-				"has social buttons":
-					topic: t (page) ->
-						page.evaluate (-> $("#social_top div.social").length), (value) => @callback null, value
-
-					"which is no empty": (value) ->
-						assert.equal value, 4
-
 				"has bottom social block":
 					topic: t (page) ->
 						page.evaluate (-> $("#social_bottom").length), (value) => @callback null, value
@@ -239,28 +219,28 @@ describe "Post techno"
 
 				"has related articles":
 					topic: t (page) ->
-						page.evaluate (-> $("h3")[1].innerText), (value) => @callback null, value
+						page.evaluate (-> $("h3")[0].innerText), (value) => @callback null, value
 
 					"which is no empty": (value) ->
 						assert.equal value, "Articles similaires"
 
 				"has related articles":
 					topic: t (page) ->
-						page.evaluate (-> $("table.zebra-striped tr").length), (value) => @callback null, value
+						page.evaluate (-> $("table.table.table-striped tr").length), (value) => @callback null, value
 
 					"which is no empty": (value) ->
 						assert.equal value, 3
 
 				"has columns":
 					topic: t (page) ->
-						page.evaluate (-> $("table.zebra-striped td").length), (value) => @callback null, value
+						page.evaluate (-> $("table.table.table-striped tr td").length), (value) => @callback null, value
 
 					"which is no empty": (value) ->
 						assert.equal value, 3
 
 				"has comments":
 					topic: t (page) ->
-						page.evaluate (-> $("h3")[2].innerText), (value) => @callback null, value
+						page.evaluate (-> $("h3")[1].innerText), (value) => @callback null, value
 
 					"which is no empty": (value) ->
 						assert.equal value, "Commentaires"

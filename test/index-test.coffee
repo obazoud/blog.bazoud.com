@@ -23,6 +23,7 @@ describe "Blog index"
 		"can open a URL on localhost":
 			topic: t (page) ->
 				page.open "http://127.0.0.1:10113/", (status) =>
+					page.includeJs "http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
 					@callback null, page, status
 
 			"and succeed": (err, page, status) ->
@@ -48,16 +49,16 @@ describe "Blog index"
 					"which is correct": (title) ->
 						assert.equal title, "Les derniers articles"
 
-				"has topbar":
+				"has navbar":
 					topic: t (page) ->
-						page.evaluate (-> $("#topbar").length), (topbar) => @callback null, topbar
+						page.evaluate (-> $(".navbar.navbar-fixed-top").length), (navbar) => @callback null, navbar
 					
-					"which is no empty": (topbar) ->
-						assert.equal topbar, 1
+					"which is no empty": (navbar) ->
+						assert.equal navbar, 1
 
-				"has topbar title":
+				"has navbar title":
 					topic: t (page) ->
-						page.evaluate (-> $("#topbar a.brand").text()), (title) => @callback null, title
+						page.evaluate (-> $(".navbar.navbar-fixed-top a.brand").text()), (title) => @callback null, title
 					
 					"which is correct": (title) ->
 						assert.equal title, "Le blog d'Olivier"
@@ -102,18 +103,18 @@ describe "Blog index"
 						page.evaluate (-> $("#archives a").length), (archives) => @callback null, archives
 
 					"which is no empty": (archives) ->
-						assert.equal archives, 5
+						assert.equal archives, 6
 
 				"has posts entries":
 					topic: t (page) ->
-						page.evaluate (-> $("table.zebra-striped tr").length), (value) => @callback null, value
+						page.evaluate (-> $("table.table.table-striped tr").length), (value) => @callback null, value
 
 					"which is no empty": (value) ->
 						assert.equal value, 35
 
 				"has columns":
 					topic: t (page) ->
-						page.evaluate (-> $("table.zebra-striped td").length), (value) => @callback null, value
+						page.evaluate (-> $("table.table.table-striped td").length), (value) => @callback null, value
 
 					"which is no empty": (value) ->
 						assert.equal value, 70
