@@ -2,6 +2,10 @@ body {
   padding-top: 60px;
 }
 
+.row {
+  margin-left: 0px;
+}
+
 hr {
   margin: 12px 0 12px;
 }
