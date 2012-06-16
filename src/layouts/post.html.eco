@@ -48,7 +48,7 @@ layout: default
   		<% i++ %>
   	<% end %>
   	<div class="social">
-    	<a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= @Site.config.baseurl %><%= @Document.url %>" data-text="<%= @Document.title %> <%= socialtags %>" data-count="vertical">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= @Site.config.baseurl %><%= @Document.url %>" data-text="<%= @Document.title %> <%= socialtags %> /via @obazoud" data-count="vertical">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
     </div>
   	<div class="social">
 	    <g:plusone size="tall" href="<%= @Site.config.baseurl %><%= @Document.url %>"></g:plusone>
