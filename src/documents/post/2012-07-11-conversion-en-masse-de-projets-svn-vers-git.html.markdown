@@ -71,7 +71,7 @@ Passons maintenant à la détection de projet SVN.
 
 ## Analyser le repository SVN
 
-Le script ruby [svn2git-massive-conversion.rb](https://github.com/obazoud/svn2git-massive-conversion/svn2git-massive-convertion.rb) permet de scanner un repository SVN et de créer les projets Git associés. Cela se passe en deux étapes distinctes pour plus de performance.
+Le script ruby [svn2git-massive-conversion.rb](https://github.com/obazoud/svn2git-massive-conversion/svn2git-massive-conversion.rb) permet de scanner un repository SVN et de créer les projets Git associés. Cela se passe en deux étapes distinctes pour plus de performance.
 Tout d'abord, il parcourt le repository SVN, si le répertoire courant contient soit 'branches', 'tags' ou 'trunk', c'est un vrai projet sinon ça continue récursivement. A la fin, une collection d'objets SVNPath est obtenue avec le chemin du projet et s'il y a le répertoire branches, tags et/ou trunk. Ces informations seront utiles pour convertir en Git plus finement et sont sauvegardés dans un fichier .dmp. 
 La deuxième étape est de convertir, à l'aide du fichier .dmp, chaque projet SVN en repository Git. Pour cela, nous allons utilisé svn2git.
 
@@ -121,18 +121,18 @@ La commande suivante permet de générer le fichier layout.dump, qui contiendra 
 A noter que pour l'ensemble de la configuration, le script va lire le fichier config.yaml (valeur par défaut) et écrit le dump dans layout.dump (valeur par défaut). Il y a des options pour changer la valeur de ces options.
 
 <pre class="prettyprint lang-bsh">
-% ./svn2git-massive-convertion.rb --layout
+% ./svn2git-massive-conversion.rb --layout
 </pre>
 
 Ensuite, nous passons à la conversion des projets SVN. L'option --threads permet de paralléliser la conversion pour aller plus vite. Par défaut, le script va créer autant de threads que de processeurs sur la machine.
 
 <pre class="prettyprint lang-bsh">
-% ./svn2git-massive-convertion.rb --threads 8
+% ./svn2git-massive-conversion.rb --threads 8
 </pre>
 
 Et enfin, le dernier permet de pusher vers votre repository Git. Cela est configurable dans le fichier config.yaml. A noter que le chemin des repository Git reflète le chemin des projets SVN pour mieux s'y retrouvé.
 <pre class="prettyprint lang-bsh">
-% ./svn2git-massive-convertion.rb --push
+% ./svn2git-massive-conversion.rb --push
 </pre>
 
 Voilà c'est fait, l'ensemble des projets SVN ont été migrés vers Git. Cela a pris à peu ~20h avec 8 threads, ~13h sur un poste avec SSD.
@@ -251,6 +251,14 @@ Git external maintient dans le fichier .gitexternals comme suit.
 Et enfin la commande git external cmd 'xxx' permet d'itérer sur tous les projets et d'appliquer une commande shell, qui peut être une autre commande git. Par exemple, git external cmd 'git diff'.
 
 Git external se base sur une branche et pas un commit, ce qui permet une gestion plus facile que les submodules par exemple.
+
+## Bonus
+
+Une option de [svn2git-massive-conversion.rb](https://github.com/obazoud/svn2git-massive-conversion/svn2git-massive-conversion.rb) permet de générer automatiquement les instructions pour Git External basé sur le fichier de layout.
+
+<pre class="prettyprint lang-bsh">
+% ./svn2git-massive-conversion.rb --git-external
+</pre>
 
 ## Conclusion
 
