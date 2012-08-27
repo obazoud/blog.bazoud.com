@@ -38,6 +38,7 @@
 		"gzippo/connect bugs": "see https://github.com/tomgco/gzippo/issues/43"
 	},
 	"engines" : {
-		"node": "0.4.x"
+		"node": "0.8.x",
+		"npm": "1.1.x"
 	}
 }
