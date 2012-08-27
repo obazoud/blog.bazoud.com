@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Ubuntu@Work
 date: '2007-01-28T15:55:00.000Z'
 author: Olivier

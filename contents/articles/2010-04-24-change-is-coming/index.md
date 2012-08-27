@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Change is coming
 date: '2010-04-24T15:18:40.000Z'
 author: Olivier

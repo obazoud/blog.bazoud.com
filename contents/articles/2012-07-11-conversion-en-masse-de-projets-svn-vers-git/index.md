@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Conversion en masse de projets SVN vers Git
 date: '2012-07-11T21:00:00.000Z'
 author: Olivier

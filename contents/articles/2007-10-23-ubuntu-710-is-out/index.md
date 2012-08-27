@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Ubuntu 7.10 is out
 date: '2007-10-23T18:35:00.000Z'
 author: Olivier

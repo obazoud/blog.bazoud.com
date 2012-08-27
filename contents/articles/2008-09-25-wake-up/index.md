@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Wake Up
 date: '2008-09-25T16:07:00.000Z'
 author: Olivier

@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Tomcat et commons-logging
 date: '2007-02-06T22:14:00.000Z'
 author: Olivier

@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Commandes utiles SVN
 date: '2007-05-08T16:29:00.000Z'
 author: Olivier

@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Nouvelle boutique
 date: '2007-01-23T21:10:00.000Z'
 author: Olivier

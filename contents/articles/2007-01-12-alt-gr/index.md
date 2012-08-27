@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Alt Gr
 date: '2007-01-11T23:21:00.000Z'
 author: Olivier

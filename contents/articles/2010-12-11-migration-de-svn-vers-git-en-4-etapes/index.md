@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Migration de SVN vers GIT en 4 étapes
 date: '2010-12-11T18:47:32.000Z'
 author: Olivier

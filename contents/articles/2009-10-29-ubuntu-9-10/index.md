@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Ubuntu 9.10
 date: '2009-10-29T10:46:00.000Z'
 author: Olivier

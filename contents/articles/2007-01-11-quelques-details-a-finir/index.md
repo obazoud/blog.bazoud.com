@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Quelques détails à finir
 date: '2007-01-10T23:36:00.000Z'
 author: Olivier

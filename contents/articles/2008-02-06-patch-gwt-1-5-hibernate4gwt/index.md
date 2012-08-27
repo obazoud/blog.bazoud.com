@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Patch GWT 1.5 / Hibernate4GWT
 date: '2008-02-06T21:26:00.000Z'
 author: Olivier

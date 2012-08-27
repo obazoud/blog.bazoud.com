@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Installer les sources d''un jar dans Maven
 date: '2007-02-05T21:41:00.000Z'
 author: Olivier

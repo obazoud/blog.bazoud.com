@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Oracle Express Edition (XE) et Ubuntu
 date: '2007-03-03T16:52:00.000Z'
 author: Olivier

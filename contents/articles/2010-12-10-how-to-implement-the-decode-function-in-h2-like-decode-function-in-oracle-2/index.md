@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: How to implement the decode function in h2 like decode function in oracle ?
 date: '2010-12-09T23:25:44.000Z'
 author: Olivier

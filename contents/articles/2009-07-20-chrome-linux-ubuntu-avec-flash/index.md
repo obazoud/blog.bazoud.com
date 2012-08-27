@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Chrome linux ubuntu avec flash
 date: '2009-07-20T21:23:00.000Z'
 author: Olivier

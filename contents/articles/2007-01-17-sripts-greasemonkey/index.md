@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Scripts GreaseMonkey
 date: '2007-01-17T22:35:00.000Z'
 author: Olivier

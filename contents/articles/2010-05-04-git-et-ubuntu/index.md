@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Git et ubuntu
 date: '2010-05-04T06:27:00.000Z'
 author: Olivier

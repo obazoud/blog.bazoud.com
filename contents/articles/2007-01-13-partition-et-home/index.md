@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Partition et /home
 date: '2007-01-13T17:38:00.000Z'
 author: Olivier

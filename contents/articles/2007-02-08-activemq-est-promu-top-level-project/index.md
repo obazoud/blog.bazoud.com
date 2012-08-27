@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: ActiveMQ est promu Top Level Project
 date: '2007-02-08T18:45:00.000Z'
 author: Olivier

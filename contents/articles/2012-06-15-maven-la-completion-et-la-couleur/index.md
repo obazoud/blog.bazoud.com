@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Maven - La complétion et la couleur
 date: '2012-06-15T21:30:00.000Z'
 author: Olivier

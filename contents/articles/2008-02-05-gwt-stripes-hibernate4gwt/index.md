@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: GWT + Stripes + Hibernate4GWT
 date: '2008-02-05T21:36:00.000Z'
 author: Olivier

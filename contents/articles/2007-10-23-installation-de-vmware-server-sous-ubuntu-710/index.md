@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Installation de VMware Server sous Ubuntu 7.10
 date: '2007-10-23T19:23:00.000Z'
 author: Olivier

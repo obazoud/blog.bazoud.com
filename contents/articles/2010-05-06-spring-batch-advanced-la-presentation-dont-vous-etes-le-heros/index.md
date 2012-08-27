@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Spring Batch Advanced, la présentation dont vous êtes le héros
 date: '2010-05-06T10:26:21.000Z'
 author: Olivier

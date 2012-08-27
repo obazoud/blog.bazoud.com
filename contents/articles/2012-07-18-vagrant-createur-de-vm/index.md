@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Vagrant, créateur de VM
 date: '2012-07-18T21:00:00.000Z'
 author: Olivier

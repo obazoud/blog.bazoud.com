@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Blog
 date: '2007-01-08T21:59:00.000Z'
 author: Olivier

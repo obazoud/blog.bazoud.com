@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Downloader les sources automatiquement avec Maven
 date: '2007-02-08T18:00:00.000Z'
 author: Olivier

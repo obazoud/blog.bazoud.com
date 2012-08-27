@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: How to create Oracle function (trunc, decode, ...) in H2 ?
 date: '2008-12-17T15:56:00.000Z'
 author: Olivier

@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Chrome linux en early access
 date: '2009-06-05T07:40:00.000Z'
 author: Olivier

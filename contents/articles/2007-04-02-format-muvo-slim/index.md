@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Format Muvo Slim
 date: '2007-04-02T20:15:00.000Z'
 author: Olivier

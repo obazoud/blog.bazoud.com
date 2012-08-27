@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Installation de Eclipse sous Ubuntu
 date: '2007-01-28T15:49:00.000Z'
 author: Olivier

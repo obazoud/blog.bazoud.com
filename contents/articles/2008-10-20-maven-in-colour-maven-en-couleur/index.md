@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Maven in colour / Maven en couleur
 date: '2008-10-20T17:05:00.000Z'
 author: Olivier

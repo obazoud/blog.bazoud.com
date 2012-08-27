@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Installation de ActiveMQ sous Ubuntu
 date: '2007-02-03T14:59:00.000Z'
 author: Olivier

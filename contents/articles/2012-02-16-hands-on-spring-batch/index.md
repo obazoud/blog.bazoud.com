@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Hands On Spring Batch
 date: '2012-02-16T09:30:00.000Z'
 author: Olivier

@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: USB et Ubuntu (update)
 date: '2007-02-27T18:00:00.000Z'
 author: Olivier

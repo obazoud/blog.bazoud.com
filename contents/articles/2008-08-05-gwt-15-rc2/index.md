@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: GWT 1.5 RC2
 date: '2008-08-05T08:46:00.000Z'
 author: Olivier

@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Extensions Firefox
 date: '2007-01-17T21:57:00.000Z'
 author: Olivier

@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: NTFS - Ubuntu
 date: '2007-01-09T22:48:00.000Z'
 author: Olivier

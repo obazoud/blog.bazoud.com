@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Mapper un arbre III
 date: '2007-06-22T19:33:00.000Z'
 author: Olivier

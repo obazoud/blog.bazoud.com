@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Lire des fichiers CHM
 date: '2007-02-06T09:08:00.000Z'
 author: Olivier

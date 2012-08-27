@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Grep en couleur
 date: '2008-05-12T20:26:00.000Z'
 author: Olivier

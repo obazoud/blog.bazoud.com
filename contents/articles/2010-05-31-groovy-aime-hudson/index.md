@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Groovy aime Hudson
 date: '2010-05-31T18:29:53.000Z'
 author: Olivier

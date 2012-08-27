@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: ll = ls -la
 date: '2007-02-20T17:25:00.000Z'
 author: Olivier

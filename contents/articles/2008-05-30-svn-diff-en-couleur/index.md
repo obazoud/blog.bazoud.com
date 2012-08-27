@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: SVN Diff en couleur
 date: '2008-05-29T22:28:00.000Z'
 author: Olivier

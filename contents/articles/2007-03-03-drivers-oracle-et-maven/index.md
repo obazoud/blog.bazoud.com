@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Drivers Oracle et Maven
 date: '2007-03-03T17:52:00.000Z'
 author: Olivier

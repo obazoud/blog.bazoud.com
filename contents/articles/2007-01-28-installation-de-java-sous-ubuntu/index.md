@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Installation de Java sous Ubuntu
 date: '2007-01-28T15:33:00.000Z'
 author: Olivier

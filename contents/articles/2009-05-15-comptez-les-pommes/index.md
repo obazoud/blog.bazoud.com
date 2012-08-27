@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Comptons les pommes !!
 date: '2009-05-15T15:15:00.000Z'
 author: Olivier

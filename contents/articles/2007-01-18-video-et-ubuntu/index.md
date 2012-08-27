@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Vidéo et Ubuntu
 date: '2007-01-18T14:29:00.000Z'
 author: Olivier

@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Soirée Spring Batch Mardi 27 avril 2010
 date: '2010-04-21T12:03:13.000Z'
 author: Olivier

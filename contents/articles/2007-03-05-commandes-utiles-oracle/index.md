@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Commandes utiles Oracle
 date: '2007-03-05T09:10:00.000Z'
 author: Olivier

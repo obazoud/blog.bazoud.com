@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Compter le nombre de processeurs
 date: '2007-12-19T20:29:00.000Z'
 author: Olivier

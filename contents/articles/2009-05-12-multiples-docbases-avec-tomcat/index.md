@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Multiples docbases avec tomcat
 date: '2009-05-12T19:50:00.000Z'
 author: Olivier

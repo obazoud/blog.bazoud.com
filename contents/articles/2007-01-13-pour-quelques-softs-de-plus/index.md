@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Pour quelques softs de plus
 date: '2007-01-13T16:00:00.000Z'
 author: Olivier

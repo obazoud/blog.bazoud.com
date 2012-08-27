@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: HomePlayer
 date: '2007-01-28T16:16:00.000Z'
 author: Olivier

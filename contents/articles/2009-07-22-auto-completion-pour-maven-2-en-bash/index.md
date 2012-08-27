@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Auto completion pour maven 2 en bash
 date: '2009-07-22T09:19:00.000Z'
 author: Olivier

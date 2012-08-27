@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Rien de grave pour mes adesklets
 date: '2007-05-02T21:25:00.000Z'
 author: Olivier

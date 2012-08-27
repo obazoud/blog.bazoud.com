@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: GWT + Stripes
 date: '2007-12-09T20:38:00.000Z'
 author: Olivier

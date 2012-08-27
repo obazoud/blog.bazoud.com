@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Souris et Ubuntu
 date: '2007-02-03T10:52:00.000Z'
 author: Olivier

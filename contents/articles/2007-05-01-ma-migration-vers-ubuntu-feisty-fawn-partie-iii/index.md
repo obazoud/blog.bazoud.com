@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Ma migration vers Ubuntu 7.0.4 (Feisty Fawn) - partie III
 date: '2007-05-01T16:23:00.000Z'
 author: Olivier

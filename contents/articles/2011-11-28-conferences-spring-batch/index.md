@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Conférences Spring Batch
 date: '2011-11-28T15:30:00.000Z'
 author: Olivier

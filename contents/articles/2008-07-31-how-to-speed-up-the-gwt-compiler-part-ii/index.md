@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: How to speed up the GWT compiler ? (Part II)
 date: '2008-07-31T21:03:00.000Z'
 author: Olivier

@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: USB et Unbuntu (suite)
 date: '2007-05-02T17:54:00.000Z'
 author: Olivier

@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Ubuntu 8.04 Hardy Heron vs Firefox 2 & 3
 date: '2008-05-13T19:59:00.000Z'
 author: Olivier

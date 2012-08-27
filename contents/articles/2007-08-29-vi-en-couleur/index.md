@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Vi en couleur
 date: '2007-08-29T17:58:00.000Z'
 author: Olivier

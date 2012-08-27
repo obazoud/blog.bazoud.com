@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Ce blog change de technos
 date: '2011-11-02T09:30:00.000Z'
 author: Olivier

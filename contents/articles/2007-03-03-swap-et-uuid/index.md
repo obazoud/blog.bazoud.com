@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Swap et UUID
 date: '2007-03-03T16:39:00.000Z'
 author: Olivier

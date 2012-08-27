@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Nouveau site
 date: '2010-04-21T11:53:34.000Z'
 author: Olivier

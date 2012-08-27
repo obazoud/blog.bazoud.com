@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: ViewSVN en ligne de commande
 date: '2008-06-15T20:45:00.000Z'
 author: Olivier

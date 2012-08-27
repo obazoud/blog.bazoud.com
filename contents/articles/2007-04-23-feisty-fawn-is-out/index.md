@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Feisty Fawn is out
 date: '2007-04-23T19:08:00.000Z'
 author: Olivier

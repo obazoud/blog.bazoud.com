@@ -1,5 +1,5 @@
 ---
-layout: post
+template: article.jade
 title: Tendances
 date: '2007-01-18T09:00:00.000Z'
 author: Olivier
