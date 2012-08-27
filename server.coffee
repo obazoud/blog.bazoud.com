@@ -4,6 +4,7 @@ wintersmith = require 'wintersmith'
 express = require 'express'
 gzippo = require 'gzippo'
 RSS = require 'rss'
+fs = require 'fs'
 
 # -------------------------------------
 # Wintersmith generation
@@ -41,8 +42,8 @@ run = () ->
     cache = []
     app.use (req,res,next) ->
       cache.push { path: req.path, referer : req.header('Referer'), when: new Date() }
-        fs.readFile __dirname + '/out/404.html', 'utf8', (err, text) ->
-          res.send text, 404
+      fs.readFile path.join(staticPath, '404.html'), 'utf8', (err, text) ->
+        res.send text, 404
     # 404 feed
     app.get '/404.xml', (req, res) ->
       feed = new RSS {
