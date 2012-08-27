@@ -29,6 +29,7 @@ wintersmith options, (error) ->
 
 # -------------------------------------
 # Express configuration
+cache = []
 
 run = () ->
   port = process.env.PORT || 10113
@@ -38,12 +39,6 @@ run = () ->
     console.log 'Express environment: commun'
     app.use express.bodyParser()
     app.use express.methodOverride()
-    # 404 Middleware
-    cache = []
-    app.use (req,res,next) ->
-      cache.push { path: req.path, referer : req.header('Referer'), when: new Date() }
-      fs.readFile path.join(staticPath, '404.html'), 'utf8', (err, text) ->
-        res.send text, 404
     # 404 feed
     app.get '/404.xml', (req, res) ->
       feed = new RSS {
@@ -58,7 +53,7 @@ run = () ->
           description: page.referer + ' -> ' + page.path
           url: 'http://blog.bazoud.com/404.xml'
           author: 'Olivier Bazoud'
-          date: page.when.toIsoDateString()
+          date: page.when
         }
       res.header "Content-Type", "text/xml; charset=UTF-8"
       res.send feed.xml(), 200
@@ -139,3 +134,9 @@ run = () ->
   # rewrite wintersmith
   app.get '/articles/:id', (req, res) ->
     res.redirect 301, '/articles/' + req.params.id + '/index.html'
+
+  # 404 Middleware
+  app.use (req,res,next) ->
+    cache.push { path: req.path, referer : req.header('Referer'), when: new Date() }
+    fs.readFile path.join(staticPath, '404.html'), 'utf8', (err, text) ->
+      res.send text, 404
