@@ -143,7 +143,7 @@ docpadServer.get '^/post/2008-07-31-can-i-speed-up-the-gwt-compiler.html$', (req
 docpadServer.get '^/post/2008-07-31-can-i-speed-up-the-gwt-compiler-part-ii.html$', (req, res) ->
 	res.redirect '/post/2008-07-31-how-to-speed-up-the-gwt-compiler-part-ii.html', 301
 docpadServer.get '^/post/2008-07-31-can-i-speed-up-the-gwt-compiler-part-iii.html$', (req, res) ->
-	res.redirect '/post/2008-07-31-can-i-speed-up-the-gwt-compiler-part-ii.html', 301
+	res.redirect '/post/2008-07-31-how-to-speed-up-the-gwt-compiler-part-iii.html', 301
 
 # images
 docpadServer.get '/public/billets/eclipse1.png', (req, res) ->
