@@ -24,7 +24,7 @@ async.waterfall [
     cache = []
     port = process.env.PORT || 10113
     app = express()
-    staticPath = path.join __dirname, options.output
+    staticPath = options.output
     app.configure () ->
       console.log 'Express environment: common'
       app.use express.bodyParser()
