@@ -61,16 +61,35 @@ block content
       &nbsp;
   #social_bottom.topsocial
     .social
-      a(href=page.url, class="twitter-share-button", data-url=page.url, data-text=page.title + " #tags /via @obazoud", data-count="vertical"): twitter-share-button
+      - var socialstags = _.chain(page.metadata.tags).map(function(tag) {
+      -   return "#" + tag
+      - }).value().join(" ")
+        a(href=page.url.replace(/(\s+)?.$/, "").replace('articles', 'post') + ".html", class="twitter-share-button", data-url=locals.url + page.url.replace(/(\s+)?.$/, "").replace('articles', 'post') + ".html", data-text=page.title + " #{socialstags} /via @obazoud", data-count="vertical"): twitter-share-button
       | <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
     .social
-      | <g:plusone size="tall" href=page.url"></g:plusone>
+      <g:plusone size="tall" href="#{locals.url}#{page.url.replace(/(\s+)?.$/, "").replace('articles', 'post')}.html"></g:plusone>
     .social
       | <script src="http://platform.linkedin.com/in.js" type="text/javascript"></script>
-      | <script type="IN/Share" data-url=page.url data-counter="top"></script>
+      | <script type="IN/Share" data-url="#{locals.url}#{page.url.replace(/(\s+)?.$/, "").replace('articles', 'post')}.html" data-counter="top"></script>
     .social
       .share-delicious
-        #delic.delicious: 0
+        #delic.delicious 0
+        #delicious-b
+          a(href='http://del.icio.us/post?url=#{locals.url}#{page.url.replace(/(\s+)?.$/, "").replace('articles', 'post')}.html&title="Save To Delicious"', target='blank') delicious
+      |  <script type='text/javascript'>
+      |  function delic(info) {
+      |   if(!info[0]) return;
+      |   var num = info[0].total_posts;
+      |    if(!num) return;
+      |    var delic = document.getElementById('delic');
+      |    delic.innerHTML = '' + num;
+      |    delic.style.textIndent = 0;
+      |    delic.style.paddingRight= '6px';
+      |  }
+      |  </script>
+      |  <script src='http://badges.del.icio.us/feeds/json/url/data?url=#{locals.url}#{page.url.replace(/(\s+)?.$/, "").replace('articles', 'post')}.html'&callback=declic></script>
+
+
   hr
   h3 Articles similaires
     table.table.table-striped
