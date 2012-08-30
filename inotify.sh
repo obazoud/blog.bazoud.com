@@ -9,7 +9,7 @@ inotifywait -mr --timefmt '%d/%m/%y %H:%M' --format '%T %w %f' \
   FILECHANGEREL=`echo "$FILECHANGE" | sed 's_'$CURPATH'/__'`
   echo "At ${time} on ${date}, file $FILECHANGEREL has changed!"
   rm -rf build/*
-  wintersmith build
+  wintersmith build --require ./node_modules/datejs/lib/date-fr-FR.js
   WID=`xdotool search --name "Le blog" | head -1`
   xdotool windowactivate $WID
   xdotool key ctrl+r
