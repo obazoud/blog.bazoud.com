@@ -1,9 +1,23 @@
 {
   "locals": {
-    "url": "http://localhost:8080",
-    "name": "The Wintersmith's blog",
-    "owner": "The Wintersmith",
-    "description": "-32°C ain't no problems!",
+    "url": "http://blog.bazoud.com",
+    "domain": "blog.bazoud.com",
+    "name": "Le blog d'Olivier",
+    "owner": "Olivier Bazoud",
+    "description": "",
+    "generator": "Wintersmithq",
+    "language": "fr-FR",
+    "googleSiteVerification": "google36a66ae7f1a82c45",
+    "keywords": ["geek","web","java","spring","spring batch","spring batch in action","node.js","git","ruby","svn","subversion"],
+    "feeds": {
+      "feed": "http://feeds.feedburner.com/bazoud/feed",
+      "rss": "http://feeds.feedburner.com/bazoud/rss",
+      "atom": "http://feeds.feedburner.com/bazoud/atom",
+      "comments": "http://feeds.feedburner.com/bazoud/comments"
+    },
+    "disqus": {
+      "shortname": "bazoud"
+    },
     "index_articles": 3
   }
 }

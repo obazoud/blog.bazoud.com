@@ -1,17 +1,90 @@
-
 extends layout
 
-block prepend title
-  #{ page.title } -
-
-block header
-  include author
-  a.back(href='/') << back to index
-  h1= page.title
-  p
-    | written by:
-    mixin author(page.metadata.author)
+block append title
+  |  » #{ page.title }
 
 block content
-  article.post
-    section.content!= page.html
+  .page-header
+    a(href=page.url)
+      h1=page.title
+  p#post_top_meta1.muted
+    span.meta-prep.meta-prep-author
+      | Posté le 
+    span.entry-date
+      = page.date
+    span.meta-sep
+      |  écrit par 
+    span.author.vcard
+      = page.metadata.author
+    | | 
+    a(href=page.url)
+      | Lien permanent
+    | | 
+    a(href="#disqus_thread")
+      | Commentaires
+    | | Posté dans
+    each category in page.metadata.categories
+      = category
+  hr
+  .post_content
+    !=page.html
+  hr
+  p#post_top_meta1.muted
+    span.meta-prep.meta-prep-author
+      | Posté le 
+    span.entry-date
+      = page.date
+    span.meta-sep
+      |  par 
+    span.author.vcard
+      = page.metadata.author
+    | | 
+    a(href=page.url)
+      | Lien permanent
+    | | 
+    a(href="#disqus_thread")
+      | Commentaires
+    | | Posté dans
+    each category in page.metadata.categories
+      = category
+  p#post_bottom_meta2.muted
+    | Taggé avec:
+  #social_bottom.topsocial
+    .social
+      a(href=page.url, class="twitter-share-button", data-url=page.url, data-text=page.title + " #tags /via @obazoud", data-count="vertical"): twitter-share-button
+      | <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+    .social
+      | <g:plusone size="tall" href=page.url"></g:plusone>
+    .social
+      | <script src="http://platform.linkedin.com/in.js" type="text/javascript"></script>
+      | <script type="IN/Share" data-url=page.url data-counter="top"></script>
+    .social
+      .share-delicious
+        #delic.delicious: 0
+  hr
+  h3 Articles similaires
+    table.table.table-striped
+      tbody
+          tr
+            td
+              a(href="/"): TODO
+  h3 Commentaires
+    #disqus_thread
+      | <script type="text/javascript">
+      | var disqus_shortname = locals.disqus.shortname;
+      | (function() {
+      |    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      |    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+      |    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      | })();
+      | </script>
+      | <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      | <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  | <script type="text/javascript">
+  |   (function() {
+  |     var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+  |     po.src = 'https://apis.google.com/js/plusone.js';
+  |     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  |   })();
+  | </script>

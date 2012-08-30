@@ -9,16 +9,17 @@ block content
   - }).compact().sortBy(function(item) { // compact removes any directories w/o an index
   -   // sort them by date
   -   return -item.date
-  - }).first(5).value() // and finally take the first 5
-  each article in articles
-    article.post
-      header
-        h2
-          a(href=article.url)= article.title
-        p
-          mixin author(article.metadata.author)
-      section.content!= article.intro
-      if article.hasMore
-        p.read-more
-          a(href=article.url) read more
-  a(href='archive.html')#archive Visit the archives!
+  - }).first(35).value() // and finally take the first 5
+  section#page
+    .page-header
+      h1 Les derniers articles
+    table.table.table-striped
+      tbody
+        each article in articles
+          tr
+            td
+              span
+                = article.metadata.date
+            td
+              a(href=article.url)= article.title
+
