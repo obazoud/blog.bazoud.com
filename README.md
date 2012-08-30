@@ -2,6 +2,8 @@
 
 It is automatically transformed by [Wintersmith](https://github.com/jnordberg/wintersmith) into a static website.
 
+% node server.js build --require ./node_modules/datejs/lib/date-fr-FR.js --clean --quiet
+
 # TODO
 - Vérifier les liens des articles
 - Vérifier les rewrites

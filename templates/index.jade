@@ -19,7 +19,7 @@ block content
           tr
             td
               span
-                = article.metadata.date
+                = article.date.toString('dd/MM/yyyy')
             td
               a(href=article.url)= article.title
 

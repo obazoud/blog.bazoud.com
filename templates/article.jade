@@ -11,7 +11,7 @@ block content
     span.meta-prep.meta-prep-author
       | Posté le 
     span.entry-date
-      = page.date
+      = page.date.toString('dddd dd MMMM yyyy')
     span.meta-sep
       |  écrit par 
     span.author.vcard
@@ -33,7 +33,7 @@ block content
     span.meta-prep.meta-prep-author
       | Posté le 
     span.entry-date
-      = page.date
+      = page.date.toString('dddd dd MMMM yyyy')
     span.meta-sep
       |  par 
     span.author.vcard
