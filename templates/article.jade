@@ -12,8 +12,9 @@ block content
       | Posté le 
     span.entry-date
       = page.date.toString('dddd dd MMMM yyyy')
+    | | 
     span.meta-sep
-      |  écrit par 
+      |  Ecrit par 
     span.author.vcard
       = page.metadata.author
     | | 
@@ -22,9 +23,11 @@ block content
     | | 
     a(href="#disqus_thread")
       | Commentaires
-    | | Posté dans
+    | | Posté dans 
     each category in page.metadata.categories
-      = category
+      a(href="/category/#{category}", rel="category tag", title="View all posts in '#{category}'")
+        = category
+      &nbsp;
   hr
   .post_content
     !=page.html
@@ -34,8 +37,9 @@ block content
       | Posté le 
     span.entry-date
       = page.date.toString('dddd dd MMMM yyyy')
+    | | 
     span.meta-sep
-      |  par 
+      |  Ecrit par 
     span.author.vcard
       = page.metadata.author
     | | 
@@ -44,11 +48,17 @@ block content
     | | 
     a(href="#disqus_thread")
       | Commentaires
-    | | Posté dans
+    | | Posté dans 
     each category in page.metadata.categories
-      = category
+      a(href="/category/#{category}", rel="category tag", title="View all posts in '#{category}'")
+        = category
+      &nbsp;
   p#post_bottom_meta2.muted
-    | Taggé avec:
+    | Taggé avec: 
+    each tag in page.metadata.tags
+      a(href="/tag/#{tag}", rel="category tag", title="View all posts in '#{tag}'")
+        = tag
+      &nbsp;
   #social_bottom.topsocial
     .social
       a(href=page.url, class="twitter-share-button", data-url=page.url, data-text=page.title + " #tags /via @obazoud", data-count="vertical"): twitter-share-button
