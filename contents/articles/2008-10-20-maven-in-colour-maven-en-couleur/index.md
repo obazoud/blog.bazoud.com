@@ -6,7 +6,7 @@ author: Olivier
 aliases: ['/post/2008/10/20/maven-in-colour-maven-en-couleur/', '/post/2008/10/20/maven-in-colour-maven-en-couleur/', '/post/2008/10/20/Maven-in-colour-/-Maven-en-couleur', '/post/2008/10/20/Maven-in-colour-/', '/post/2008/10/20/maven-in-colour-/-maven-en-couleur', '/post/2008/10/20/Maven-in-colour-/-Maven-en-couleur/']
 categories: [Uncategorized]
 tags: [Ubuntu,maven,awk]
-excerpt: <p>ENG : If you want to see maven in colour, you can just add an litle awk in a script :)</p> <p>FR : Vous voulez voir maven en couleur, il suffit d'ajouter un petit awk dans un script :)</p>
+excerpt: "<p>ENG : If you want to see maven in colour, you can just add an litle awk in a script :)</p> <p>FR : Vous voulez voir maven en couleur, il suffit d'ajouter un petit awk dans un script :)</p>"
 ---
 
 <p>ENG : If you want to see maven in colour, you can just add an litle awk in a script :)</p> <p>FR : Vous voulez voir maven en couleur, il suffit d'ajouter un petit awk dans un script :)</p> 

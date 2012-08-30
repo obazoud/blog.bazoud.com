@@ -6,7 +6,7 @@ author: Olivier
 aliases: ['/post/2007/01/11/quelques-details-a-finir/', '/post/2007/01/11/quelques-details-a-finir/']
 categories: [Uncategorized]
 tags: [Ubuntu]
-excerpt: <p>Je suis assez satisfait que mon Ubuntu, mais il reste quelques détails à fignoler dans mon système :</p>
+excerpt: "<p>Je suis assez satisfait que mon Ubuntu, mais il reste quelques détails à fignoler dans mon système :</p>"
 ---
 
 <p>Je suis assez satisfait que mon Ubuntu, mais il reste quelques détails à fignoler dans mon système :</p>

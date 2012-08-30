@@ -6,7 +6,7 @@ author: Olivier
 aliases: ['/post/2007/01/13/partition-et-home/', '/post/2007/01/13/partition-et-home/']
 categories: [Uncategorized]
 tags: [Ubuntu]
-excerpt: <p>J'ai trois partitions que je souhaite organiser comme suit :</p> <ul> <li>/dev/hda1 pour l'installation de Ubuntu, monté sur &quot;/&quot;</li> <li>/dev/hdb1 pour la home, monté sur &quot;/home&quot;</li> <li>/dev/hdc1 pour mes backups, monté sur &quot;/home/olivier/backups&quot;</li> </ul> <p>Sachant qu'à l'installation, tout a été installé sur le même disque, il faut réorganiser tout ça.</p>
+excerpt: "<p>J'ai trois partitions que je souhaite organiser comme suit :</p> <ul> <li>/dev/hda1 pour l'installation de Ubuntu, monté sur &quot;/&quot;</li> <li>/dev/hdb1 pour la home, monté sur &quot;/home&quot;</li> <li>/dev/hdc1 pour mes backups, monté sur &quot;/home/olivier/backups&quot;</li> </ul> <p>Sachant qu'à l'installation, tout a été installé sur le même disque, il faut réorganiser tout ça.</p>"
 ---
 
 <p>J'ai trois partitions que je souhaite organiser comme suit :</p> <ul> <li>/dev/hda1 pour l'installation de Ubuntu, monté sur &quot;/&quot;</li> <li>/dev/hdb1 pour la home, monté sur &quot;/home&quot;</li> <li>/dev/hdc1 pour mes backups, monté sur &quot;/home/olivier/backups&quot;</li> </ul> <p>Sachant qu'à l'installation, tout a été installé sur le même disque, il faut réorganiser tout ça.</p>

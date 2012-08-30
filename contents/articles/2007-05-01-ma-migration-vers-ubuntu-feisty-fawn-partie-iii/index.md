@@ -6,11 +6,7 @@ author: Olivier
 aliases: ['/post/2007/05/01/ma-migration-vers-ubuntu-7-0-4-feisty-fawn-partie-iii/', '/post/2007/05/01/ma-migration-vers-ubuntu-feisty-fawn-partie-iii/']
 categories: [Uncategorized]
 tags: [Ubuntu]
-excerpt: <p>Voici un petit guide illustré de ma migration vers Ubuntu 'Feisty Fawn' 7.0.4.<br />
-La <a href="/post/2007/05/01/Ma-migration-vers-Ubuntu-Feisty-Fawn-:-partie-I">partie I</a> illustre les différentes étapes avant la migration (si nécessaire).<br />
-La <a href="/post/2007/05/01/Ma-migration-vers-Ubuntu-Feisty-Fawn-:-partie-II">partie II</a> illustre les différentes étapes de la migration.<br />
-La <a href="/post/2007/05/01/Ma-migration-vers-Ubuntu-Feisty-Fawn-:-partie-III">partie III</a> illustre mon petit problème lors de cette migration.<br />
-Voici la partie III.</p>
+excerpt: "<p>Voici un petit guide illustré de ma migration vers Ubuntu 'Feisty Fawn' 7.0.4.<br /> La <a href='/post/2007/05/01/Ma-migration-vers-Ubuntu-Feisty-Fawn-:-partie-I'>partie I</a> illustre les différentes étapes avant la migration (si nécessaire).<br /> La <a href='/post/2007/05/01/Ma-migration-vers-Ubuntu-Feisty-Fawn-:-partie-II'>partie II</a> illustre les différentes étapes de la migration.<br /> La <a href='/post/2007/05/01/Ma-migration-vers-Ubuntu-Feisty-Fawn-:-partie-III'>partie III</a> illustre mon petit problème lors de cette migration.<br /> Voici la partie III.</p>"
 ---
 
 <p>Voici un petit guide illustré de ma migration vers Ubuntu 'Feisty Fawn' 7.0.4.<br />

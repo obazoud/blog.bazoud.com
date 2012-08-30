@@ -6,7 +6,7 @@ author: Olivier
 aliases: ['/post/2007/01/13/pour-quelques-softs-de-plus/', '/post/2007/01/13/pour-quelques-softs-de-plus/']
 categories: [Uncategorized]
 tags: [Ubuntu]
-excerpt: <p>J'étais fan de quelques logiciels pratiques avant que je ne sois libre :) :</p>
+excerpt: "<p>J'étais fan de quelques logiciels pratiques avant que je ne sois libre :) :</p>"
 ---
 
 <p>J'étais fan de quelques logiciels pratiques avant que je ne sois libre :) :</p>

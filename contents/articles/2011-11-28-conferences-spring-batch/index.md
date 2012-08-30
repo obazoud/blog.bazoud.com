@@ -5,7 +5,7 @@ date: '2011-11-28T15:30:00.000Z'
 author: Olivier
 categories: [conference]
 tags: [springbatch,springbatchinaction, sugfr, chtijug]
-excerpt: Prochaines conférences sur Spring Batch: Lille et Paris.
+excerpt: "Prochaines conférences sur Spring Batch: Lille et Paris."
 ---
 
 Je vais donner des conférences sur [Spring Batch](http://static.springsource.org/spring-batch/), le 29 Novembre 2011 à Lille et le Mardi 20 Décembre 2011 à Paris

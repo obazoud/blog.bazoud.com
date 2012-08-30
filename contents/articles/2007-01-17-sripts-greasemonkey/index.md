@@ -6,7 +6,7 @@ author: Olivier
 aliases: ['/post/2007/01/17/scripts-greasemonkey/', '/post/2007/01/17/sripts-greasemonkey/', '/post/2007/01/17/sripts-greasemonkey/']
 categories: [Uncategorized]
 tags: [firefox]
-excerpt: <p>J'ai développé quelques scripts GreaseMonkey simples pour :</p> <ul> <li>horde : recharge la page toutes les xx secondes et</li> <li>del.icio.us : ajoute un lien 'Open All' qui ouvre tous les liens de la pages, et un autre qui ajoute des liens sur des tags (c'est avant que les bundles existes)</li> </ul>
+excerpt: "<p>J'ai développé quelques scripts GreaseMonkey simples pour :</p> <ul> <li>horde : recharge la page toutes les xx secondes et</li> <li>del.icio.us : ajoute un lien 'Open All' qui ouvre tous les liens de la pages, et un autre qui ajoute des liens sur des tags (c'est avant que les bundles existes)</li> </ul>"
 ---
 
 <p>J'ai développé quelques scripts GreaseMonkey simples pour :</p> <ul> <li>horde : recharge la page toutes les xx secondes et</li> <li>del.icio.us : ajoute un lien 'Open All' qui ouvre tous les liens de la pages, et un autre qui ajoute des liens sur des tags (c'est avant que les bundles existes)</li> </ul>

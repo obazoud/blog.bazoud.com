@@ -6,7 +6,7 @@ author: Olivier
 aliases: ['/post/2007/02/03/installation-de-activemq-sous-ubuntu/', '/post/2007/02/03/installation-de-activemq-sous-ubuntu/']
 categories: [Uncategorized]
 tags: [Ubuntu,java,JMS,Derby,ActiveMQ]
-excerpt: <p>ActiveMQ est Message Bus open source avec le support complet de JMS 1.1/J2EE 1.4 traitant les messages transient, persistant, transactionnelle et XA.</p> <p>Pour l'installation, il faut :</p>
+excerpt: "<p>ActiveMQ est Message Bus open source avec le support complet de JMS 1.1/J2EE 1.4 traitant les messages transient, persistant, transactionnelle et XA.</p> <p>Pour l'installation, il faut :</p>"
 ---
 
 <p>ActiveMQ est Message Bus open source avec le support complet de JMS 1.1/J2EE 1.4 traitant les messages transient, persistant, transactionnelle et XA.</p> <p>Pour l'installation, il faut :</p>

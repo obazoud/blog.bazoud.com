@@ -6,7 +6,7 @@ author: Olivier
 aliases: ['/post/2007/02/06/tomcat-et-commons-logging/', '/post/2007/02/06/tomcat-et-commons-logging/']
 categories: [Uncategorized]
 tags: [tomcat,java,commons-logging]
-excerpt: <p>Si vous avez l'erreur suivante au démarrage de Tomcat 5.5.20 avec la version 1.1 de commons-logging :</p> <pre> SEVERE: Error reading tld listeners java.lang.NullPointerException java.lang.NullPointerException </pre>
+excerpt: "<p>Si vous avez l'erreur suivante au démarrage de Tomcat 5.5.20 avec la version 1.1 de commons-logging :</p> <pre> SEVERE: Error reading tld listeners java.lang.NullPointerException java.lang.NullPointerException </pre>"
 ---
 
 <p>Si vous avez l'erreur suivante au démarrage de Tomcat 5.5.20 avec la version 1.1 de commons-logging :</p> 

@@ -6,7 +6,7 @@ author: Olivier
 aliases: ['/post/2007/01/17/extensions-firefox/', '/post/2007/01/17/extensions-firefox/']
 categories: [Uncategorized]
 tags: [firefox]
-excerpt: <p>C'est une tradition de mettre <a href="http://blog.toutantic.net/index.php?2005/12/04/221-extensions-firefox-le-retour-de-la-liste"> la liste de ses extensions FireFox dans son blog</a>, et comme un dessin est plus parlant :</p>
+excerpt: "<p>C'est une tradition de mettre <a href='http://blog.toutantic.net/index.php?2005/12/04/221-extensions-firefox-le-retour-de-la-liste'> la liste de ses extensions FireFox dans son blog</a>, et comme un dessin est plus parlant :</p>"
 ---
 
 <p>C'est une tradition de mettre <a href="http://blog.toutantic.net/index.php?2005/12/04/221-extensions-firefox-le-retour-de-la-liste"> la liste de ses extensions FireFox dans son blog</a>, et comme un dessin est plus parlant :</p>
