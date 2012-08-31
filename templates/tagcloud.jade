@@ -8,11 +8,15 @@
 -   counts[word] = (counts[word] || 0) + 1
 -   return counts
 - }, {}).value()
+- var sortedWord = _.chain(cloud).keys().map(function(item) {
+-   return item
+- }).sortBy(function(word) {
+-   return word.toLowerCase()
+- }).value()
 
 #tags.tagcloud
-  each count, word in cloud
+  each word in sortedWord
     = '\r\n'
-    - var sizeCount = Math.min(Math.floor(count / 1.25), 25)
-    a(class="size-#{sizeCount}", href="/tag/#{word}", title="#{word}: #{count} posts")
+    - var sizeCount = Math.min(Math.floor(cloud[word] / 1.25), 25)
+    a(class="size-#{sizeCount}", href="/tag/#{word}", title="#{word}: #{cloud[word]} posts")
       | #{word}
-    
