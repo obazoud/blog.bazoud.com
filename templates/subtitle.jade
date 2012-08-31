@@ -1,0 +1,21 @@
+p#post_top_meta1.muted
+  span.meta-prep.meta-prep-author
+    | Posté le 
+  span.entry-date
+    = page.date.toString('dddd dd MMMM yyyy')
+  | | 
+  span.meta-sep
+    |  Ecrit par 
+  span.author.vcard
+    = page.metadata.author
+  | | 
+  a(href=page.url)
+    | Lien permanent
+  | | 
+  a(href="#disqus_thread")
+    | Commentaires
+  | | Posté dans 
+  each category in page.metadata.categories
+    a(href="/category/#{category}", rel="category tag", title="View all posts in '#{category}'")
+      = category
+    &nbsp;
