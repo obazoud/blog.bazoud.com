@@ -62,36 +62,11 @@ html(lang=locals.language)
               h4 Spring Batch in Action
               a(href="http://affiliate.manning.com/idevaffiliate.php?id=1178_267_1_68", target="_blank", alt="String Batch in Action", title="String Batch in Action"): img(border="0", src="/images/SpringBatchInAction.jpg", alt="String Batch in Action", title="String Batch in Action")
               h4 Tags
-              #tags.tagcloud
-                h7 TODO
+              include tagcloud
               h4 Archives
-              #archives.tagcloud
-                h7 TODO
+              include archivecloud
               h4 Blogroll
-              li
-                  a.ext(href="http://www.dviel.com/", target="_blank") Damien Viel’s blog
-                  span.ext
-              li
-                a.ext(href="http://blogpro.toutantic.net/", target="_blank") Aurélien Pelletier
-                span.ext
-              li
-                a.ext(href="http://blog.aheritier.net/", target="_blank") Le blog d"Arnaud
-                span.ext
-              li
-                a.ext(href="http://blog.toutantic.net/", target="_blank") Aurel"s blog
-                span.ext
-              li
-                a.ext(href="http://blog.loof.fr/", target="_blank") new Blog( perso );
-                span.ext
-              li
-                a.ext(href="http://www.application-servers.com/", target="_blank") a19s
-                span.ext
-              li
-                a.ext(href="http://www.onirik.org/", target="_blank") Onirik
-                span.ext
-              li
-                a.ext(href="http://grumeautique.blogspot.com/", target="_blank") Petit précis de Grumeautique
-                span.ext
+              include blogroll
               h4 Feeds
               a(target="_blank", style="cursor:pointer;", href=locals.feeds.feed): img(alt="Feed", title="Feed", src="/images/rss.png")
               a(target="_blank", style="cursor:pointer;", href=locals.feeds.comments): img(alt="Comments Feed", title="Comments Feed", src="/images/rss.png")
@@ -100,7 +75,6 @@ html(lang=locals.language)
             .row
               .span12
                 block content
-                  h7 CONTENT
     footer.footer
       div.inner
         block footer
