@@ -6,7 +6,9 @@ block content
   - var articles = _.chain(contents.articles._.directories).map(function(item) {
   -   // map articles to index pages of subdirectories of 'articles'
   -   return item.index
-  - }).compact().sortBy(function(item) { // compact removes any directories w/o an index
+  - }).compact().filter(function(article) {
+  -   return article.metadata.ignored !== true
+  - }).sortBy(function(item) { // compact removes any directories w/o an index
   -   // sort them by date
   -   return -item.date
   - }).first(35).value() // and finally take the first 5
