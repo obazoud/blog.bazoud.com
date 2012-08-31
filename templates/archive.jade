@@ -5,14 +5,19 @@ block content
   != page.html
   - var archive = _.chain(contents.articles._.directories).map(function(item) {
   -   return item.index
-  - }).compact().sortBy(function(item) {
+  - }).compact().filter(function(article) {
+  -   return article.metadata.ignored !== true
+  - }).sortBy(function(item) {
   -   return -item.date
   - }).groupBy(function(item) {
   -   return item.date.getFullYear()
   - }).value()
-  - var map = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+  - var map = _.chain(Date.CultureInfo.monthNames).map(function(item) {
+  -   return item[0].toUpperCase() + item.substring(1)
+  - }).value()
 
   section.archive
+    hr
     ul
       each year in _.chain(archive).keys().reverse().value()
         li.year= year
