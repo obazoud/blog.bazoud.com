@@ -127,6 +127,8 @@ async.waterfall [
       res.redirect 301, '/tag/' + req.params + '.html'
     app.get /^\/archive\/([0-9]+)(?!\html)$/, (req, res) ->
       res.redirect 301, '/archive/' + req.params + '.html'
+    app.get /^\/category\/([a-zA-Z-0-9\-]+)(?!\html)$/, (req, res) ->
+      res.redirect 301, '/category/' + req.params + '.html'
 
     app.get '/articles/:id\.html', (req, res) ->
       res.redirect 301, '/articles/' + req.params.id + '/index.html'
