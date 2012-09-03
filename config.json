@@ -16,6 +16,7 @@
       "comments": "http://feeds.feedburner.com/bazoud/comments"
     },
     "disqus": {
+      "url": "http://bazoud.disqus.com",
       "shortname": "bazoud"
     },
     "index_articles": 3
