@@ -33,13 +33,13 @@ rss(version='2.0',
         link= permalink
         comments= commentlink
         pubDate= article.date.toISOString()
+        dc:creator= article.metadata.author
         each currentTag in article.metadata.tags
             category <![CDATA[#{currentTag}]]>
-
         guid(isPermaLink='true')= permalink
-        dc:creator= article.metadata.author
         author= article.metadata.author
         description <![CDATA[#{article.metadata.excerpt}]]>
         content:encoded <![CDATA[#{article.metadata.excerpt}]]> - &lt;a href="#{permalink}"&gt;Lire la suite&lt;/a&gt;
+        wfw:commentRss= locals.disqus + article.url + "/lastest.rss"
         slash:comments 0
 
