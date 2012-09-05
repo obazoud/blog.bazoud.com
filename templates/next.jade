@@ -1,5 +1,8 @@
 extends layout
 
+block append title
+  |  » Les derniers articles
+
 block content
   include author
   //- underscore helps us filter and sort our articles
@@ -11,7 +14,7 @@ block content
   - }).sortBy(function(item) { // compact removes any directories w/o an index
   -   // sort them by date
   -   return -item.date
-  - }).first(35).value() // and finally take the first 5
+  - }).rest(35).value() // and finally take the first 5
   section#page
     .page-header
       h1 Les derniers articles
@@ -24,5 +27,3 @@ block content
                 = article.date.toString('dd/MM/yyyy')
             td
               a(href=article.url)= article.title
-    p
-      a(href="/next", class="btn small primary") La suite...
