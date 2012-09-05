@@ -30,5 +30,6 @@ It is automatically transformed by [Wintersmith](https://github.com/jnordberg/wi
 - page 404
 
 - verifier 404.xml
-
+- related articles
+- ignore in related, tags, archive, category
 - faire les alias (voir les metadata des articles)
