@@ -3,7 +3,7 @@
 CURPATH=`pwd`
 
 inotifywait -mr --timefmt '%d/%m/%y %H:%M' --format '%T %w %f' \
--e close_write $CURPATH/contents $CURPATH/templates | while read date time dir file; do
+-e close_write $CURPATH/contents/articles $CURPATH/templates | while read date time dir file; do
   FILECHANGE=${dir}${file}
   # convert absolute path to relative
   FILECHANGEREL=`echo "$FILECHANGE" | sed 's_'$CURPATH'/__'`
