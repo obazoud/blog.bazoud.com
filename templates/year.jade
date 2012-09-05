@@ -1,6 +1,9 @@
 
 extends layout
 
+block append title
+  |  » Archive #{page.metadata.currentYear}
+
 block content
   include author
   - var articles = _.chain(contents.articles._.directories).map(function(item) {

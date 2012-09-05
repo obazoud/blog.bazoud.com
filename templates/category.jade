@@ -1,6 +1,9 @@
 
 extends layout
 
+block append title
+  |  » Catégorie #{page.metadata.currentCategory}
+
 block content
   include author
   - var articles = _.chain(contents.articles._.directories).map(function(item) {

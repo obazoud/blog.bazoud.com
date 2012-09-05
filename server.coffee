@@ -48,6 +48,38 @@ async.waterfall [
         res.header "Content-Type", "text/xml; charset=UTF-8"
         res.send feed.xml(), 200
 
+    # aliases
+    buffer = fs.readFileSync path.join(options.output, 'aliases.json')
+    aliases = JSON.parse buffer.toString()
+    app.get '/', (req, res, next) ->
+      p = req.param 'p', null
+      if p
+        if aliases[req.url.toLowerCase()]
+          res.redirect(301, aliases[req.url.toLowerCase()])
+          res.end()
+        else
+          next()
+      else
+        #req.url = req.url + '/'
+        if aliases[req.url.toLowerCase()]
+          res.redirect(301, aliases[req.url.toLowerCase()])
+          res.end()
+        else
+          next()
+    app.get /\/[a-z0-9\-]+\/?$/i, (req, res, next) =>
+      if aliases[req.url.toLowerCase()]
+        res.redirect(301, aliases[req.url.toLowerCase()])
+        res.end()
+      else
+        url = req.url
+        if !req.url.toLowerCase().match('\/$')
+          url = req.url + '/'
+        if aliases[url.toLowerCase()]
+          res.redirect(301, aliases[url.toLowerCase()])
+          res.end()
+        else
+          next()
+
     app.configure 'development', () ->
       console.log 'Express environment: development'
       app.use express.errorHandler({ dumpExceptions: true, showStack: true })
@@ -121,6 +153,9 @@ async.waterfall [
     # legacy docpad
     app.get '/post/:id\.html', (req, res) ->
       res.redirect 301, '/articles/' + req.params.id + '/index.html'
+
+    app.get '/next', (req, res) ->
+      res.redirect 301, '/next.html'
 
     # rewrite wintersmith
     app.get /^\/tag\/([a-zA-Z-0-9\-]+)(?!\html)$/, (req, res) ->

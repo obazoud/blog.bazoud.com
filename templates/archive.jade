@@ -1,6 +1,9 @@
 
 extends layout
 
+block append title
+  |  » Les archives
+
 block content
   != page.html
   - var archive = _.chain(contents.articles._.directories).map(function(item) {
@@ -16,6 +19,7 @@ block content
   -   return item[0].toUpperCase() + item.substring(1)
   - }).value()
 
+  h1 Les archives
   section.archive
     hr
     ul

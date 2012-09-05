@@ -60,16 +60,6 @@ describe "Blog next"
 					"which has a next url": (next) ->
 						assert.equal next, "/next"
 
-#
-#					"has page title":
-#						topic: t (page) ->
-#							page.evaluate (-> $("h1").text()), (title) => @callback null, title
-#
-#						"which is correct": (title) ->
-#							console.log '->' + title
-#							assert.equal title, "Articles"
-#
-
 		teardown: (page, ph) ->
 			ph.exit()
 

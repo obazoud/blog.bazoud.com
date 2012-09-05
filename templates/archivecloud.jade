@@ -13,7 +13,7 @@
 - }).compact().filter(function(article) {
 -   return article.metadata.ignored !== true
 - }).flatten().size().value()
-#tags.tagcloud
+#archives.tagcloud
   a(class="size-25", href="/archive.html", title="Total: #{countAll} posts")
     | Toutes
   each count, word in cloud

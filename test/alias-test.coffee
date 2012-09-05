@@ -12,7 +12,7 @@ t = (fn) ->
 		fn.apply this, args
 		return
 
-describe "Blog index"
+describe "Alias"
 	"A page":
 		topic: t ->
 			test = this
@@ -22,7 +22,7 @@ describe "Blog index"
 
 		"can open a URL on localhost":
 			topic: t (page) ->
-				page.open "http://127.0.0.1:10113/", (status) =>
+				page.open "http://127.0.0.1:10113/post/2007/01/09/first", (status) =>
 					page.includeJs "http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
 					@callback null, page, status
 
@@ -40,23 +40,23 @@ describe "Blog index"
 						page.evaluate (-> document.title), (title) => @callback null, title
 
 					"which is correct": (title) ->
-						assert.equal title, "Le blog d'Olivier » Les derniers articles"
+						assert.equal title, "Le blog d'Olivier » Blog"
 
 				"has page title":
 					topic: t (page) ->
 						page.evaluate (-> $("h1").text()), (title) => @callback null, title
 					
 					"which is correct": (title) ->
-						assert.equal title, "Les derniers articles"
+						assert.equal title, "Blog"
 
 				"has navbar":
 					topic: t (page) ->
-						page.evaluate (-> $(".navbar.navbar-fixed-top").length), (navbar) => @callback null, navbar
+						page.evaluate (-> $(".navbar.navbar-fixed-top").length), (topbar) => @callback null, topbar
 					
-					"which is no empty": (navbar) ->
-						assert.equal navbar, 1
+					"which is no empty": (topbar) ->
+						assert.equal topbar, 1
 
-				"has navbar title":
+				"has topbar title":
 					topic: t (page) ->
 						page.evaluate (-> $(".navbar.navbar-fixed-top a.brand").text()), (title) => @callback null, title
 					
@@ -69,48 +69,6 @@ describe "Blog index"
 					
 					"which is no empty": (footer) ->
 						assert.equal footer, 1
-
-				"has tags section":
-					topic: t (page) ->
-						page.evaluate (-> $("#tags").length), (tags) => @callback null, tags
-					
-					"which is no empty": (tags) ->
-						assert.equal tags, 1
-
-				"has tags":
-					topic: t (page) ->
-						page.evaluate (-> $("#tags a").length), (tags) => @callback null, tags
-					
-					"which is no empty": (tags) ->
-						assert.isTrue tags > 50
-
-				"has archives section":
-					topic: t (page) ->
-						page.evaluate (-> $("#archives").length), (archives) => @callback null, archives
-
-					"which is no empty": (archives) ->
-						assert.equal archives, 1
-
-				"has archives":
-					topic: t (page) ->
-						page.evaluate (-> $("#archives a").length), (archives) => @callback null, archives
-
-					"which is no empty": (archives) ->
-						assert.equal archives, 7
-
-				"has posts entries":
-					topic: t (page) ->
-						page.evaluate (-> $("table.table.table-striped tr").length), (value) => @callback null, value
-
-					"which is no empty": (value) ->
-						assert.equal value, 35
-
-				"has columns":
-					topic: t (page) ->
-						page.evaluate (-> $("table.table.table-striped td").length), (value) => @callback null, value
-
-					"which is no empty": (value) ->
-						assert.equal value, 70
 
 		teardown: (page, ph) ->
 			ph.exit()
