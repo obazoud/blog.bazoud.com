@@ -24,7 +24,8 @@ async.waterfall [
     cache = []
     port = process.env.PORT || 10113
     app = express()
-    staticPath = options.output
+
+    console.log "static:" + options.output
     app.configure () ->
       console.log 'Express environment: common'
       app.use express.bodyParser()
@@ -49,53 +50,56 @@ async.waterfall [
         res.send feed.xml(), 200
 
     # aliases
-    buffer = fs.readFileSync path.join(options.output, 'aliases.json')
-    aliases = JSON.parse buffer.toString()
-    app.get '/', (req, res, next) ->
-      p = req.param 'p', null
-      if p
+    fs.readFile path.join(options.output, 'aliases.json'), (err, buffer) ->
+      throw err if err
+      aliases = JSON.parse buffer.toString()
+      app.get '/', (req, res, next) ->
+        p = req.param 'p', null
+        if p
+          if aliases[req.url.toLowerCase()]
+            res.redirect(301, aliases[req.url.toLowerCase()])
+            res.end()
+          else
+            next()
+        else
+          #req.url = req.url + '/'
+          if aliases[req.url.toLowerCase()]
+            res.redirect(301, aliases[req.url.toLowerCase()])
+            res.end()
+          else
+            next()
+      app.get /\/[a-z0-9\-]+\/?$/i, (req, res, next) =>
         if aliases[req.url.toLowerCase()]
           res.redirect(301, aliases[req.url.toLowerCase()])
           res.end()
         else
-          next()
-      else
-        #req.url = req.url + '/'
-        if aliases[req.url.toLowerCase()]
-          res.redirect(301, aliases[req.url.toLowerCase()])
-          res.end()
-        else
-          next()
-    app.get /\/[a-z0-9\-]+\/?$/i, (req, res, next) =>
-      if aliases[req.url.toLowerCase()]
-        res.redirect(301, aliases[req.url.toLowerCase()])
-        res.end()
-      else
-        url = req.url
-        if !req.url.toLowerCase().match('\/$')
-          url = req.url + '/'
-        if aliases[url.toLowerCase()]
-          res.redirect(301, aliases[url.toLowerCase()])
-          res.end()
-        else
-          next()
+          url = req.url
+          if !req.url.toLowerCase().match('\/$')
+            url = req.url + '/'
+          if aliases[url.toLowerCase()]
+            res.redirect(301, aliases[url.toLowerCase()])
+            res.end()
+          else
+            next()
 
     app.configure 'development', () ->
       console.log 'Express environment: development'
       app.use express.errorHandler({ dumpExceptions: true, showStack: true })
-      app.use gzippo.staticGzip staticPath
+      app.use gzippo.staticGzip options.output
+
     app.configure 'production', () ->
       console.log 'Express environment: production'
       app.use app.errorHandler()
       oneDay = 86400000
       expiresOffset = oneDay * 7
-      app.use express.static staticPath, { maxAge: expiresOffset }
+      app.use express.static options.output, { maxAge: expiresOffset }
+
     app.listen port
     console.log 'Express server listening on port %d', port
     console.log 'Express server running on http://localhost:%d', port
-    console.log 'Express server static: %s', staticPath
-    callback null, app, cache, staticPath
-  (app, cache, staticPath, callback) ->
+    console.log 'Express server static: %s', options.output
+    callback null, app, cache, options
+  (app, cache, options, callback) ->
     # -------------------------------------
     # Redirects
 
@@ -171,7 +175,7 @@ async.waterfall [
     # 404 Middleware
     app.use (req,res,next) ->
       cache.push { path: req.path, referer : req.header('Referer'), when: new Date() }
-      fs.readFile path.join(staticPath, '404.html'), 'utf8', (err, text) ->
+      fs.readFile path.join(options.output, '404.html'), 'utf8', (err, text) ->
         res.send text, 404
   ], (err, result) ->
     console.log 'FAIL: ' + err.message
