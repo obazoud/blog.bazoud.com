@@ -1,0 +1,539 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="fr-FR">
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="text/html;charset=UTF-8" http-equiv="Content-Type"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width"/>
+    <meta name="generator" content="Wintersmithq"/>
+    <meta name="google-site-verification" content="google36a66ae7f1a82c45"/>
+    <meta name="description" content="Le blog d'Olivier"/>
+    <meta name="author" content="Olivier Bazoud"/>
+    <meta name="keywords" content="geek,web,java,spring,spring batch,spring batch in action,node.js,git,ruby,svn,subversion"/>
+    <title>Le blog d'Olivier » Conversion en masse de projets SVN vers Git
+    </title>
+    <link rel="apple-touch-icon" href="/ico/bootstrap-apple-57x57.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="/ico/bootstrap-apple-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="/ico/bootstrap-apple-114x114.png"/>
+    <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.feedburner.com/bazoud/feed"/>
+    <link rel="alternate" type="text/xml" title="RSS .92" href="http://feeds.feedburner.com/bazoud/rss"/>
+    <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="http://feeds.feedburner.com/bazoud/atom"/>
+    <link href="/vendor/bootstrap/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/styles/mystyle.css" rel="stylesheet"/>
+    <link href="/vendor/bootstrap/prettify.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="/vendor/google-code-prettify/prettify.js"></script>
+    <!-- Shims: IE6-8 support of HTML5 elements--><!--[if lt IE 9]>
+    <script async="async" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  </head>
+  <body onload="prettyPrint()">
+    <div class="navbar navbar-fixed-top"><a href="http://github.com/obazoud/blog.bazoud.com"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/camo.github.com/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"/></a>
+      <div class="navbar-inner">
+        <div class="container-fluid"><a data-toggle="collapse" data-target=".nav-collapse" class="btn btn-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a href="/" class="brand">Le blog d'Olivier</a>
+          <div class="nav-collapse">
+            <form id="search-form" action="http://www.google.com/search" method="get" class="navbar-search pull-left"><span class="glass js-search-action"><i></i></span>
+              <input type="hidden" value="UTF-8" name="ie"/>
+              <input type="hidden" value="UTF-8" name="oe"/>
+              <input type="hidden" value="blog.bazoud.com" name="domains"/>
+              <input type="hidden" value="blog.bazoud.com" name="sitesearch"/>
+              <input name="q" type="text" placeholder="Rechercher avec Google..." class="search-query span3"/>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <h4>Suivez moi !</h4><a target="_blank" style="cursor: pointer;" href="http://feeds.feedburner.com/bazoud/feed"><img alt="Feed" title="Feed" src="/images/rss.png"/></a><a href="http://www.twitter.com/obazoud" style="cursor: pointer;" target="_blank"><img src="/images/twitter.png" title="Follow me on Twitter!" alt="Follow @obazoud on Twitter!"/></a><a href="https://plus.google.com/108456051643223740688" target="_blank" alt="Google +" title="Google +"><img src="/images/google-plus-48x48.png" border="0"/></a>
+              <h4>Spring Batch in Action</h4><a href="http://affiliate.manning.com/idevaffiliate.php?id=1178_267_1_68" target="_blank" alt="String Batch in Action" title="String Batch in Action"><img border="0" src="/images/SpringBatchInAction.jpg" alt="String Batch in Action" title="String Batch in Action"/></a>
+              <h4>Tags</h4>
+              <div id="tags" class="tagcloud">
+<a href="/tag/ActiveMQ" title="ActiveMQ: 2 posts" class="size-1">ActiveMQ</a>
+<a href="/tag/advanced" title="advanced: 1 posts" class="size-0">advanced</a>
+<a href="/tag/awk" title="awk: 3 posts" class="size-2">awk</a>
+<a href="/tag/bash" title="bash: 3 posts" class="size-2">bash</a>
+<a href="/tag/bdd" title="bdd: 1 posts" class="size-0">bdd</a>
+<a href="/tag/blog" title="blog: 1 posts" class="size-0">blog</a>
+<a href="/tag/chrome" title="chrome: 2 posts" class="size-1">chrome</a>
+<a href="/tag/chromium" title="chromium: 1 posts" class="size-0">chromium</a>
+<a href="/tag/chtijug" title="chtijug: 1 posts" class="size-0">chtijug</a>
+<a href="/tag/cloud" title="cloud: 1 posts" class="size-0">cloud</a>
+<a href="/tag/coffeescript" title="coffeescript: 1 posts" class="size-0">coffeescript</a>
+<a href="/tag/commons-logging" title="commons-logging: 1 posts" class="size-0">commons-logging</a>
+<a href="/tag/decode" title="decode: 1 posts" class="size-0">decode</a>
+<a href="/tag/Derby" title="Derby: 1 posts" class="size-0">Derby</a>
+<a href="/tag/devops" title="devops: 1 posts" class="size-0">devops</a>
+<a href="/tag/docpad" title="docpad: 1 posts" class="size-0">docpad</a>
+<a href="/tag/eclipse" title="eclipse: 2 posts" class="size-1">eclipse</a>
+<a href="/tag/evenement" title="evenement: 4 posts" class="size-3">evenement</a>
+<a href="/tag/firefox" title="firefox: 4 posts" class="size-3">firefox</a>
+<a href="/tag/flash" title="flash: 1 posts" class="size-0">flash</a>
+<a href="/tag/gem" title="gem: 1 posts" class="size-0">gem</a>
+<a href="/tag/generics" title="generics: 4 posts" class="size-3">generics</a>
+<a href="/tag/git" title="git: 5 posts" class="size-4">git</a>
+<a href="/tag/google" title="google: 2 posts" class="size-1">google</a>
+<a href="/tag/grep" title="grep: 2 posts" class="size-1">grep</a>
+<a href="/tag/GWT" title="GWT: 7 posts" class="size-5">GWT</a>
+<a href="/tag/h2" title="h2: 2 posts" class="size-1">h2</a>
+<a href="/tag/heroku" title="heroku: 1 posts" class="size-0">heroku</a>
+<a href="/tag/Hibernate" title="Hibernate: 5 posts" class="size-4">Hibernate</a>
+<a href="/tag/Hibernate4gwt" title="Hibernate4gwt: 2 posts" class="size-1">Hibernate4gwt</a>
+<a href="/tag/java" title="java: 16 posts" class="size-12">java</a>
+<a href="/tag/javascript" title="javascript: 1 posts" class="size-0">javascript</a>
+<a href="/tag/jdk5" title="jdk5: 5 posts" class="size-4">jdk5</a>
+<a href="/tag/jdk6" title="jdk6: 1 posts" class="size-0">jdk6</a>
+<a href="/tag/jenkins" title="jenkins: 1 posts" class="size-0">jenkins</a>
+<a href="/tag/JMS" title="JMS: 2 posts" class="size-1">JMS</a>
+<a href="/tag/linux" title="linux: 1 posts" class="size-0">linux</a>
+<a href="/tag/lucid-lynx" title="lucid-lynx: 1 posts" class="size-0">lucid-lynx</a>
+<a href="/tag/maven" title="maven: 9 posts" class="size-7">maven</a>
+<a href="/tag/nodejs" title="nodejs: 1 posts" class="size-0">nodejs</a>
+<a href="/tag/oh-my-zsh" title="oh-my-zsh: 1 posts" class="size-0">oh-my-zsh</a>
+<a href="/tag/opschef" title="opschef: 1 posts" class="size-0">opschef</a>
+<a href="/tag/Oracle" title="Oracle: 9 posts" class="size-7">Oracle</a>
+<a href="/tag/phantomjs" title="phantomjs: 1 posts" class="size-0">phantomjs</a>
+<a href="/tag/ppa" title="ppa: 1 posts" class="size-0">ppa</a>
+<a href="/tag/puppet" title="puppet: 1 posts" class="size-0">puppet</a>
+<a href="/tag/ruby" title="ruby: 2 posts" class="size-1">ruby</a>
+<a href="/tag/sed" title="sed: 1 posts" class="size-0">sed</a>
+<a href="/tag/shell" title="shell: 6 posts" class="size-4">shell</a>
+<a href="/tag/sonar" title="sonar: 1 posts" class="size-0">sonar</a>
+<a href="/tag/spring" title="spring: 3 posts" class="size-2">spring</a>
+<a href="/tag/springbatch" title="springbatch: 5 posts" class="size-4">springbatch</a>
+<a href="/tag/springbatchinaction" title="springbatchinaction: 2 posts" class="size-1">springbatchinaction</a>
+<a href="/tag/Stripes" title="Stripes: 2 posts" class="size-1">Stripes</a>
+<a href="/tag/subversion" title="subversion: 1 posts" class="size-0">subversion</a>
+<a href="/tag/sugfr" title="sugfr: 4 posts" class="size-3">sugfr</a>
+<a href="/tag/svn" title="svn: 6 posts" class="size-4">svn</a>
+<a href="/tag/svn2git" title="svn2git: 1 posts" class="size-0">svn2git</a>
+<a href="/tag/testng" title="testng: 1 posts" class="size-0">testng</a>
+<a href="/tag/tomcat" title="tomcat: 3 posts" class="size-2">tomcat</a>
+<a href="/tag/twitter" title="twitter: 2 posts" class="size-1">twitter</a>
+<a href="/tag/Ubuntu" title="Ubuntu: 38 posts" class="size-25">Ubuntu</a>
+<a href="/tag/Uncategorized" title="Uncategorized: 4 posts" class="size-3">Uncategorized</a>
+<a href="/tag/vagrant" title="vagrant: 1 posts" class="size-0">vagrant</a>
+<a href="/tag/vi" title="vi: 2 posts" class="size-1">vi</a>
+<a href="/tag/viewsvn" title="viewsvn: 1 posts" class="size-0">viewsvn</a>
+<a href="/tag/vmware" title="vmware: 1 posts" class="size-0">vmware</a>
+<a href="/tag/vows" title="vows: 1 posts" class="size-0">vows</a>
+<a href="/tag/wordpress" title="wordpress: 1 posts" class="size-0">wordpress</a>
+<a href="/tag/zsh" title="zsh: 1 posts" class="size-0">zsh</a>
+              </div>
+              <h4>Archives</h4>
+              <div id="archives" class="tagcloud"><a href="/archive.html" title="Total: 81 posts" class="size-25">Toutes</a>
+<a href="/archive/2007" title="2007: 46 posts" class="size-25">2007</a>
+<a href="/archive/2008" title="2008: 14 posts" class="size-11">2008</a>
+<a href="/archive/2009" title="2009: 6 posts" class="size-4">2009</a>
+<a href="/archive/2010" title="2010: 9 posts" class="size-7">2010</a>
+<a href="/archive/2011" title="2011: 2 posts" class="size-1">2011</a>
+<a href="/archive/2012" title="2012: 4 posts" class="size-3">2012</a>
+              </div>
+              <h4>Blogroll</h4>
+              <li><a href="http://www.dviel.com/" target="_blank" class="ext">Damien Viel’s blog</a><span class="ext"></span></li>
+              <li><a href="http://blogpro.toutantic.net/" target="_blank" class="ext">Aurélien Pelletier</a><span class="ext"></span></li>
+              <li><a href="http://blog.aheritier.net/" target="_blank" class="ext">Le blog d"Arnaud</a><span class="ext"></span></li>
+              <li><a href="http://blog.toutantic.net/" target="_blank" class="ext">Aurel"s blog</a><span class="ext"></span></li>
+              <li><a href="http://blog.loof.fr/" target="_blank" class="ext">new Blog( perso );</a><span class="ext"></span></li>
+              <li><a href="http://www.application-servers.com/" target="_blank" class="ext">a19s</a><span class="ext"></span></li>
+              <li><a href="http://www.onirik.org/" target="_blank" class="ext">Onirik</a><span class="ext"></span></li>
+              <li><a href="http://grumeautique.blogspot.com/" target="_blank" class="ext">Petit précis de Grumeautique</a><span class="ext"></span></li>
+              <h4>Feeds</h4><a target="_blank" style="cursor:pointer;" href="http://feeds.feedburner.com/bazoud/feed"><img alt="Feed" title="Feed" src="/images/rss.png"/></a><a target="_blank" style="cursor:pointer;" href="http://feeds.feedburner.com/bazoud/comments"><img alt="Comments Feed" title="Comments Feed" src="/images/rss.png"/></a>
+            </ul>
+          </div>
+        </div>
+        <div class="span8">
+          <div class="content">
+            <div class="row">
+              <div class="span12">
+                <div class="page-header"><a href="/articles/2012-07-11-conversion-en-masse-de-projets-svn-vers-git/">
+                    <h1>Conversion en masse de projets SVN vers Git</h1></a></div>
+                <p id="post_top_meta1" class="muted"><span class="meta-prep meta-prep-author">Posté le </span><span class="entry-date">mercredi 11 juillet 2012</span> | <span class="meta-sep"> Ecrit par </span><span class="author vcard">Olivier</span> | <a href="/articles/2012-07-11-conversion-en-masse-de-projets-svn-vers-git/">Lien permanent</a> | <a href="#disqus_thread">Commentaires</a> | Posté dans <a href="/category/Uncategorized" rel="category tag" title="View all posts in 'Uncategorized'">Uncategorized</a>&nbsp;
+                </p>
+                <hr/>
+                <div class="post_content"><h2>Objectifs</h2>
+<p>Comme vous avez pu le lire dans l&apos;article <a href="/post/2010-12-11-migration-de-svn-vers-git-en-4-etapes.html">Migration de SVN vers Git en 4 étapes</a>, le passage de <a href="http://subversion.apache.org/">SVN</a> vers <a href="http://git-scm.com/">Git</a> fonctionne très bien. Oui mais voilà, ça fonctionne pour un projet. Que se passe t il si l&apos;on souhaite migrer des centaines de projets SVN vers Git ?
+Nous allons étudier une conversion en masse des projets SVN en Git et également abordé la gestion de ces nombreux projets Git ainsi créés.
+
+</p>
+<h2>Les chiffres</h2>
+<p>Je vous donne quelques chiffres permettant de vous donner une idée du projet:
+
+</p>
+<ul>
+<li>le SVN à migrer est très large ~130 000 commits, ~9 Go le dump et à peu près 250 projets</li>
+<li>chaque projet SVN ayant un layout standard comme le montre le schéma suivant.<pre class="prettyprint lang-bsh">
+.
+├── projetA
+│   ├── branches
+│   ├── tags
+│   └── trunk
+├── ...
+└── projetX
+  ├── sousprojet1
+  │   ├── branches
+  │   ├── tags
+  │   └── trunk
+  └── sousprojet2
+      ├── branches
+      ├── tags
+      └── trunk
+</pre>
+
+</li>
+</ul>
+<p>Pour un tel volume, il est nécessaire d&apos;avoir une approche plus industrielle qu&apos;un simple script shell à passer par projet. 
+Pour cela, il faut:
+
+</p>
+<ul>
+<li>créer la liste des auteurs SVN</li>
+<li>créer un script Ruby ... parce que <a href="https://twitter.com/Florian_elam">@Florian_elam</a> m&apos;a dit un jour que Ruby c&apos;est bien! ;) et surtout parce que le binding Ruby/SVN existe</li>
+<li>scanner le repository SVN et détecter les différents projets</li>
+<li>pour chaque projet, le transformer en repository <a href="http://git-scm.com/">Git</a></li>
+<li>parallèliser les phases de transformation</li>
+</ul>
+<p><img src="/images/svn2git.png" alt="Transformer un gros SVN en pleins Git">
+
+</p>
+<h2>Gérer les auteurs</h2>
+<p>Comme abordé dans <a href="/post/2010-12-11-migration-de-svn-vers-git-en-4-etapes.html">Migration de SVN vers Git en 4 étapes</a>, git svn a besoin d&apos;un fichier d&apos;auteurs. Il doit être absolument à jour pour une bonne conversion. Lors de mes essais, j&apos;ai dû écrire un script, car des personnes ont été ajoutés dans le SVN entre mes essais.
+<a href="https://github.com/obazoud/svn2git-massive-conversion/author-diff.rb">author-diff.rb</a> permet de connaître les différences entre le fichier des auteurs Git &quot;git-authors.txt&quot; et le fichier &quot;svn-authors.txt&quot; issu du dernier &quot;svn log&quot;.
+Il existe plusieurs options:
+
+</p>
+<ul>
+<li>--repo SVN_REPOSITORY : l&apos;url du repository SVN</li>
+<li>--update : effectue un &quot;svn log&quot; pour récuperer l&apos;ensemble des indentifiants utilisateurs.</li>
+</ul>
+<p>Générer le fichier &quot;svn-authors.txt&quot;
+</p>
+<pre class="prettyprint lang-bsh">
+% ./author-diff.rb --repo <a href="http://svn.mycompany.com">http://svn.mycompany.com</a> --update
+</pre>
+
+<p>Afficher les différences entre les fichiers des auteurs SVN et Git
+</p>
+<pre class="prettyprint lang-bsh">
+% ./author-diff.rb
+</pre>
+
+<p>Passons maintenant à la détection de projet SVN.
+
+</p>
+<h2>Analyser le repository SVN</h2>
+<p>Le script ruby <a href="https://github.com/obazoud/svn2git-massive-conversion/svn2git-massive-conversion.rb">svn2git-massive-conversion.rb</a> permet de scanner un repository SVN et de créer les projets Git associés. Cela se passe en deux étapes distinctes pour plus de performance.
+Tout d&apos;abord, il parcourt le repository SVN, si le répertoire courant contient soit &apos;branches&apos;, &apos;tags&apos; ou &apos;trunk&apos;, c&apos;est un vrai projet sinon ça continue récursivement. A la fin, une collection d&apos;objets SVNPath est obtenue avec le chemin du projet et s&apos;il y a le répertoire branches, tags et/ou trunk. Ces informations seront utiles pour convertir en Git plus finement et sont sauvegardés dans un fichier .dmp. 
+La deuxième étape est de convertir, à l&apos;aide du fichier .dmp, chaque projet SVN en repository Git. Pour cela, nous allons utilisé svn2git.
+
+</p>
+<h2>Introduction à svn2git</h2>
+<p>Comme dirait <a href="http://blogpro.toutantic.net/2011/09/25/de-svn-a-git/">Aurélien</a>, il y a <a href="https://github.com/nirvdrum/svn2git">svn2git</a> et <a href="http://gitorious.org/svn2git/pages/Home">svn2git</a>. Si le repository SVN a subit plusieurs refactoring (déplacement de projet, ...), le deuxième peut s&apos;avérer un peu complexe à configurer, il est à noter qu&apos;il beaucoup plus performant que le premier. Cependant, je préfère utiliser le premier car c&apos;est juste un wrapper élaboré écrit en Ruby du classique git-svn.
+
+</p>
+<p>L&apos;installation est simple:
+
+</p>
+<pre class="prettyprint lang-bsh">
+% gem install svn2git
+</pre>
+
+<p>Voici un exemple simple de conversion:
+
+</p>
+<pre class="prettyprint lang-bsh">
+% svn2git <a href="http://svn.mycompany.com/myproject">http://svn.mycompany.com/myproject</a> --authors svn-authors.txt --metadata
+</pre>
+
+<p>Il faut être au plus près du serveur SVN pour éviter les latences réseaux, voir sur le serveur lui même pour aller encore plus vite. Et si&apos;l a des SSD c&apos;est encore mieux ;)
+
+</p>
+<p>Ce <a href="https://github.com/nirvdrum/svn2git">svn2git</a> permet facilement de convertir un repository Git avec plusieurs options:
+
+</p>
+<ul>
+<li>--rebase : permet de mettre à jour le repository Git plutôt que de cloner</li>
+<li>--username NAME : utilise cet utilisateur pour se connecter au serveur SVN</li>
+<li>--trunk PATH / --branches PATH / --tags PATH : indique le chemin pour &apos;trunk&apos; / &apos;branches&apos; / &apos;tags&apos; si votre layout n&apos;est pas classique</li>
+<li>--rootistrunk : indique que le root du projet SVN est trunk (branches et tags ne seront pas importés)</li>
+<li>--notrunk / --nobranches / --notags : n&apos;importera pas &apos;trunk&apos; / &apos;branches&apos; / &apos;tags&apos;</li>
+<li>--no-minimize-url : utilise strcitement l&apos;url et n&apos;utilisera pas l&apos;url du repository SVN.</li>
+<li>--revision REV : démarre l&apos;import SVN à la révision REV</li>
+<li>--metadata : ajout les métadata SVN dans les commenentaires et notes au sein du commit Git</li>
+<li>--authors AUTHORS_FILE : emplacement du fichier des auteurs</li>
+<li>--exclude REGEX : exclus des chemins à importer (voir --ignore-paths dans git svn fetch)</li>
+<li>--verbose : afficher les informations de debug</li>
+</ul>
+<p>Une fois le projet SVN converti en repository Git, <a href="https://github.com/nirvdrum/svn2git">svn2git</a> permet de mettre à jour le projet Git en ajoutant les derniers commit et/ou branches. Tant que des personnes commit sur SVN, il veut mieux que le Git soit read only.
+
+</p>
+<pre class="prettyprint lang-bsh">
+% svn2git <a href="http://svn.mycompany.com/myproject">http://svn.mycompany.com/myproject</a> --rebase
+</pre>
+
+<p>Nous avons toutes les briques de base pour finir l&apos;ensemble du script.
+
+</p>
+<h2> Tous ensemble</h2>
+<p>La commande suivante permet de générer le fichier layout.dump, qui contiendra la structure des projets SVN à convertir.
+A noter que pour l&apos;ensemble de la configuration, le script va lire le fichier config.yaml (valeur par défaut) et écrit le dump dans layout.dump (valeur par défaut). Il y a des options pour changer la valeur de ces options.
+
+</p>
+<pre class="prettyprint lang-bsh">
+% ./svn2git-massive-conversion.rb --layout
+</pre>
+
+<p>Ensuite, nous passons à la conversion des projets SVN. L&apos;option --threads permet de paralléliser la conversion pour aller plus vite. Par défaut, le script va créer autant de threads que de processeurs sur la machine.
+
+</p>
+<pre class="prettyprint lang-bsh">
+% ./svn2git-massive-conversion.rb --threads 8
+</pre>
+
+<p>Et enfin, le dernier permet de pusher vers votre repository Git. Cela est configurable dans le fichier config.yaml. A noter que le chemin des repository Git reflète le chemin des projets SVN pour mieux s&apos;y retrouvé.
+</p>
+<pre class="prettyprint lang-bsh">
+% ./svn2git-massive-conversion.rb --push
+</pre>
+
+<p>Voilà c&apos;est fait, l&apos;ensemble des projets SVN ont été migrés vers Git. Cela a pris à peu ~20h avec 8 threads, ~13h sur un poste avec SSD.
+Maintenant, comment vais je pouvoir gérer autant de repository Git ? 
+
+</p>
+<h2>Gérer ces repository Git</h2>
+<p>Un fois, tous ces repository Git crées, quelle serait les possibilités ?
+
+</p>
+<ul>
+<li>à la main, on va dire que cela ne semble pas souhaitable au vu du nombre de répositories</li>
+<li>avec un &quot;beau script shell&quot; bash/zsh à base de &quot;for repo in ...&quot;</li>
+<li>bon commençons par google ;)</li>
+</ul>
+<p>Je vous donne en vrac l&apos;ensemble des pistes étudiées, je vous donne juste après ma préférence:
+
+</p>
+<ul>
+<li><a href="http://progit.org/book/ch6-6.html">Git submodules</a> permet de créer des sous modules Git dans un repository Git. Seul problème, il se base sur des commits et pas sur des branches. De ce fait, ça peut devenir lours avec 250 repository Git </li>
+<li><a href="http://source.android.com/source/version-control.html">Repo, Git et guerrit</a> est la façcon dont le projet Android gère l&apos;ensemble de son source. Quelques précisions: le workspace Repo n&apos;est pas un repository Git, il faut avoir un workflow avec Guerrit installé. Malgré tout, c&apos;est très intéressant à étudier mais un peu overkill pour mon cas.</li>
+<li><a href="http://www.kernel.org/pub/software/scm/git/docs/git-read-tree.html">read-tree</a> / <a href="http://www.kernel.org/pub/software/scm/git/docs/git-filter-branch.html">filter-branch</a>: vous trouverez un <a href="http://grummfy.be/blog/389">article en français</a> parlant de ce sujet. Ici, cela reviendrait à partir de l&apos;ensemble de repository Git crée et de les fusionner en un seul</li>
+<li>L&apos;aide GitHub pour faire des <a href="https://help.github.com/articles/working-with-subtree-merge">merges avec subtree</a> et aussi <a href="http://help.github.com/subtree-merge">ici</a></li>
+<li><a href="https://github.com/apenwarr/git-subtree">Git subtree</a>: solution sophistiquée et complexe, mais assez intéressante écrite en C</li>
+<li>à la <a href="https://github.com/symfony/symfony-standard">symfony</a></li>
+<li><a href="https://github.com/eneroth/git-externals">git-externals</a> qui a l&apos;avantage de mixer Git et SVN avec l&apos;utilisation de <a href="http://www.kernel.org/pub/software/scm/git/docs/howto/using-merge-subtree.html">la stratégie de subtree</a></li>
+<li><a href="https://github.com/winton/externals">externals</a></li>
+<li><a href="https://github.com/ronanchilvers/git-external">git external</a></li>
+<li><a href="https://github.com/evilchelu/braid">Braid</a></li>
+<li><a href="https://github.com/azimux/externals">externals</a> et son <a href="http://nopugs.com/ext-tutorial">tutorial</a></li>
+<li><a href="https://github.com/37signals/cached_externals">cached externals</a></li>
+<li><a href="https://github.com/dcestari/git-external">Git external: <em>a git-submodule alternative</em></a></li>
+</ul>
+<p>Ma préférence va au dernier cité: <a href="https://github.com/dcestari/git-external">Git external</a>, la <a href="http://dcestari.github.com/git-external/">documentation se trouve ici</a>.
+Certes, ce n&apos;est pas parfait mais je suis en train de faire pas mal de pull request pour améliorer ce projet, mon fork se trouve <a href="https://github.com/obazoud/git-external">ici</a>. A noter que la branche &quot;develop&quot; intégre déjà tous mes pull request non encore mergé dans le projet principal.
+
+</p>
+<h2>Git External</h2>
+<h3>Installation de Git External</h3>
+<p>Cloner le repository Git
+</p>
+<pre class="prettyprint lang-bsh">
+% git clone <a href="git://github.com/obazoud/git-external.git">git://github.com/obazoud/git-external.git</a>
+% git checkout develop
+</pre>
+
+<p>Builder et install le gem
+</p>
+<pre class="prettyprint lang-bsh">
+% gem build git-external.gemspec &amp;&amp; gem install git-external-0.1.1.gem
+</pre>
+
+<pre class="prettyprint lang-bsh">
+ % git external
+Usage: git external add repository-url path [branch]
+   or: git external status
+   or: git external init
+   or: git external update
+   or: git external cmd &apos;command&apos;
+</pre>
+
+<h3>Utilisation</h3>
+<p>Prenons un exemple rapide: <a href="https://github.com/jenkinsci/jenkins">Jenkins</a>. Nous allons créer un repository Git assemblant le repository Jenkins et deux plugins Jenkins.
+
+</p>
+<pre class="prettyprint lang-bsh">
+% git init
+% git external add <a href="git://github.com/jenkinsci/jenkins.git">git://github.com/jenkinsci/jenkins.git</a> jenkins master
+% git external add <a href="git://github.com/jenkinsci/dashboard-view-plugin.git">git://github.com/jenkinsci/dashboard-view-plugin.git</a> jenkins-plugins/dashboard-view-plugin master
+% git external add <a href="git://github.com/jenkinsci/maven3-plugin.git">git://github.com/jenkinsci/maven3-plugin.git</a> jenkins-plugins/maven3-plugin master
+% git external init
+jenkins-plugins/maven3-plugin
+Cloning into &apos;jenkins-plugins/maven3-plugin&apos;...
+remote: Counting objects: 65, done.
+remote: Compressing objects: 100% (32/32), done.
+remote: Total 65 (delta 9), reused 4 (delta 1)
+Receiving objects: 100% (65/65), 15.43 KiB, done.
+Resolving deltas: 100% (9/9), done.
+jenkins
+Cloning into &apos;jenkins&apos;...
+remote: Counting objects: 177346, done.
+remote: Compressing objects: 100% (51998/51998), done.
+remote: Total 177346 (delta 116849), reused 175606 (delta 115323)
+Receiving objects: 100% (177346/177346), 52.50 MiB | 753 KiB/s, done.
+Resolving deltas: 100% (116849/116849), done.
+jenkins-plugins/dashboard-view-plugin
+Cloning into &apos;jenkins-plugins/dashboard-view-plugin&apos;...
+remote: Counting objects: 1427, done.
+remote: Compressing objects: 100% (648/648), done.
+remote: Total 1427 (delta 438), reused 1220 (delta 343)
+Receiving objects: 100% (1427/1427), 149.13 KiB | 62 KiB/s, done.
+Resolving deltas: 100% (438/438), done.
+fatal: A branch named &apos;master&apos; already exists.
+</pre>
+
+<p>Alors comment ça marche ? C&apos;est simple en fait. Git external clone les repository Git dans les repertoires précisés et ceux ci sont ajoutés dans le .gitignore. Ils sont donc ignoré du nouveau repository. Voilà!
+</p>
+<pre class="prettyprint lang-bsh">
+% cat .gitignore
+jenkins
+jenkins-plugins/dashboard-view-plugin
+jenkins-plugins/maven3-plugin
+</pre>
+
+<p>Git external maintient dans le fichier .gitexternals comme suit.
+</p>
+<pre class="prettyprint lang-bsh">
+% cat .gitexternals 
+[external &quot;jenkins&quot;]
+  path = jenkins
+  url = <a href="git://github.com/jenkinsci/jenkins.git">git://github.com/jenkinsci/jenkins.git</a>
+  branch = master
+[external &quot;jenkins-plugins/dashboard-view-plugin&quot;]
+  path = jenkins-plugins/dashboard-view-plugin
+  url = <a href="git://github.com/jenkinsci/dashboard-view-plugin.git">git://github.com/jenkinsci/dashboard-view-plugin.git</a>
+  branch = master
+[external &quot;jenkins-plugins/maven3-plugin&quot;]
+  path = jenkins-plugins/maven3-plugin
+  url = <a href="git://github.com/jenkinsci/maven3-plugin.git">git://github.com/jenkinsci/maven3-plugin.git</a>
+  branch = master
+</pre>
+
+<p>Et enfin la commande git external cmd &apos;xxx&apos; permet d&apos;itérer sur tous les projets et d&apos;appliquer une commande shell, qui peut être une autre commande git. Par exemple, git external cmd &apos;git diff&apos;.
+
+</p>
+<p>Git external se base sur une branche et pas un commit, ce qui permet une gestion plus facile que les submodules par exemple.
+
+</p>
+<h2>Bonus</h2>
+<p>Une option de <a href="https://github.com/obazoud/svn2git-massive-conversion/svn2git-massive-conversion.rb">svn2git-massive-conversion.rb</a> permet de générer automatiquement les instructions pour Git External basé sur le fichier de layout.
+
+</p>
+<pre class="prettyprint lang-bsh">
+% ./svn2git-massive-conversion.rb --git-external
+</pre>
+
+<h2>Conclusion</h2>
+<p>Nous avons mis en oeuvre une migration massive de projets SVN vers Git et également une solution pour gérer plus facilement un ensemble conséquent de projet Git.
+
+</p>
+<p>Tout le code source se trouve sur GitHub: <a href="https://github.com/obazoud/svn2git-massive-conversion"><a href="https://github.com/obazoud/svn2git-massive-conversion">https://github.com/obazoud/svn2git-massive-conversion</a></a>.
+</p>
+
+                </div>
+                <hr/>
+                <p id="post_top_meta1" class="muted"><span class="meta-prep meta-prep-author">Posté le </span><span class="entry-date">mercredi 11 juillet 2012</span> | <span class="meta-sep"> Ecrit par </span><span class="author vcard">Olivier</span> | <a href="/articles/2012-07-11-conversion-en-masse-de-projets-svn-vers-git/">Lien permanent</a> | <a href="#disqus_thread">Commentaires</a> | Posté dans <a href="/category/Uncategorized" rel="category tag" title="View all posts in 'Uncategorized'">Uncategorized</a>&nbsp;
+                </p>
+                <p id="post_bottom_meta2" class="muted">Taggé avec: <a href="/tag/git" rel="category tag" title="View all posts in 'git'">git</a>&nbsp;<a href="/tag/svn" rel="category tag" title="View all posts in 'svn'">svn</a>&nbsp;<a href="/tag/ruby" rel="category tag" title="View all posts in 'ruby'">ruby</a>&nbsp;<a href="/tag/bash" rel="category tag" title="View all posts in 'bash'">bash</a>&nbsp;<a href="/tag/gem" rel="category tag" title="View all posts in 'gem'">gem</a>&nbsp;<a href="/tag/svn2git" rel="category tag" title="View all posts in 'svn2git'">svn2git</a>&nbsp;
+                </p>
+                <div id="social_bottom" class="topsocial">
+                  <div class="social"><a href="/post/2012-07-11-conversion-en-masse-de-projets-svn-vers-git.html" data-url="http://blog.bazoud.com/post/2012-07-11-conversion-en-masse-de-projets-svn-vers-git.html" data-text="Conversion en masse de projets SVN vers Git #git #svn #ruby #bash #gem #svn2git /via @obazoud" data-count="vertical" class="twitter-share-button">
+                      <twitter-share-button></twitter-share-button></a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+                  </div>
+                  <div class="social"><g:plusone size="tall" href="http://blog.bazoud.com/post/2012-07-11-conversion-en-masse-de-projets-svn-vers-git.html"></g:plusone></div>
+                  <div class="social">
+                    <script src="http://platform.linkedin.com/in.js" type="text/javascript"></script>
+                    <script type="IN/Share" data-url="http://blog.bazoud.com/post/2012-07-11-conversion-en-masse-de-projets-svn-vers-git.html" data-counter="top"></script>
+                  </div>
+                  <div class="social">
+                    <div class="share-delicious">
+                      <div id="delic" class="delicious">0</div>
+                      <div id="delicious-b"><a href="http://del.icio.us/post?url=http://blog.bazoud.com/post/2012-07-11-conversion-en-masse-de-projets-svn-vers-git.html&amp;title=&quot;Save To Delicious&quot;" target="blank">delicious</a></div>
+                    </div> <script type='text/javascript'>
+                     function delic(info) {
+                      if(!info[0]) return;
+                      var num = info[0].total_posts;
+                       if(!num) return;
+                       var delic = document.getElementById('delic');
+                       delic.innerHTML = '' + num;
+                       delic.style.textIndent = 0;
+                       delic.style.paddingRight= '6px';
+                     }
+                     </script>
+                     <script src='http://badges.del.icio.us/feeds/json/url/data?url=http://blog.bazoud.com/post/2012-07-11-conversion-en-masse-de-projets-svn-vers-git.html'&callback=declic></script>
+                  </div>
+                </div><script type="text/javascript">
+                  (function() {
+                    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                    po.src = 'https://apis.google.com/js/plusone.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                  })();
+                </script>
+                <hr/>
+                <h3>Articles similaires</h3>
+                <table class="table table-striped">
+                  <tbody>
+                    <tr>
+                      <td><a href="/articles/2011-11-02-ce-blog-change-de-technos/" title="git,nodejs,javascript,coffeescript,heroku,docpad,twitter,phantomjs,vows,bdd,wordpress">Ce blog change de technos</a></td>
+                    </tr>
+                    <tr>
+                      <td><a href="/articles/2008-07-31-how-to-speed-up-the-gwt-compiler-part-i/" title="maven,GWT,Oracle,jdk6,jdk5,svn,tomcat">How to speed up the GWT compiler ? (Part I)</a></td>
+                    </tr>
+                    <tr>
+                      <td><a href="/articles/2012-06-15-maven-la-completion-et-la-couleur/" title="maven,zsh,bash,oh-my-zsh">Maven - La complétion et la couleur</a></td>
+                    </tr>
+                    <tr>
+                      <td><a href="/articles/2010-05-04-git-et-ubuntu/" title="Ubuntu,git,ppa">Git et ubuntu</a></td>
+                    </tr>
+                    <tr>
+                      <td><a href="/articles/2012-07-18-vagrant-createur-de-vm/" title="vagrant,devops,ruby,git,opschef,puppet,jenkins,sonar,cloud">Vagrant, créateur de VM</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <h3>Commentaires</h3>
+                <div id="disqus_thread"></div><script type="text/javascript">
+                var disqus_shortname = 'bazoud';
+                (function() {
+                   var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                   dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="inner">
+        <p class="pull-right"><a href="#">Revenir en haut</a></p>
+        <p>
+           
+          Le blog d'Olivier - Copyright © 2007-2012  Olivier Bazoud - Powered by <a href="http://www.nodejs.org" title="Powered by Node.js" target="_blank">Node.js</a> and<a href="https://github.com/jnordberg/wintersmith" title="Powered by Wintersmith" target="_blank"> Wintersmith </a> - Special thanks to <a href="http://twitter.github.com/bootstrap/" target="_blank" title="Bootstrap, from Twitter">Twitter Bootstrap</a>
+        </p>
+      </div>
+    </footer><script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1176603-1']);
+     
+    _gaq.push(['_trackPageview']);
+     
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+  </body>
+</html>

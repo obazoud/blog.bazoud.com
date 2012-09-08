@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:slash="http://purl.org/rss/1.0/modules/slash/">
+  <channel></channel>
+  <title>Le blog d'Olivier</title>
+  <atom:link href="http://feeds.feedburner.com/bazoud/feed" rel="self" type="application/rss+xml"></atom:link>
+  <link>http://blog.bazoud.com</link>
+  <description>Le blog d'Olivier</description>
+  <lastBuildDate>2012-09-08T17:16:31.697Z</lastBuildDate>
+  <language>fr</language><sy:updatePeriod>hourly</sy:updatePeriod>
+  <sy:updateFrequency>1</sy:updateFrequency>
+  <generator uri="https://github.com/jnordberg/wintersmith" version="1.1.1">Wintersmith</generator>
+  <item>
+    <title><![CDATA[Vagrant, créateur de VM]]></title>
+    <link>http://blog.bazoud.com/articles/2012-07-18-vagrant-createur-de-vm/</link>
+    <comments>http://blog.bazoud.com/articles/2012-07-18-vagrant-createur-de-vm/#disqus_thread</comments>
+    <pubDate>2012-07-18T21:00:00.000Z</pubDate>
+    <dc:creator>Olivier</dc:creator>
+    <category><![CDATA[vagrant]]></category>
+    <category><![CDATA[devops]]></category>
+    <category><![CDATA[ruby]]></category>
+    <category><![CDATA[git]]></category>
+    <category><![CDATA[opschef]]></category>
+    <category><![CDATA[puppet]]></category>
+    <category><![CDATA[jenkins]]></category>
+    <category><![CDATA[sonar]]></category>
+    <category><![CDATA[cloud]]></category>
+    <guid isPermaLink="true">http://blog.bazoud.com/articles/2012-07-18-vagrant-createur-de-vm/</guid>
+    <author>Olivier</author>
+    <description><![CDATA[Mise en oeuvre de Vagrant pour créer des VM VirtualBox, pour l'exemple nous allons en créer une avec Jenkins et Sonar via Chef - &lt;a href="http://blog.bazoud.com/articles/2012-07-18-vagrant-createur-de-vm/"&gt;Lire la suite&lt;/a&gt;]]></description>
+    <content:encoded><![CDATA[Mise en oeuvre de Vagrant pour créer des VM VirtualBox, pour l'exemple nous allons en créer une avec Jenkins et Sonar via Chef - &lt;a href="http://blog.bazoud.com/articles/2012-07-18-vagrant-createur-de-vm/"&gt;Lire la suite&lt;/a&gt;]]></content:encoded>
+    <wfw:commentRss>[object Object]/articles/2012-07-18-vagrant-createur-de-vm//lastest.rss</wfw:commentRss>
+    <slash:comments>0</slash:comments>
+  </item>
+  <item>
+    <title><![CDATA[Conversion en masse de projets SVN vers Git]]></title>
+    <link>http://blog.bazoud.com/articles/2012-07-11-conversion-en-masse-de-projets-svn-vers-git/</link>
+    <comments>http://blog.bazoud.com/articles/2012-07-11-conversion-en-masse-de-projets-svn-vers-git/#disqus_thread</comments>
+    <pubDate>2012-07-11T21:00:00.000Z</pubDate>
+    <dc:creator>Olivier</dc:creator>
+    <category><![CDATA[git]]></category>
+    <category><![CDATA[svn]]></category>
+    <category><![CDATA[ruby]]></category>
+    <category><![CDATA[bash]]></category>
+    <category><![CDATA[gem]]></category>
+    <category><![CDATA[svn2git]]></category>
+    <guid isPermaLink="true">http://blog.bazoud.com/articles/2012-07-11-conversion-en-masse-de-projets-svn-vers-git/</guid>
+    <author>Olivier</author>
+    <description><![CDATA[Article sur la migration d'un large repository SVN vers un ensemble de repositories Git. - &lt;a href="http://blog.bazoud.com/articles/2012-07-11-conversion-en-masse-de-projets-svn-vers-git/"&gt;Lire la suite&lt;/a&gt;]]></description>
+    <content:encoded><![CDATA[Article sur la migration d'un large repository SVN vers un ensemble de repositories Git. - &lt;a href="http://blog.bazoud.com/articles/2012-07-11-conversion-en-masse-de-projets-svn-vers-git/"&gt;Lire la suite&lt;/a&gt;]]></content:encoded>
+    <wfw:commentRss>[object Object]/articles/2012-07-11-conversion-en-masse-de-projets-svn-vers-git//lastest.rss</wfw:commentRss>
+    <slash:comments>0</slash:comments>
+  </item>
+  <item>
+    <title><![CDATA[Maven - La complétion et la couleur]]></title>
+    <link>http://blog.bazoud.com/articles/2012-06-15-maven-la-completion-et-la-couleur/</link>
+    <comments>http://blog.bazoud.com/articles/2012-06-15-maven-la-completion-et-la-couleur/#disqus_thread</comments>
+    <pubDate>2012-06-15T21:30:00.000Z</pubDate>
+    <dc:creator>Olivier</dc:creator>
+    <category><![CDATA[maven]]></category>
+    <category><![CDATA[zsh]]></category>
+    <category><![CDATA[bash]]></category>
+    <category><![CDATA[oh-my-zsh]]></category>
+    <guid isPermaLink="true">http://blog.bazoud.com/articles/2012-06-15-maven-la-completion-et-la-couleur/</guid>
+    <author>Olivier</author>
+    <description><![CDATA[Tout ce que vous voulez savoir sur la couleur et la complétion Maven. - &lt;a href="http://blog.bazoud.com/articles/2012-06-15-maven-la-completion-et-la-couleur/"&gt;Lire la suite&lt;/a&gt;]]></description>
+    <content:encoded><![CDATA[Tout ce que vous voulez savoir sur la couleur et la complétion Maven. - &lt;a href="http://blog.bazoud.com/articles/2012-06-15-maven-la-completion-et-la-couleur/"&gt;Lire la suite&lt;/a&gt;]]></content:encoded>
+    <wfw:commentRss>[object Object]/articles/2012-06-15-maven-la-completion-et-la-couleur//lastest.rss</wfw:commentRss>
+    <slash:comments>0</slash:comments>
+  </item>
+  <item>
+    <title><![CDATA[Hands On Spring Batch]]></title>
+    <link>http://blog.bazoud.com/articles/2012-02-16-hands-on-spring-batch/</link>
+    <comments>http://blog.bazoud.com/articles/2012-02-16-hands-on-spring-batch/#disqus_thread</comments>
+    <pubDate>2012-02-16T09:30:00.000Z</pubDate>
+    <dc:creator>Olivier</dc:creator>
+    <category><![CDATA[springbatch]]></category>
+    <category><![CDATA[springbatchinaction]]></category>
+    <guid isPermaLink="true">http://blog.bazoud.com/articles/2012-02-16-hands-on-spring-batch/</guid>
+    <author>Olivier</author>
+    <description><![CDATA[Pour le premier Hands On de l'année 2012, nous aurons l'occasion de tester Spring Batch mardi prochain, le 21 février. - &lt;a href="http://blog.bazoud.com/articles/2012-02-16-hands-on-spring-batch/"&gt;Lire la suite&lt;/a&gt;]]></description>
+    <content:encoded><![CDATA[Pour le premier Hands On de l'année 2012, nous aurons l'occasion de tester Spring Batch mardi prochain, le 21 février. - &lt;a href="http://blog.bazoud.com/articles/2012-02-16-hands-on-spring-batch/"&gt;Lire la suite&lt;/a&gt;]]></content:encoded>
+    <wfw:commentRss>[object Object]/articles/2012-02-16-hands-on-spring-batch//lastest.rss</wfw:commentRss>
+    <slash:comments>0</slash:comments>
+  </item>
+  <item>
+    <title><![CDATA[Conférences Spring Batch]]></title>
+    <link>http://blog.bazoud.com/articles/2011-11-28-conferences-spring-batch/</link>
+    <comments>http://blog.bazoud.com/articles/2011-11-28-conferences-spring-batch/#disqus_thread</comments>
+    <pubDate>2011-11-28T15:30:00.000Z</pubDate>
+    <dc:creator>Olivier</dc:creator>
+    <category><![CDATA[springbatch]]></category>
+    <category><![CDATA[springbatchinaction]]></category>
+    <category><![CDATA[sugfr]]></category>
+    <category><![CDATA[chtijug]]></category>
+    <guid isPermaLink="true">http://blog.bazoud.com/articles/2011-11-28-conferences-spring-batch/</guid>
+    <author>Olivier</author>
+    <description><![CDATA[Prochaines conférences sur Spring Batch: Lille et Paris. - &lt;a href="http://blog.bazoud.com/articles/2011-11-28-conferences-spring-batch/"&gt;Lire la suite&lt;/a&gt;]]></description>
+    <content:encoded><![CDATA[Prochaines conférences sur Spring Batch: Lille et Paris. - &lt;a href="http://blog.bazoud.com/articles/2011-11-28-conferences-spring-batch/"&gt;Lire la suite&lt;/a&gt;]]></content:encoded>
+    <wfw:commentRss>[object Object]/articles/2011-11-28-conferences-spring-batch//lastest.rss</wfw:commentRss>
+    <slash:comments>0</slash:comments>
+  </item>
+  <item>
+    <title><![CDATA[Ce blog change de technos]]></title>
+    <link>http://blog.bazoud.com/articles/2011-11-02-ce-blog-change-de-technos/</link>
+    <comments>http://blog.bazoud.com/articles/2011-11-02-ce-blog-change-de-technos/#disqus_thread</comments>
+    <pubDate>2011-11-02T09:30:00.000Z</pubDate>
+    <dc:creator>Olivier</dc:creator>
+    <category><![CDATA[git]]></category>
+    <category><![CDATA[nodejs]]></category>
+    <category><![CDATA[javascript]]></category>
+    <category><![CDATA[coffeescript]]></category>
+    <category><![CDATA[heroku]]></category>
+    <category><![CDATA[docpad]]></category>
+    <category><![CDATA[twitter]]></category>
+    <category><![CDATA[phantomjs]]></category>
+    <category><![CDATA[vows]]></category>
+    <category><![CDATA[bdd]]></category>
+    <category><![CDATA[wordpress]]></category>
+    <guid isPermaLink="true">http://blog.bazoud.com/articles/2011-11-02-ce-blog-change-de-technos/</guid>
+    <author>Olivier</author>
+    <description><![CDATA[Ce blog change de technos, abandonne wordpress et utilise node.js FTW! - &lt;a href="http://blog.bazoud.com/articles/2011-11-02-ce-blog-change-de-technos/"&gt;Lire la suite&lt;/a&gt;]]></description>
+    <content:encoded><![CDATA[Ce blog change de technos, abandonne wordpress et utilise node.js FTW! - &lt;a href="http://blog.bazoud.com/articles/2011-11-02-ce-blog-change-de-technos/"&gt;Lire la suite&lt;/a&gt;]]></content:encoded>
+    <wfw:commentRss>[object Object]/articles/2011-11-02-ce-blog-change-de-technos//lastest.rss</wfw:commentRss>
+    <slash:comments>0</slash:comments>
+  </item>
+  <item>
+    <title><![CDATA[Migration de SVN vers GIT en 4 étapes]]></title>
+    <link>http://blog.bazoud.com/articles/2010-12-11-migration-de-svn-vers-git-en-4-etapes/</link>
+    <comments>http://blog.bazoud.com/articles/2010-12-11-migration-de-svn-vers-git-en-4-etapes/#disqus_thread</comments>
+    <pubDate>2010-12-11T18:47:32.000Z</pubDate>
+    <dc:creator>Olivier</dc:creator>
+    <category><![CDATA[svn]]></category>
+    <category><![CDATA[awk]]></category>
+    <category><![CDATA[shell]]></category>
+    <category><![CDATA[git]]></category>
+    <category><![CDATA[subversion]]></category>
+    <category><![CDATA[grep]]></category>
+    <guid isPermaLink="true">http://blog.bazoud.com/articles/2010-12-11-migration-de-svn-vers-git-en-4-etapes/</guid>
+    <author>Olivier</author>
+    <description><![CDATA[Migration de SVN vers Git en 4 étapes - &lt;a href="http://blog.bazoud.com/articles/2010-12-11-migration-de-svn-vers-git-en-4-etapes/"&gt;Lire la suite&lt;/a&gt;]]></description>
+    <content:encoded><![CDATA[Migration de SVN vers Git en 4 étapes - &lt;a href="http://blog.bazoud.com/articles/2010-12-11-migration-de-svn-vers-git-en-4-etapes/"&gt;Lire la suite&lt;/a&gt;]]></content:encoded>
+    <wfw:commentRss>[object Object]/articles/2010-12-11-migration-de-svn-vers-git-en-4-etapes//lastest.rss</wfw:commentRss>
+    <slash:comments>0</slash:comments>
+  </item>
+  <item>
+    <title><![CDATA[How to implement the decode function in h2 like decode function in oracle ?]]></title>
+    <link>http://blog.bazoud.com/articles/2010-12-10-how-to-implement-the-decode-function-in-h2-like-decode-function-in-oracle-2/</link>
+    <comments>http://blog.bazoud.com/articles/2010-12-10-how-to-implement-the-decode-function-in-h2-like-decode-function-in-oracle-2/#disqus_thread</comments>
+    <pubDate>2010-12-09T23:25:44.000Z</pubDate>
+    <dc:creator>Olivier</dc:creator>
+    <category><![CDATA[Oracle]]></category>
+    <category><![CDATA[java]]></category>
+    <category><![CDATA[h2]]></category>
+    <category><![CDATA[decode]]></category>
+    <guid isPermaLink="true">http://blog.bazoud.com/articles/2010-12-10-how-to-implement-the-decode-function-in-h2-like-decode-function-in-oracle-2/</guid>
+    <author>Olivier</author>
+    <description><![CDATA[ - &lt;a href="http://blog.bazoud.com/articles/2010-12-10-how-to-implement-the-decode-function-in-h2-like-decode-function-in-oracle-2/"&gt;Lire la suite&lt;/a&gt;]]></description>
+    <content:encoded><![CDATA[ - &lt;a href="http://blog.bazoud.com/articles/2010-12-10-how-to-implement-the-decode-function-in-h2-like-decode-function-in-oracle-2/"&gt;Lire la suite&lt;/a&gt;]]></content:encoded>
+    <wfw:commentRss>[object Object]/articles/2010-12-10-how-to-implement-the-decode-function-in-h2-like-decode-function-in-oracle-2//lastest.rss</wfw:commentRss>
+    <slash:comments>0</slash:comments>
+  </item>
+  <item>
+    <title><![CDATA[Groovy aime Hudson]]></title>
+    <link>http://blog.bazoud.com/articles/2010-05-31-groovy-aime-hudson/</link>
+    <comments>http://blog.bazoud.com/articles/2010-05-31-groovy-aime-hudson/#disqus_thread</comments>
+    <pubDate>2010-05-31T18:29:53.000Z</pubDate>
+    <dc:creator>Olivier</dc:creator>
+    <guid isPermaLink="true">http://blog.bazoud.com/articles/2010-05-31-groovy-aime-hudson/</guid>
+    <author>Olivier</author>
+    <description><![CDATA[ - &lt;a href="http://blog.bazoud.com/articles/2010-05-31-groovy-aime-hudson/"&gt;Lire la suite&lt;/a&gt;]]></description>
+    <content:encoded><![CDATA[ - &lt;a href="http://blog.bazoud.com/articles/2010-05-31-groovy-aime-hudson/"&gt;Lire la suite&lt;/a&gt;]]></content:encoded>
+    <wfw:commentRss>[object Object]/articles/2010-05-31-groovy-aime-hudson//lastest.rss</wfw:commentRss>
+    <slash:comments>0</slash:comments>
+  </item>
+  <item>
+    <title><![CDATA[Spring Batch Advanced, la présentation dont vous êtes le héros]]></title>
+    <link>http://blog.bazoud.com/articles/2010-05-06-spring-batch-advanced-la-presentation-dont-vous-etes-le-heros/</link>
+    <comments>http://blog.bazoud.com/articles/2010-05-06-spring-batch-advanced-la-presentation-dont-vous-etes-le-heros/#disqus_thread</comments>
+    <pubDate>2010-05-06T10:26:21.000Z</pubDate>
+    <dc:creator>Olivier</dc:creator>
+    <category><![CDATA[evenement]]></category>
+    <category><![CDATA[spring]]></category>
+    <category><![CDATA[springbatch]]></category>
+    <category><![CDATA[advanced]]></category>
+    <category><![CDATA[sugfr]]></category>
+    <guid isPermaLink="true">http://blog.bazoud.com/articles/2010-05-06-spring-batch-advanced-la-presentation-dont-vous-etes-le-heros/</guid>
+    <author>Olivier</author>
+    <description><![CDATA[ - &lt;a href="http://blog.bazoud.com/articles/2010-05-06-spring-batch-advanced-la-presentation-dont-vous-etes-le-heros/"&gt;Lire la suite&lt;/a&gt;]]></description>
+    <content:encoded><![CDATA[ - &lt;a href="http://blog.bazoud.com/articles/2010-05-06-spring-batch-advanced-la-presentation-dont-vous-etes-le-heros/"&gt;Lire la suite&lt;/a&gt;]]></content:encoded>
+    <wfw:commentRss>[object Object]/articles/2010-05-06-spring-batch-advanced-la-presentation-dont-vous-etes-le-heros//lastest.rss</wfw:commentRss>
+    <slash:comments>0</slash:comments>
+  </item>
+</rss>
