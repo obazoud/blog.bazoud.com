@@ -46,7 +46,7 @@
 		"request": "*"
 	},
 	"scripts": {
-		"test": "vows --spec"
+		"test": "vows --spec test/*-test.coffee"
 	},
 	"engines" : {
 		"node": "0.8.x",
