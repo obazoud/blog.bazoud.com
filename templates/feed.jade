@@ -38,8 +38,8 @@ rss(version='2.0',
             category <![CDATA[#{currentTag}]]>
         guid(isPermaLink='true')= permalink
         author= article.metadata.author
-        description <![CDATA[#{article.metadata.excerpt} - &lt;a href="#{permalink}"&gt;Lire la suite&lt;/a&gt;]]>
-        content:encoded <![CDATA[#{article.metadata.excerpt} - &lt;a href="#{permalink}"&gt;Lire la suite&lt;/a&gt;]]>
+        description <![CDATA[#{article.metadata.excerpt}]]>
+        content:encoded <![CDATA[#{article.metadata.excerpt}]]>
         wfw:commentRss= locals.disqus + article.url + "/lastest.rss"
         slash:comments 0
 
