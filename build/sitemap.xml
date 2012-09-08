@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/archive.html</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -499,469 +499,469 @@
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/Ubuntu</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/git</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/nodejs</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/javascript</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/coffeescript</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/heroku</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/docpad</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/twitter</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/phantomjs</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/vows</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/bdd</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/wordpress</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/firefox</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/Uncategorized</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/jdk5</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/java</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/Hibernate</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/generics</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/evenement</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/google</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/Oracle</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://blog.bazoud.com/tag/springbatch</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://blog.bazoud.com/tag/springbatchinaction</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/maven</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/GWT</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/jdk6</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/svn</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/tomcat</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://blog.bazoud.com/tag/springbatch</loc>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://blog.bazoud.com/tag/springbatchinaction</loc>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/chrome</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/zsh</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/bash</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/oh-my-zsh</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/Stripes</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/blog</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://blog.bazoud.com/tag/h2</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://blog.bazoud.com/tag/decode</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/commons-logging</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://blog.bazoud.com/tag/h2</loc>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://blog.bazoud.com/tag/decode</loc>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/ppa</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/eclipse</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/testng</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/spring</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/advanced</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/sugfr</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/vi</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/flash</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/chromium</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/JMS</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/ActiveMQ</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/shell</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/grep</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/Hibernate4gwt</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/vagrant</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/devops</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/ruby</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/opschef</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/puppet</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/jenkins</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/sonar</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/cloud</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/lucid-lynx</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/linux</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/awk</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/subversion</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/vmware</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/Derby</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://blog.bazoud.com/tag/chtijug</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/viewsvn</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/sed</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://blog.bazoud.com/tag/chtijug</loc>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/gem</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/tag/svn2git</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/category/Uncategorized</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/category/conference</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/archive/2007</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/archive/2011</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/archive/2008</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/archive/2012</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/archive/2009</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://blog.bazoud.com/archive/2010</loc>
-    <lastmod>2012-09-08T17:16:31.738Z</lastmod>
+    <lastmod>2012-09-08T19:27:13.509Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>

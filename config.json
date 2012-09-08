@@ -5,7 +5,7 @@
     "name": "Le blog d'Olivier",
     "owner": "Olivier Bazoud",
     "description": "",
-    "generator": "Wintersmithq",
+    "generator": "Wintersmith",
     "language": "fr-FR",
     "googleSiteVerification": "google36a66ae7f1a82c45",
     "keywords": ["geek","web","java","spring","spring batch","spring batch in action","node.js","git","ruby","svn","subversion"],
