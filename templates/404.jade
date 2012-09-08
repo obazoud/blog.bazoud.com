@@ -1,0 +1,27 @@
+
+extends layout
+
+block append title
+  |  » Page non trouvée
+
+block content
+  != page.html
+  - var archive = _.chain(contents.articles._.directories).map(function(item) {
+  -   return item.index
+  - }).compact().filter(function(article) {
+  -   return article.metadata.ignored !== true
+  - }).sortBy(function(item) {
+  -   return -item.date
+  - }).groupBy(function(item) {
+  -   return item.date.getFullYear()
+  - }).value()
+  - var map = _.chain(Date.CultureInfo.monthNames).map(function(item) {
+  -   return item[0].toUpperCase() + item.substring(1)
+  - }).value()
+
+  section#page
+    .page-header
+      h1 Page non trouvée
+    .hero-unit
+      h2 404
+      p A work in progress
