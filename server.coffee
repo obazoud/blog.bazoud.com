@@ -146,6 +146,8 @@ app.configure () ->
     app.get /^\/category\/([a-zA-Z-0-9\-]+)(?!\html)$/, (req, res) ->
       res.redirect 301, '/category/' + req.params + '.html'
 
+    app.get /^\/articles\/([a-zA-Z-0-9\-]+)\/$/, (req, res) ->
+      res.redirect 301, '/articles/' + req.params + '/index.html'
     app.get '/articles/:id\.html', (req, res) ->
       res.redirect 301, '/articles/' + req.params.id + '/index.html'
 
