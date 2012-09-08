@@ -1,0 +1,29 @@
+
+extends layout
+
+block append title
+  |  » Catégorie #{page.metadata.currentCategory}
+
+block content
+  include author
+  - var articles = _.chain(contents.articles._.directories).map(function(item) {
+  -   return item.index
+  - }).compact().filter(function(article) {
+  -   return article.metadata.ignored !== true
+  - }).filter(function(article) {
+  -   return _.indexOf(article.metadata.categories, page.metadata.currentCategory) >= 0
+  - }).sortBy(function(item) {
+  -   return -item.date
+  - }).value()
+  section#page
+    .page-header
+      h1 Catégorie #{page.metadata.currentCategory}
+    table.table.table-striped
+      tbody
+        each article in articles
+          tr
+            td
+              span
+                = article.date.toString('dd/MM/yyyy')
+            td
+              a(href=article.url)= article.title

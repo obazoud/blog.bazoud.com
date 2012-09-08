@@ -1,4 +1,3 @@
 # This is the source code for my website/blog
 
-It is automatically transformed by [DocPad](http://github.com/balupton/docpad) into a static website
-
+It is automatically transformed by [Wintersmith](https://github.com/jnordberg/wintersmith) into a static website.

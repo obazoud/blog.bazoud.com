@@ -1,155 +1,178 @@
 # Requires
-docpad = require 'docpad'
-mydocpad = require './lib/MyDocPad'
+path = require 'path'
+wintersmith = require 'wintersmith'
 express = require 'express'
-fs = require 'fs'
-gzippo = require './lib/gzippo.js'
+gzippo = require 'gzippo'
 RSS = require 'rss'
+fs = require 'fs'
+async = require 'async'
+util = require 'util'
 
-# Variables
-oneDay = 86400000
-expiresOffset = oneDay * 7
+wintersmithPath = path.dirname require.resolve 'wintersmith'
+wintersmithCli = require wintersmithPath + '/cli'
+
+workDir = path.resolve process.cwd()
+buildDir = path.join workDir, './build'
 
 # -------------------------------------
-# Server
-
-# Configuration
-masterPort = process.env.PORT || 10113
-
-# Create Server
-masterServer = express.createServer()
-
-# Setup DocPad
-docpadPort = masterPort
-docpadServer = masterServer
-
+# Express configuration
 cache = []
+port = process.env.PORT || 10113
+app = express()
 
-# -------------------------------------
-# Middlewares
+app.configure () ->
+  console.log 'Express environment: common'
+  app.use express.bodyParser()
+  app.use express.methodOverride()
 
-configureDocPadInstance = (docpadInstance) ->
-	# Static Middleware
-	docpadInstance.action 'generate', (next) ->
-		docpadInstance.action 'watch', (next) ->
-			docpadInstance.action 'server', (next) ->
-				docpadServer.use gzippo.staticGzip docpadInstance.outPath, { maxAge: expiresOffset }
+  # 404 feed
+  app.get '/404.xml', (req, res) ->
+    feed = new RSS {
+      title: 'Le Blog d Olivier: 404 feed'
+      feed_url: 'http://blog.bazoud.com/404.xml'
+      site_url: 'http://blog.bazoud.com'
+      author: 'Olivier Bazoud'
+    }
+    for page in cache
+      feed.item {
+        title:  'blog.bazoud.com: 404 Not Found'
+        description: page.referer + ' -> ' + page.path
+        url: 'http://blog.bazoud.com/404.xml'
+        author: 'Olivier Bazoud'
+        date: page.when
+      }
+    res.header "Content-Type", "text/xml; charset=UTF-8"
+    res.send feed.xml(), 200
 
-				# Router Middleware
-				docpadServer.use docpadServer.router
+  # Aliases
+  fs.readFile path.join(buildDir, 'aliases.json'), (err, buffer) ->
+    throw err if err
+    aliases = JSON.parse buffer.toString()
+    app.get '/', (req, res, next) ->
+      p = req.param 'p', null
+      if p
+        if aliases[req.url.toLowerCase()]
+          res.redirect(301, aliases[req.url.toLowerCase()])
+          res.end()
+        else
+          next()
+      else
+        #req.url = req.url + '/'
+        if aliases[req.url.toLowerCase()]
+          res.redirect(301, aliases[req.url.toLowerCase()])
+          res.end()
+        else
+          next()
+    app.get /\/[a-z0-9\-]+\/?$/i, (req, res, next) =>
+      if aliases[req.url.toLowerCase()]
+        res.redirect(301, aliases[req.url.toLowerCase()])
+        res.end()
+      else
+        url = req.url
+        if !req.url.toLowerCase().match('\/$')
+          url = req.url + '/'
+        if aliases[url.toLowerCase()]
+          res.redirect(301, aliases[url.toLowerCase()])
+          res.end()
+        else
+          next()
+  
+    # -------------------------------------
+    # Redirects
 
-				# 404 Middleware
-				docpadServer.use (req,res,next) ->
-					cache.push { path: req.path, referer : req.header('Referer'), when: new Date() }
-					fs.readFile __dirname + '/out/404.html', 'utf8', (err, text) ->
-						res.send text, 404
+    # healthCheck
+    app.get '/healthCheck', (req, res) ->
+      res.send 'ok', 200
+    app.get '/healthCheckKO', (req, res) ->
+      res.send 'ko', 200
+    app.get '/healthCheckRange', (req, res) ->
+      res.send '10', 200
 
-				# 404 rss
-				docpadServer.get '/404.xml', (req, res) ->
-					feed = new RSS {
-						title: 'Le Blog d Olivier: 404 feed'
-						feed_url: 'http://blog.bazoud.com/404.xml'
-						site_url: 'http://blog.bazoud.com'
-						author: 'Olivier Bazoud'
-					}
-					for page in cache
-						feed.item {
-							title:  'blog.bazoud.com: 404 Not Found'
-							description: page.referer + ' -> ' + page.path
-							url: 'http://blog.bazoud.com/404.xml'
-							author: 'Olivier Bazoud'
-							date: page.when.toIsoDateString()
-						}
-					res.header "Content-Type", "text/xml; charset=UTF-8"
-					res.send feed.xml(), 200
+    # feeds
+    app.get '/feed', (req, res) ->
+      res.redirect 301, '/feed.xml'
 
-# Configure
-docpadServer.configure 'development', () ->
-	# Settings
-	docpadInstance = new mydocpad.MyDocPad {
-		logLevel: 6
-		port: docpadPort
-		maxAge: 0
-		server: masterServer
-		rootPath: __dirname
-	}
-	configureDocPadInstance docpadInstance
+    app.get '/rss', (req, res) ->
+      res.redirect 301, '/rss.xml'
 
-docpadServer.configure 'production', () ->
-	# Settings
-	docpadInstance = new mydocpad.MyDocPad {
-		logLevel: 6
-		port: docpadPort
-		maxAge: expiresOffset
-		server: masterServer
-		rootPath: __dirname
-	}
-	configureDocPadInstance docpadInstance
+    app.get '/atom', (req, res) ->
+      res.redirect 301, '/atom.xml'
 
-# -------------------------------------
-# Start Server
+    # legacy wordpress
+    app.get '/feed/atom', (req, res) ->
+      res.redirect 301, '/atom.xml'
+    app.get '/feed/rss2', (req, res) ->
+      res.redirect 301, '/feed.xml'
+    app.get '/feed/rss2/comments', (req, res) ->
+      res.redirect 301, 'http://feeds.bazoud.com/bazoud/comments'
+    app.get '^/feed/tag/*$', (req, res) ->
+      res.redirect 301, '/feed.xml'
+    app.get '^/post/tag/*$', (req, res) ->
+      res.redirect 301, '/feed.xml'
+    app.get '/archive/:year/:mount', (req, res) ->
+      res.redirect 301, '/archive/' + req.params.year
 
-# Start Server
-masterServer.listen masterPort
-console.log 'Express server listening on port %d', masterServer.address().port
+    app.get '^/wp-*$', (req, res) ->
+      res.send 'Gone', 410
 
-# DNS Servers
-# masterServer.use express.vhost 'yourwebsite.*', docpadServer
+    # quick fix
+    app.get '^/post/2008-07-31-can-i-speed-up-the-gwt-compiler.html$', (req, res) ->
+      res.redirect 301, '/post/2008-07-31-how-to-speed-up-the-gwt-compiler-part-i.html'
+    app.get '^/post/2008-07-31-can-i-speed-up-the-gwt-compiler-part-ii.html$', (req, res) ->
+      res.redirect 301, '/post/2008-07-31-how-to-speed-up-the-gwt-compiler-part-ii.html'
+    app.get '^/post/2008-07-31-can-i-speed-up-the-gwt-compiler-part-iii.html$', (req, res) ->
+      res.redirect 301, '/post/2008-07-31-how-to-speed-up-the-gwt-compiler-part-iii.html'
 
+    # images
+    app.get '/public/billets/eclipse1.png', (req, res) ->
+      res.redirect 301, '/images/eclipse1.png'
+    app.get '/public/billets/feisty/29.png', (req, res) ->
+      res.redirect 301, '/images/29.png'
+    app.get '/wp-content/uploads/eclipse2.png', (req, res) ->
+      res.redirect 301, '/images/eclipse2.png'
 
-# -------------------------------------
-# Redirects
+    # legacy docpad
+    app.get '/post/:id\.html', (req, res) ->
+      res.redirect 301, '/articles/' + req.params.id + '/index.html'
 
-# Place your redirects here
+    app.get '/next', (req, res) ->
+      res.redirect 301, '/next.html'
 
-# healthCheck
-docpadServer.get '/healthCheck', (req, res) ->
-	res.send 'ok', 200
-docpadServer.get '/healthCheckKO', (req, res) ->
-	res.send 'ko', 200
-docpadServer.get '/healthCheckRange', (req, res) ->
-	res.send '10', 200
+    # rewrite wintersmith
+    app.get /^\/tag\/([a-zA-Z-0-9\-]+)(?!\html)$/, (req, res) ->
+      res.redirect 301, '/tag/' + req.params + '.html'
+    app.get /^\/archive\/([0-9]+)(?!\html)$/, (req, res) ->
+      res.redirect 301, '/archive/' + req.params + '.html'
+    app.get /^\/category\/([a-zA-Z-0-9\-]+)(?!\html)$/, (req, res) ->
+      res.redirect 301, '/category/' + req.params + '.html'
 
-# feeds
-docpadServer.get '/feed', (req, res) ->
-	res.redirect '/feed.xml', 301
+    app.get '/articles/:id\.html', (req, res) ->
+      res.redirect 301, '/articles/' + req.params.id + '/index.html'
 
-docpadServer.get '/rss', (req, res) ->
-	res.redirect '/rss.xml', 301
+    # 404 Middleware
+    app.use (req,res,next) ->
+      cache.push { path: req.path, referer : req.header('Referer'), when: new Date() }
+      fs.readFile path.join(buildDir, '404.html'), 'utf8', (err, text) ->
+        res.send text, 404
 
-docpadServer.get '/atom', (req, res) ->
-	res.redirect '/atom.xml', 301
+app.configure 'development', () ->
+  console.log 'Express environment: development'
+  app.use express.errorHandler({ dumpExceptions: true, showStack: true })
+  app.use gzippo.staticGzip buildDir
 
-# legacy
-docpadServer.get '/feed/atom', (req, res) ->
-	res.redirect '/atom.xml', 301
-docpadServer.get '/feed/rss2', (req, res) ->
-	res.redirect '/feed.xml', 301
-docpadServer.get '/feed/rss2/comments', (req, res) ->
-	res.redirect 'http://feeds.bazoud.com/bazoud/comments', 301
-docpadServer.get '^/feed/tag/*$', (req, res) ->
-	res.redirect '/feed.xml', 301
-docpadServer.get '^/post/tag/*$', (req, res) ->
-	res.redirect '/feed.xml', 301
-docpadServer.all '/archive/:year/:mount', (req, res) ->
-  res.redirect '/archive/' + req.params.year, 301
+  # -------------------------------------
+  # Wintersmith generation
+  wintersmithCli.main (options) ->
+    console.log 'Pages generated by Wintersmith.\n'
 
-docpadServer.get '^/wp-*$', (req, res) ->
-  res.send 'Gone', 410
+app.configure 'production', () ->
+  console.log 'Express environment: production'
+  app.use express.errorHandler()
+  oneDay = 86400000
+  expiresOffset = oneDay * 7
+  app.use express.static buildDir, { maxAge: expiresOffset }
 
-# quick fix
-docpadServer.get '^/post/2008-07-31-can-i-speed-up-the-gwt-compiler.html$', (req, res) ->
-	res.redirect '/post/2008-07-31-how-to-speed-up-the-gwt-compiler-part-i.html', 301
-docpadServer.get '^/post/2008-07-31-can-i-speed-up-the-gwt-compiler-part-ii.html$', (req, res) ->
-	res.redirect '/post/2008-07-31-how-to-speed-up-the-gwt-compiler-part-ii.html', 301
-docpadServer.get '^/post/2008-07-31-can-i-speed-up-the-gwt-compiler-part-iii.html$', (req, res) ->
-	res.redirect '/post/2008-07-31-how-to-speed-up-the-gwt-compiler-part-iii.html', 301
-
-# images
-docpadServer.get '/public/billets/eclipse1.png', (req, res) ->
-	res.redirect '/images/eclipse1.png', 301
-docpadServer.get '/public/billets/feisty/29.png', (req, res) ->
-	res.redirect '/images/29.png', 301
-docpadServer.get '/wp-content/uploads/eclipse2.png', (req, res) ->
-	res.redirect '/images/eclipse2.png', 301
-
+app.listen port
+console.log 'Express server listening on port %d', port
+console.log 'Express server running on http://localhost:%d', port
+console.log 'Express server static: %s', buildDir

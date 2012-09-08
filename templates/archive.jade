@@ -1,0 +1,36 @@
+
+extends layout
+
+block append title
+  |  » Les archives
+
+block content
+  != page.html
+  - var archive = _.chain(contents.articles._.directories).map(function(item) {
+  -   return item.index
+  - }).compact().filter(function(article) {
+  -   return article.metadata.ignored !== true
+  - }).sortBy(function(item) {
+  -   return -item.date
+  - }).groupBy(function(item) {
+  -   return item.date.getFullYear()
+  - }).value()
+  - var map = _.chain(Date.CultureInfo.monthNames).map(function(item) {
+  -   return item[0].toUpperCase() + item.substring(1)
+  - }).value()
+
+  h1 Les archives
+  section.archive
+    hr
+    ul
+      each year in _.chain(archive).keys().reverse().value()
+        li.year= year
+        - var months = _.groupBy(archive[year], function(item) { return map[item.date.getMonth()] })
+        ul
+          each articles, month in months
+            li
+              strong= month
+              each article in articles
+                br
+                a(href=article.url)= article.title
+

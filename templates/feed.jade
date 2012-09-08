@@ -1,0 +1,45 @@
+doctype xml
+rss(version='2.0',
+    xmlns:content="http://purl.org/rss/1.0/modules/content/",
+    xmlns:wfw="http://wellformedweb.org/CommentAPI/",
+    xmlns:dc="http://purl.org/dc/elements/1.1/",
+    xmlns:atom="http://www.w3.org/2005/Atom",
+    xmlns:sy="http://purl.org/rss/1.0/modules/syndication/",
+    xmlns:slash="http://purl.org/rss/1.0/modules/slash/")
+  channel
+  - var articles = _.chain(contents.articles._.directories).map(function(item) {
+  -   return item.index
+  - }).compact().filter(function(article) {
+  -   return article.metadata.ignored !== true
+  - }).sortBy(function(item) {
+  -   return -item.date
+  - }).first(10).value() // and finally take the first 5
+
+    title= locals.name
+    atom:link(href=locals.feeds.feed, rel='self', type='application/rss+xml')
+    link= locals.url
+    description= locals.name
+    - var buildDate = new Date().toISOString()
+    lastBuildDate= buildDate
+    language fr
+    | <sy:updatePeriod>hourly</sy:updatePeriod>
+    | <sy:updateFrequency>1</sy:updateFrequency>
+    | <generator uri="https://github.com/jnordberg/wintersmith" version="1.1.1">Wintersmith</generator>
+    for article in articles
+      - var permalink = locals.url + article.url
+      - var commentlink = permalink + "#disqus_thread"
+      item
+        title <![CDATA[#{article.title}]]>
+        link= permalink
+        comments= commentlink
+        pubDate= article.date.toISOString()
+        dc:creator= article.metadata.author
+        each currentTag in article.metadata.tags
+            category <![CDATA[#{currentTag}]]>
+        guid(isPermaLink='true')= permalink
+        author= article.metadata.author
+        description <![CDATA[#{article.metadata.excerpt} - &lt;a href="#{permalink}"&gt;Lire la suite&lt;/a&gt;]]>
+        content:encoded <![CDATA[#{article.metadata.excerpt} - &lt;a href="#{permalink}"&gt;Lire la suite&lt;/a&gt;]]>
+        wfw:commentRss= locals.disqus + article.url + "/lastest.rss"
+        slash:comments 0
+

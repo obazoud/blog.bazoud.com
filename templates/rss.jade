@@ -1,0 +1,41 @@
+doctype xml
+rss(xmlns="http://www.w3.org/2005/Atom",
+    xmlns:thr="http://purl.org/syndication/thread/1.0",
+    xml:lang="en")
+  channel
+  - var articles = _.chain(contents.articles._.directories).map(function(item) {
+  -   return item.index
+  - }).compact().filter(function(article) {
+  -   return article.metadata.ignored !== true
+  - }).sortBy(function(item) {
+  -   return -item.date
+  - }).first(10).value() // and finally take the first 5
+
+  - var buildDate = new Date().toISOString()
+    updated= buildDate
+    title= locals.name
+    subtitle(type="text")
+    link(rel="alternate", type="text/html")= locals.url
+    id= locals.feeds.rss
+    generator(uri="https://github.com/jnordberg/wintersmith", version="1.1.1") Wintersmith
+
+    for article in articles
+      - var permalink = locals.url + article.url
+      - var commentlink = permalink + "#disqus_thread"
+      - var disqusRss = locals.disqus.url + article.url + "/lastest.rss"
+      entry
+        author
+          name= article.metadata.author
+          title(type="html") <![CDATA[#{article.title}]]>
+          description <![CDATA[#{article.metadata.excerpt} - &lt;a href="#{permalink}"&gt;Lire la suite&lt;/a&gt;]]>
+          link(rel="alternate", type="text/html", href= permalink)
+          id= permalink
+          updated= article.date.toISOString()
+          published= article.date.toISOString()
+          each currentTag in article.metadata.tags
+            category(schema=locals.url, term=currentTag)
+          summary(type="html")
+          content(type="html", xml:base=permalink) #{article.metadata.excerpt} - &lt;a href="#{permalink}"&gt;Lire la suite&lt;/a&gt;
+          link(rel="replies", type="text/html", href=commentlink, thr:count="0")
+          link(rel="replies", type="application/rss+xml", href=commentlink, thr:count="0")= disqusRss
+          thr:total 0

@@ -1,0 +1,24 @@
+- var cloud = _.chain(contents.articles._.directories).map(function(item) {
+-   return item.index
+- }).compact().filter(function(article) {
+-   return article.metadata.ignored !== true
+- }).map(function(article) {
+-   return article.date.getFullYear()
+- }).flatten().reduce(function(counts, word) {
+-   counts[word] = (counts[word] || 0) + 1
+-   return counts
+- }, {}).value()
+- var countAll = _.chain(contents.articles._.directories).map(function(item) {
+-   return item.index
+- }).compact().filter(function(article) {
+-   return article.metadata.ignored !== true
+- }).flatten().size().value()
+#archives.tagcloud
+  a(class="size-25", href="/archive.html", title="Total: #{countAll} posts")
+    | Toutes
+  each count, word in cloud
+    = '\r\n'
+    - var sizeCount = Math.min(Math.floor(count / 1.25), 25)
+    a(class="size-#{sizeCount}", href="/archive/#{word}", title="#{word}: #{count} posts")
+      | #{word}
+    

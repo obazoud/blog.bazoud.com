@@ -1,0 +1,21 @@
+extends layout
+
+block append title
+  |  » #{ page.title }
+
+block content
+  .page-header
+    a(href=page.url)
+      h1=page.title
+  include subtitle
+  hr
+  .post_content
+    !=page.html
+  hr
+  include subtitle
+  include social
+  hr
+  h3 Articles similaires
+  include related
+  h3 Commentaires
+  include disqus

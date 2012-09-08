@@ -22,7 +22,7 @@ describe "Post techno"
 
 		"can open a URL on localhost":
 			topic: t (page) ->
-				page.open "http://127.0.0.1:10113/post/2011-11-02-ce-blog-change-de-technos.html", (status) =>
+				page.open "http://127.0.0.1:10113/articles/2011-11-02-ce-blog-change-de-technos/", (status) =>
 					page.includeJs "http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"
 					@callback null, page, status
 
@@ -70,13 +70,6 @@ describe "Post techno"
 					"which is no empty": (footer) ->
 						assert.equal footer, 1
 
-				"has footer":
-					topic: t (page) ->
-						page.evaluate (-> $("footer").length), (footer) => @callback null, footer
-					
-					"which is no empty": (footer) ->
-						assert.equal footer, 1
-
 				"has tags section":
 					topic: t (page) ->
 						page.evaluate (-> $("#tags").length), (tags) => @callback null, tags
@@ -103,7 +96,7 @@ describe "Post techno"
 						page.evaluate (-> $("#archives a").length), (archives) => @callback null, archives
 
 					"which is no empty": (archives) ->
-						assert.equal archives, 6
+						assert.equal archives, 7
 
 				"has section":
 					topic: t (page) ->
@@ -124,21 +117,21 @@ describe "Post techno"
 						page.evaluate (-> $("#post_top_meta1 a").length), (value) => @callback null, value
 
 					"which are 11": (value) ->
-						assert.equal value, 3
+						assert.equal value, 6
 
 				"has permlink":
 					topic: t (page) ->
 						page.evaluate (-> $("#post_top_meta1 a")[0].getAttribute('href')), (value) => @callback null, value
 
 					"which are href": (value) ->
-						assert.equal value, "/post/2011-11-02-ce-blog-change-de-technos.html"
+						assert.equal value, "/articles/2011-11-02-ce-blog-change-de-technos/"
 
 				"has comment link":
 					topic: t (page) ->
 						page.evaluate (-> $("#post_top_meta1 a")[1].getAttribute('href')), (value) => @callback null, value
 
 					"which are href": (value) ->
-						assert.equal value, "/post/2011-11-02-ce-blog-change-de-technos.html#disqus_thread"
+						assert.equal value, "#disqus_thread"
 
 				"has category link":
 					topic: t (page) ->
@@ -146,62 +139,6 @@ describe "Post techno"
 
 					"which are href": (value) ->
 						assert.equal value, "/category/Uncategorized"
-
-				"has tags":
-					topic: t (page) ->
-						page.evaluate (-> $("#post_top_meta2 a").length), (value) => @callback null, value
-
-					"which are 11": (value) ->
-						assert.equal value, 11
-
-				"has bottom meta 1 post":
-					topic: t (page) ->
-						page.evaluate (-> $("#post_bottom_meta1").length), (value) => @callback null, value
-
-					"which are 1": (value) ->
-						assert.equal value, 1
-
-				"has links":
-					topic: t (page) ->
-						page.evaluate (-> $("#post_bottom_meta1 a").length), (value) => @callback null, value
-
-					"which are 11": (value) ->
-						assert.equal value, 3
-
-				"has permlink":
-					topic: t (page) ->
-						page.evaluate (-> $("#post_bottom_meta1 a")[0].getAttribute('href')), (value) => @callback null, value
-
-					"which are href": (value) ->
-						assert.equal value, "/post/2011-11-02-ce-blog-change-de-technos.html"
-
-				"has comment link":
-					topic: t (page) ->
-						page.evaluate (-> $("#post_bottom_meta1 a")[1].getAttribute('href')), (value) => @callback null, value
-
-					"which are href": (value) ->
-						assert.equal value, "/post/2011-11-02-ce-blog-change-de-technos.html#disqus_thread"
-
-				"has category link":
-					topic: t (page) ->
-						page.evaluate (-> $("#post_bottom_meta1 a")[2].getAttribute('href')), (value) => @callback null, value
-
-					"which are href": (value) ->
-						assert.equal value, "/category/Uncategorized"
-
-				"has bottom meta 2 post":
-					topic: t (page) ->
-						page.evaluate (-> $("#post_bottom_meta2").length), (value) => @callback null, value
-
-					"which are 1": (value) ->
-						assert.equal value, 1
-
-				"has tags":
-					topic: t (page) ->
-						page.evaluate (-> $("#post_bottom_meta2 a").length), (value) => @callback null, value
-
-					"which are 11": (value) ->
-						assert.equal value, 11
 
 				"has bottom social block":
 					topic: t (page) ->
@@ -224,19 +161,19 @@ describe "Post techno"
 					"which is no empty": (value) ->
 						assert.equal value, "Articles similaires"
 
-				"has related articles":
+				"has related articles list":
 					topic: t (page) ->
 						page.evaluate (-> $("table.table.table-striped tr").length), (value) => @callback null, value
 
 					"which is no empty": (value) ->
-						assert.equal value, 3
+						assert.equal value, 5
 
 				"has columns":
 					topic: t (page) ->
 						page.evaluate (-> $("table.table.table-striped tr td").length), (value) => @callback null, value
 
 					"which is no empty": (value) ->
-						assert.equal value, 3
+						assert.equal value, 5
 
 				"has comments":
 					topic: t (page) ->
@@ -244,23 +181,6 @@ describe "Post techno"
 
 					"which is no empty": (value) ->
 						assert.equal value, "Commentaires"
-
-#
-# not available @ localhost
-#				"has new comment":
-#					topic: t (page) ->
-#						page.evaluate (-> $("h3")[5].innerText), (value) => @callback null, value
-#
-#					"which is no empty": (value) ->
-#						assert.equal value, "Add New Comment"
-#
-#				"has reactions":
-#					topic: t (page) ->
-#						page.evaluate (-> $("h3")[7].innerText), (value) => @callback null, value
-#
-#					"which is no empty": (value) ->
-#						assert.equal value, "Réactions"
-#
 
 		teardown: (page, ph) ->
 			ph.exit()

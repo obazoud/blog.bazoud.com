@@ -1,0 +1,14 @@
+- var relatedDocuments = _.chain(contents.articles._.directories).map(function(item) {
+-   return item.index
+- }).compact().filter(function(current) {
+-   return current.metadata.ignored !== true
+- }).filter(function(current) {
+-   return !_.isEmpty(_.intersection(current.metadata.tags, page.metadata.tags))
+- }).first(5).value()
+
+table.table.table-striped
+  tbody
+      each relatedDocument in relatedDocuments
+        tr
+          td
+            a(href=relatedDocument.url, title="#{relatedDocument.metadata.tags}")= relatedDocument.title

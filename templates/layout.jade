@@ -1,0 +1,104 @@
+!!! transitional
+html(lang=locals.language)
+  head
+    block head
+      meta(charset="utf-8")
+      meta(content="text/html;charset=UTF-8", http-equiv="Content-Type")
+      meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
+      meta(name="viewport", content="width=device-width")
+      meta(name="generator", content=locals.generator)
+      meta(name="google-site-verification", content=locals.googleSiteVerification)
+      meta(name="description", content=locals.name)
+      meta(name="author", content=locals.owner)
+      meta(name="keywords", content=locals.keywords)
+      title
+        block title
+          = locals.name
+      link(rel="apple-touch-icon", href="/ico/bootstrap-apple-57x57.png")
+      link(rel="apple-touch-icon", sizes="72x72", href="/ico/bootstrap-apple-72x72.png")
+      link(rel="apple-touch-icon", sizes="114x114", href="/ico/bootstrap-apple-114x114.png")
+      link(rel="alternate", type="application/rss+xml", title="RSS 2.0", href=locals.feeds.feed)
+      link(rel="alternate", type="text/xml", title="RSS .92", href=locals.feeds.rss)
+      link(rel="alternate", type="application/atom+xml", title="Atom 0.3", href=locals.feeds.atom)
+
+      link(href="/vendor/bootstrap/bootstrap.min.css", rel="stylesheet")
+      link(href="/styles/mystyle.css", rel="stylesheet")
+
+      link(href="/vendor/bootstrap/prettify.css", type="text/css", rel="stylesheet")
+      script(type="text/javascript", src="/vendor/google-code-prettify/prettify.js")
+
+      // Shims: IE6-8 support of HTML5 elements
+      // if lt IE 9
+        script(async, src="http://html5shim.googlecode.com/svn/trunk/html5.js")
+  body(onload="prettyPrint()")
+    .navbar.navbar-fixed-top
+      a(href="http://github.com/obazoud/blog.bazoud.com")
+        img(style="position: absolute; top: 0; right: 0; border: 0;", src="https://a248.e.akamai.net/camo.github.com/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67", alt="Fork me on GitHub")
+      .navbar-inner
+        .container-fluid
+          a(class="btn btn-navbar", data-toggle="collapse", data-target=".nav-collapse")
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a(class="brand", href="/")
+            = locals.name
+          .nav-collapse
+            form(id="search-form", class="navbar-search pull-left", action="http://www.google.com/search", method="get")
+              span(class="glass js-search-action"): i
+              input(type="hidden", value="UTF-8", name="ie")
+              input(type="hidden", value="UTF-8", name="oe")
+              input(type="hidden", value=locals.domain, name="domains")
+              input(type="hidden", value=locals.domain, name="sitesearch")
+              input(class="search-query span3", name="q", type="text", placeholder="Rechercher avec Google...")
+    .container-fluid
+      .row-fluid
+        .span3
+          .well.sidebar-nav
+            ul.nav.nav-list
+              h4 Suivez moi !
+              a(target="_blank", style="cursor: pointer;", href=locals.feeds.feed): img(alt="Feed", title="Feed", src="/images/rss.png")
+              a(href="http://www.twitter.com/obazoud", style="cursor: pointer;", target="_blank"): img(src="/images/twitter.png", title="Follow me on Twitter!", alt="Follow @obazoud on Twitter!")
+              a(href="https://plus.google.com/108456051643223740688", target="_blank", alt="Google +", title="Google +"): img(src="/images/google-plus-48x48.png", border="0")
+              h4 Spring Batch in Action
+              a(href="http://affiliate.manning.com/idevaffiliate.php?id=1178_267_1_68", target="_blank", alt="String Batch in Action", title="String Batch in Action"): img(border="0", src="/images/SpringBatchInAction.jpg", alt="String Batch in Action", title="String Batch in Action")
+              h4 Tags
+              include tagcloud
+              h4 Archives
+              include archivecloud
+              h4 Blogroll
+              include blogroll
+              h4 Feeds
+              a(target="_blank", style="cursor:pointer;", href=locals.feeds.feed): img(alt="Feed", title="Feed", src="/images/rss.png")
+              a(target="_blank", style="cursor:pointer;", href=locals.feeds.comments): img(alt="Comments Feed", title="Comments Feed", src="/images/rss.png")
+        .span8
+          .content
+            .row
+              .span12
+                block content
+    footer.footer
+      div.inner
+        block footer
+          p(class="pull-right"): a(href="#") Revenir en haut
+          p 
+            | #{ locals.name } - Copyright © 2007-#{ new Date().getFullYear() }  #{ locals.owner } - Powered by 
+            a(href="http://www.nodejs.org", title="Powered by Node.js", target="_blank")
+              | Node.js
+            |  and
+            a(href="https://github.com/jnordberg/wintersmith", title="Powered by Wintersmith", target="_blank")
+              |  Wintersmith 
+            |  - Special thanks to 
+            a(href="http://twitter.github.com/bootstrap/", target="_blank", title="Bootstrap, from Twitter")
+              | Twitter Bootstrap
+
+    | <script type="text/javascript">
+    | var _gaq = _gaq || [];
+    | _gaq.push(['_setAccount', 'UA-1176603-1']);
+    | 
+    | _gaq.push(['_trackPageview']);
+    | 
+    | (function() {
+    |   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    |   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    |   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    | })();
+    | </script>

@@ -70,13 +70,6 @@ describe "Blog index"
 					"which is no empty": (footer) ->
 						assert.equal footer, 1
 
-				"has footer":
-					topic: t (page) ->
-						page.evaluate (-> $("footer").length), (footer) => @callback null, footer
-					
-					"which is no empty": (footer) ->
-						assert.equal footer, 1
-
 				"has tags section":
 					topic: t (page) ->
 						page.evaluate (-> $("#tags").length), (tags) => @callback null, tags
@@ -103,7 +96,7 @@ describe "Blog index"
 						page.evaluate (-> $("#archives a").length), (archives) => @callback null, archives
 
 					"which is no empty": (archives) ->
-						assert.equal archives, 6
+						assert.equal archives, 7
 
 				"has posts entries":
 					topic: t (page) ->
